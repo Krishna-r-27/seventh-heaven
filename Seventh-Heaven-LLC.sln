@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36915.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "seventh-heaven-llc.client", "seventh-heaven-llc.client\seventh-heaven-llc.client.esproj", "{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seventh-Heaven-LLC.Server", "Seventh-Heaven-LLC.Server\Seventh-Heaven-LLC.Server.csproj", "{D6EC9E14-5C8F-4E40-A7C5-85BB4A251BE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D6EC9E14-5C8F-4E40-A7C5-85BB4A251BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6EC9E14-5C8F-4E40-A7C5-85BB4A251BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6EC9E14-5C8F-4E40-A7C5-85BB4A251BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6EC9E14-5C8F-4E40-A7C5-85BB4A251BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {291A5DB2-48B4-4CE8-96CB-8E67C0A98930}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,2 @@
+C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\seventh-heaven-llc.client\obj\Debug\seventh-heaven-llc.client.esproj.CoreCompileInputs.cache
+C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\seventh-heaven-llc.client\obj\Debug\seventh-heaven-llc.client.esproj.CoreCompileInputs.cache

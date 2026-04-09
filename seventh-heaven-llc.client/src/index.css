@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+/*@import "tw-animate-css";*/
+/*@custom-variant dark (&:is(.dark *));*/
+
+@layer base {
+    html, body {
+        @apply font-primary text-base;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-primary;
+    }
+
+    :root {
+        /*Font-size*/
+        --font-16: 16px;
+        --font-18: 16px;
+        --font-20: 18px;
+        /* Spacing Scale - Mobile */
+        --space-30: 20px;
+        --space-50: 30px;
+        --space-70: 40px;
+        --space-100: 50px;
+        --space-200: 80px;
+    }
+
+    /* sm */
+    @media (min-width: 640px) {
+        :root {
+            --space-30: 20px;
+            --space-50: 35px;
+            --space-70: 50px;
+            --space-100: 60px;
+            --space-200: 100px;
+        }
+    }
+
+    /* md */
+    @media (min-width: 768px) {
+        :root {
+            --space-30: 20px;
+            --space-50: 40px;
+            --space-70: 55px;
+            --space-100: 70px;
+            --space-200: 120px;
+        }
+    }
+
+    /* lg2 */
+    @media (min-width: 1024px) {
+        :root {
+            /*Font-size*/
+            --font-16: 16px;
+            --font-18: 18px;
+            --font-20: 20px;
+            /* Spacing Scale */
+            --space-30: 25px;
+            --space-50: 45px;
+            --space-70: 60px;
+            --space-100: 80px;
+            --space-200: 150px;
+        }
+    }
+
+    /* 2xl */
+    @media (min-width: 1440px) {
+        :root {
+            --space-30: 30px;
+            --space-50: 50px;
+            --space-70: 70px;
+            --space-100: 100px;
+            --space-200: 200px;
+        }
+    }
+}

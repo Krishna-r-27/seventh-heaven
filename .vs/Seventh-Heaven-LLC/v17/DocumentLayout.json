@@ -1,0 +1,118 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|c:\\users\\dnc\\desktop\\krishna ravalji - dnc projects\\react projects\\seventh-heaven-llc-old\\seventh-heaven-llc.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|solutionrelative:seventh-heaven-llc.client\\src\\app.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|c:\\users\\dnc\\desktop\\krishna ravalji - dnc projects\\react projects\\seventh-heaven-llc-old\\seventh-heaven-llc.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|solutionrelative:seventh-heaven-llc.client\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|c:\\users\\dnc\\desktop\\krishna ravalji - dnc projects\\react projects\\seventh-heaven-llc-old\\seventh-heaven-llc.client\\tailwind.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|solutionrelative:seventh-heaven-llc.client\\tailwind.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|c:\\users\\dnc\\desktop\\krishna ravalji - dnc projects\\react projects\\seventh-heaven-llc-old\\seventh-heaven-llc.client\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|solutionrelative:seventh-heaven-llc.client\\src\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|c:\\users\\dnc\\desktop\\krishna ravalji - dnc projects\\react projects\\seventh-heaven-llc-old\\seventh-heaven-llc.client\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|solutionrelative:seventh-heaven-llc.client\\src\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|c:\\users\\dnc\\desktop\\krishna ravalji - dnc projects\\react projects\\seventh-heaven-llc-old\\seventh-heaven-llc.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{BDBA321C-BCCF-F173-C8A0-39D1B206BC5B}|seventh-heaven-llc.client\\seventh-heaven-llc.client.esproj|solutionrelative:seventh-heaven-llc.client\\vite.config.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "package.json",
+              "DocumentMoniker": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\package.json",
+              "RelativeDocumentMoniker": "seventh-heaven-llc.client\\package.json",
+              "ToolTip": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\package.json",
+              "RelativeToolTip": "seventh-heaven-llc.client\\package.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-07T12:22:21.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.jsx",
+              "DocumentMoniker": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\src\\App.jsx",
+              "RelativeDocumentMoniker": "seventh-heaven-llc.client\\src\\App.jsx",
+              "ToolTip": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\src\\App.jsx",
+              "RelativeToolTip": "seventh-heaven-llc.client\\src\\App.jsx",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003663|",
+              "WhenOpened": "2026-04-07T11:40:54.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "tailwind.config.js",
+              "DocumentMoniker": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\tailwind.config.js",
+              "RelativeDocumentMoniker": "seventh-heaven-llc.client\\tailwind.config.js",
+              "ToolTip": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\tailwind.config.js",
+              "RelativeToolTip": "seventh-heaven-llc.client\\tailwind.config.js",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-07T11:38:39.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "App.css",
+              "DocumentMoniker": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\src\\App.css",
+              "RelativeDocumentMoniker": "seventh-heaven-llc.client\\src\\App.css",
+              "ToolTip": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\src\\App.css",
+              "RelativeToolTip": "seventh-heaven-llc.client\\src\\App.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-07T11:37:07.643Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "index.css",
+              "DocumentMoniker": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\src\\index.css",
+              "RelativeDocumentMoniker": "seventh-heaven-llc.client\\src\\index.css",
+              "ToolTip": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\src\\index.css",
+              "RelativeToolTip": "seventh-heaven-llc.client\\src\\index.css",
+              "ViewState": "AgIAACoAAAAAAAAAAAAwwEsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-04-07T11:36:51.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "vite.config.js",
+              "DocumentMoniker": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\vite.config.js",
+              "RelativeDocumentMoniker": "seventh-heaven-llc.client\\vite.config.js",
+              "ToolTip": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\seventh-heaven-llc.client\\vite.config.js",
+              "RelativeToolTip": "seventh-heaven-llc.client\\vite.config.js",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAwDIAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-04-07T11:36:01.228Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
