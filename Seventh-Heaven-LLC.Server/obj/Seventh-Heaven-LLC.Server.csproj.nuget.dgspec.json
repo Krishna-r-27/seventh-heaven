@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj": {}
+    "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj": {
+    "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
+        "projectUniqueName": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
         "projectName": "Seventh-Heaven-LLC.Server",
-        "projectPath": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
+        "projectPath": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
         "packagesPath": "C:\\Users\\DNC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC-old\\Seventh-Heaven-LLC.Server\\obj\\",
+        "outputPath": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
