@@ -11,8 +11,5 @@
   <ItemGroup>
     <Folder Include="src\assets\img\" />
     <Folder Include="src\components\" />
-    <Folder Include="src\data\" />
-    <Folder Include="src\layout\" />
-    <Folder Include="src\pages\" />
   </ItemGroup>
 </Project>
