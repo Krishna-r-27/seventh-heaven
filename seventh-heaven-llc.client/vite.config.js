@@ -43,8 +43,9 @@ export default defineConfig({
     plugins: [react(), tailwindcss()],
     resolve: {
         alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url))
-        }
+            "@": fileURLToPath(new URL("./src", import.meta.url)),
+            "@img": path.resolve(fileURLToPath(new URL(".", import.meta.url)), "src/assets/img"),
+        },
     },
     server: {
         proxy: {

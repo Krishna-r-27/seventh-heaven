@@ -1,7 +1,9 @@
-function Home() {
-  return (
-    <p>Hello world!</p>
-  );
-}
+import HomeBanner from "@/Layouts/HomeBanner";
 
-export default Home;
+export default function Home() {
+    return (
+        <>
+            <HomeBanner />
+        </>
+    );
+}
