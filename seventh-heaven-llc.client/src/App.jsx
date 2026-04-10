@@ -1,13 +1,41 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AppLayout from './Layouts/AppLayout';
+import Home from "./pages/Home";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import ScrollToTop from "./components/Common/ScrollToTop";
+import ScrollToHash from "./components/Common/ScrollToHash";
 
 function App() {
-
     return (
-        <section className="py-8 sm:py-14 md:py-16 lg:py-100">
-            <div className="container mx-auto ">
-                <h1 className="text-red-500 text-3xl">Seventh Heaven LLC</h1>
+        <BrowserRouter>
+            <ScrollToTop />
+            <ScrollToHash />
+
+            <div className="font-montserrat flex min-h-screen flex-col">
+
+
+                <main className="flex-grow">
+
+                    <Routes>
+
+                        <Route element={<AppLayout />}>
+
+                            <Route path="/" element={<Home />} />
+                            <Route path="/about-us" element={<AboutUs />} />
+                            <Route path="/contact-us" element={<ContactUs />} />
+                        </Route>
+
+
+
+                    </Routes>
+
+                </main>
+
+
             </div>
-        </section>
+
+        </BrowserRouter>
     );
 }
 
