@@ -1,46 +1,72 @@
+import { motion } from "framer-motion";
 import Button from "@/Components/Button";
+import bannerPng from "@/assets/img/hero.png";
+import bannerWebp from "@/assets/img/hero.webp";
 
 export default function HomeBanner() {
     return (
-        <section className="relative h-[600px] w-full overflow-hidden">
+        <section className="relative h-[55vh] sm:h-[65vh] lg:h-[90vh] w-full overflow-hidden">
 
-            {/* Background Image */}
-
-            <picture>
-                <source srcSet="/assets/img/dubai-banner.webp" type="image/webp" />
+            {/* BACKGROUND IMAGE (with subtle zoom) */}
+            <motion.picture
+                className="absolute inset-0 w-full h-full"
+                initial={{ scale: 1.1 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 6, ease: "easeOut" }}
+            >
+                <source srcSet={bannerWebp} type="image/webp" />
                 <img
-                    src="/assets/img/dubai-banner.png"
+                    src={bannerPng}
                     alt="Dubai Skyline"
-                    className="absolute inset-0 h-full w-full object-cover"
+                    className="w-full h-full object-cover"
                 />
-            </picture>
+            </motion.picture>
 
-            {/* Overlay */}
+            {/* OVERLAY */}
+            <div className="absolute inset-0 bg-blue/40"></div>
 
-            <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(0,90,164,0.75)_0%,rgba(0,90,164,0.55)_40%,rgba(0,90,164,0.2)_70%,transparent_100%)]"></div>
+            {/* CONTENT */}
+            <div className="relative z-10 container mx-auto h-full flex items-center">
 
-            {/* Content */}
+                <div className="text-white text-center sm:text-left mx-auto sm:mx-0 max-w-lg">
 
-            <div className="relative container mx-auto flex h-full items-center">
-
-                <div className="max-w-[520px] text-white">
-
-                    <h1 className="font-manrope text-heading-sm leading-tight font-bold md:text-heading lg:text-display">
-                        Making Vacations
-                        <br />
+                    {/* HEADING */}
+                    <motion.h1
+                        className="font-manrope text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                    >
+                        Making Vacations <br />
                         Memorable
-                    </h1>
+                    </motion.h1>
 
-                    <p className="text-body-sm mt-4 /90 md:text-body">
-                        Your dream house is just one step away let’s discover it together
+                    {/* PARAGRAPH */}
+                    <motion.p
+                        className="mt-4 text-md"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3, duration: 0.7 }}
+                    >
+                        Your dream house is just one step away - let's discover it together
                         today and start living.
-                    </p>
+                    </motion.p>
 
-                    <div className="mt-6">
-                        <Button variant="outline" to="/list-with-us">
+                    {/* BUTTON */}
+                    <motion.div
+                        className="mt-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.6, duration: 0.6 }}
+                    >
+                        <Button
+                            className="bg-white text-theme"
+                            variant="outline"
+                            to="/listing"
+                        >
                             List With Us
                         </Button>
-                    </div>
+                    </motion.div>
 
                 </div>
 

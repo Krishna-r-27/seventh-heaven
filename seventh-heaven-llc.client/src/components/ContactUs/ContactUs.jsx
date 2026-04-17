@@ -1,12 +1,22 @@
 ﻿import callIcon from "@img/call-white.svg";
 import emailIcon from "@img/email-white.svg";
 import ContactForm from "../forms/ContactForm";
+import { motion } from "framer-motion";
 function ContactUs() {
     return (
         <section className="w-full py-8 sm:py-12 md:py-14 lg:py-16">
             <div className="container mx-auto px-4">
 
-                <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-8 lg:gap-24 lg:gap-12 items-start">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                        duration: 0.9,
+                        ease: [0.25, 0.1, 0.25, 1]
+                    }}
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-8 lg:gap-24 lg:gap-12 items-start"
+                >
 
                     {/* LEFT SIDE */}
                     <div>
@@ -74,7 +84,7 @@ function ContactUs() {
 
                     {/* RIGHT SIDE FORM */}
                         <ContactForm />
-                </div>
+                </motion.div>
             </div>
         </section>
     );

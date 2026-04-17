@@ -7,7 +7,7 @@ import Button from "@/Components/Button";
 const navItems = [
     { label: "Home", path: "/" },
     { label: "About Us", path: "/about-us" },
-    { label: "Our Properties", path: "/our-properties" },
+    { label: "Our Properties", path: "/book-now" },
     { label: "Contact Us", path: "/contact-us" },
 ];
 
@@ -75,8 +75,8 @@ const Header = () => {
                                         end={path === "/"}
                                         className={({ isActive }) =>
                                             `font-medium text-body-sm whitespace-nowrap relative pb-1 transition-colors ${isActive
-                                                ? "text-primary after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[2px] after:bg-primary"
-                                                : "text-dark hover:text-primary"
+                                                ? "text-gold after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[2px] after:bg-gold"
+                                                : "text-theme hover:text-gold"
                                             }`
                                         }
                                     >
@@ -94,12 +94,12 @@ const Header = () => {
 
                         <div className="flex items-center gap-3">
 
-                            <Button variant="outline" to="/list-with-us">
+                            <Button variant="outline" to="/listing">
                                 List With Us
                             </Button>
 
-                            <Button variant="primary" to="/inquire">
-                                Inquire Now
+                            <Button variant="primary" to="/contact-us">
+                                Enquire Now
                             </Button>
 
                         </div>
@@ -193,23 +193,19 @@ const Header = () => {
                         </NavLink>
 
                     ))}
+                    <Button variant="outline" to="/listing" className="mb-3">
+                        List With Us
+                    </Button>
 
+                    <Button variant="primary" to="/contact-us">
+                        Enquire Now
+                    </Button>
                 </div>
 
 
                 {/* Drawer Buttons */}
 
-                <div className="flex flex-col gap-3 border-t border-gray-light px-6 py-5">
-
-                    <Button variant="outline" to="/list-with-us">
-                        List With Us
-                    </Button>
-
-                    <Button variant="primary" to="/inquire">
-                        Inquire Now
-                    </Button>
-
-                </div>
+                
 
             </div>
 
