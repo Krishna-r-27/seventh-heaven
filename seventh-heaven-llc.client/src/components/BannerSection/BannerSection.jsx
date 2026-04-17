@@ -28,7 +28,7 @@ const BannerSection = ({ title, pageName }) => {
                   flex items-center justify-center
                   gap-2
                 ">
-                  <Link to="/" className="hover:text-[#F89B32] transition">
+                  <Link to="/" className="hover:font-semibold transition">
                       Home
                   </Link>
                   <span>/</span>

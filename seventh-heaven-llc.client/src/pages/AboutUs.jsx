@@ -1,4 +1,8 @@
 import BannerSection from "../components/BannerSection/BannerSection";
+import AboutUsSection from "../components/AboutUs/AboutUsSection";
+import VisionMission from "../components/VisionMission/VisionMission";
+import SuccessSection from "../components/SuccessStory/SuccessSection";
+import CTASection from "../components/Sections/CTASection";
 function AboutUs() {
   return (
       <>
@@ -6,7 +10,10 @@ function AboutUs() {
               title="About Us"
               pageName="About Us"
           />
-          <h1>TEST TEXT</h1>
+          <AboutUsSection />
+          <VisionMission />
+          <SuccessSection />
+          <CTASection />
       </>
   );
 }

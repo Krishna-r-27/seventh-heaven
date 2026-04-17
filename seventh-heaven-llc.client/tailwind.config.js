@@ -81,7 +81,7 @@ export default {
             manrope: ["Manrope", "sans-serif"],
         },
 
-
+        
         // Border radius
         borderRadius: {
             xs: "5px",

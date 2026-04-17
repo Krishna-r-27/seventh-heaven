@@ -74,3 +74,4 @@ C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heave
 C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.pdb
 C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.genruntimeconfig.cache
 C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\ref\Seventh-Heaven-LLC.Server.dll
+C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.sourcelink.json

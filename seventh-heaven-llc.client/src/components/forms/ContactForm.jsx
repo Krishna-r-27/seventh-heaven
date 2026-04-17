@@ -1,4 +1,4 @@
-﻿import Button from "@/Components/Button";
+﻿import Button from "@/components/Button";
 function ContactForm() {
     return (
         <div className="border border-gold rounded-xl p-4 md:p-8 bg-white">
