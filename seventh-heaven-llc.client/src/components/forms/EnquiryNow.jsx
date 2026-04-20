@@ -4,7 +4,7 @@ import { FiChevronDown } from "react-icons/fi";
 function EnquiryNow() {
     const [propertyType, setPropertyType] = useState("");
   return (
-      <div className="border border-gold rounded-xl p-3 md:p-8 bg-white">
+      <div className="border border-gold rounded-xl p-4 md:p-8 bg-white">
 
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 lg:mb-6 text-theme">
               Enquiry <span className="text-gold">Now</span>
