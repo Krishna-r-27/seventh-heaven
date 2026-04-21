@@ -19,24 +19,13 @@ function Listing() {
                 >
                     <div className="w-full lg:w-1/2 order-1 lg:order-2">
 
-                        <div className="inline-block lg:mt-3">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-theme">
-                                List Your <span className="text-gold">Property</span>
-                            </h2>
-
-                            <div className="mt-2">
-                                <div className="w-[62%] h-[1px] bg-gold"></div>
-                                <div className="w-[35%] h-[1px] bg-gold mt-1"></div>
-                            </div>
-                        </div>
-
-                        <div className="mt-6 rounded-xl overflow-hidden">
+                        <div className="rounded-xl overflow-hidden">
                             <picture>
                                 <source srcSet={listingImg} type="image/webp" />
                                 <img
                                     src={listingImg}
                                     alt="listing"
-                                    className="w-full h-[220px] sm:h-[260px] md:h-[300px] lg:h-auto object-cover rounded-none lg:rounded-xl"
+                                    className="w-full h-[220px] sm:h-[260px] md:h-[300px] lg:h-[965px] object-cover rounded-none lg:rounded-xl"
                                 />
                             </picture>
                         </div>

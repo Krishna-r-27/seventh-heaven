@@ -184,11 +184,11 @@ function PropertyDetail() {
 
                                 <div className="flex flex-wrap md:gap-6 gap-3 mb-4 text-theme">
                                     <p className="text-theme">
-                                        <span className="font-semibold">Spacious:</span> <span className="text-[#6A6A6A]">{property.type}</span>
+                                        <span className="font-semibold">Spacious:</span> <span className="text-theme">{property.type}</span>
                                     </p>
 
                                     <p>
-                                        <span className="font-semibold">Location:</span> <span className="text-[#6A6A6A]">{property.location}</span>
+                                        <span className="font-semibold">Location:</span> <span className="text-theme">{property.location}</span>
                                     </p>
                                 </div>
 
@@ -228,20 +228,7 @@ function PropertyDetail() {
                                 </div>
 
                             </div>
-                            <div className="rounded-md overflow-hidden mb-6">
-                                <a
-                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(property.location)}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block"
-                                >
-                                    <iframe
-                                        src={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&output=embed`}
-                                        className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] pointer-events-none"
-                                        loading="lazy"
-                                    ></iframe>
-                                </a>
-                            </div>
+                        
 
                             <div>
                                 {property.description.map((para, i) => (
@@ -264,7 +251,7 @@ function PropertyDetail() {
                                     </div>
                                 </div>
 
-                                <p className="text-[#6A6A6A] text-lg font-semibold mt-4">
+                                <p className="text-theme text-md font-semibold mt-4">
                                     {property.nearestLocation}
                                 </p>
                             </div>
@@ -332,6 +319,20 @@ function PropertyDetail() {
                                         </div>
                                     ))}
                                 </div>
+                            </div>
+                            <div className="rounded-md overflow-hidden mb-6">
+                                <a
+                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(property.location)}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="block"
+                                >
+                                    <iframe
+                                        src={`https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&output=embed`}
+                                        className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] pointer-events-none"
+                                        loading="lazy"
+                                    ></iframe>
+                                </a>
                             </div>
                         </div>
 
