@@ -6,7 +6,7 @@ function ListProperty() {
       <div className="border border-gold rounded-xl p-4 md:p-8 bg-white">
 
           <h2 className="text-2xl md:text-3xl font-semibold mb-4 lg:mb-6 text-theme">
-              Fill The <span className="text-gold">Form</span>
+              List Your <span className="text-gold">Property</span>
           </h2>
 
           <form className="space-y-4 lg:space-y-6">
@@ -148,7 +148,7 @@ function ListProperty() {
                   </div>
               </div>
 
-              <Button variant="primary" to="#" className="mt-2">
+              <Button variant="primary" size="sm" to="#" className="mt-2">
                   Submit Now
               </Button>
           </form>

@@ -15,14 +15,11 @@ function PropertyCard({ property }) {
         >
 
             <div className="relative overflow-hidden rounded-lg">
-                <picture>
-                    <source srcSet={property.imageWebp} type="image/webp" />
-                    <img
-                        src={property.imagePng}
-                        alt={property.title}
-                        className="w-full h-[220px] object-cover rounded-lg transition-transform duration-700 ease-in-out group-hover:scale-115"
-                    />
-                </picture>
+                <img
+                    src={property.imagePng}
+                    alt={property.title}
+                    className="w-full h-[220px] object-cover rounded-lg transition-transform duration-700 ease-in-out group-hover:scale-115"
+                />
 
                 <div className="absolute top-3 right-3 bg-theme/60 p-2 rounded">
                     <img src={heartIcon} alt="heart" className="w-5 h-5" />

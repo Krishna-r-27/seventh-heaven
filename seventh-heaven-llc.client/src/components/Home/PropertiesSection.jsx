@@ -1,26 +1,83 @@
-﻿import { motion } from "framer-motion";
+﻿import { motion, useAnimation } from "framer-motion";
 import propertiesData from "@/data/Home/propertiesData";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 export default function PropertiesSection() {
+    const controls = useAnimation();
     return (
         <section className="w-full py-8 sm:py-12 md:py-14 lg:py-16">
             <div className="container mx-auto px-4">
 
                 {/* HEADING */}
-                <div className="lg:text-center mb-5 md:mb-8">
+
+                <motion.div
+                    className="lg:text-center mb-5 md:mb-8"
+                    initial="hidden"
+                    animate={controls}
+                    onViewportEnter={() => controls.start("visible")}
+                    onViewportLeave={() => controls.start("hidden")}
+                    viewport={{ amount: 0.4 }}
+                >
                     <div className="inline-block">
-                        <h2 className="text-2xl md:text-3xl font-semibold text-theme">
+
+                        <motion.h2
+                            className="text-2xl md:text-3xl font-semibold text-theme"
+                            variants={{
+                                hidden: { y: 40, opacity: 0 },
+                                visible: {
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: { duration: 0.6 }
+                                }
+                            }}
+                        >
                             Explore Our <span className="text-gold">Properties</span>
-                        </h2>
+                        </motion.h2>
 
                         <div className="lg:text-center mt-2">
-                            <div className="w-[62%] h-[1px] bg-gold lg:mx-auto"></div>
-                            <div className="w-[35%] h-[1px] bg-gold mt-1 lg:mx-auto"></div>
+
+                            <motion.div
+                                className="w-[62%] h-[1px] bg-gold lg:mx-auto"
+                                style={{ originX: 0.5 }}
+                                variants={{
+                                    hidden: { scaleX: 0, opacity: 0 },
+                                    visible: {
+                                        scaleX: 1,
+                                        opacity: 1,
+                                        transition: { delay: 0.6, duration: 0.4 }
+                                    }
+                                }}
+                            />
+
+                            <motion.div
+                                className="h-[1px] w-[35%] bg-gold mt-1 lg:mx-auto"
+                                style={{ originX: 0.5 }}
+                                variants={{
+                                    hidden: { scaleX: 0, opacity: 0 },
+                                    visible: {
+                                        scaleX: 1,
+                                        opacity: 1,
+                                        transition: { delay: 0.8, duration: 0.4 }
+                                    }
+                                }}
+                            />
                         </div>
+
                     </div>
-                </div>
+                </motion.div>
+                {/*<div className="lg:text-center mb-5 md:mb-8">*/}
+                {/*    <div className="inline-block">*/}
+                {/*        <h2 className="text-2xl md:text-3xl font-semibold text-theme">*/}
+                {/*            Explore Our <span className="text-gold">Properties</span>*/}
+                {/*        </h2>*/}
+
+                {/*        <div className="lg:text-center mt-2">*/}
+                {/*            <div className="w-[62%] h-[1px] bg-gold lg:mx-auto"></div>*/}
+                {/*            <div className="w-[35%] h-[1px] bg-gold mt-1 lg:mx-auto"></div>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
                 {/* CARDS */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -41,7 +98,7 @@ export default function PropertiesSection() {
 
                             {/* ICON */}
                             <div className="mb-4 flex justify-center sm:justify-start">
-                                <div className={`p-4 rounded-sm ${index === 1 ? "bg-gold" : "bg-blue"}`}>
+                                <div className="p-4 rounded-sm bg-gold">
                                     <picture>
                                         <source srcSet={item.icon.webp} type="image/webp" />
                                         <img
@@ -72,13 +129,13 @@ export default function PropertiesSection() {
 
                                 <Link
                                     to="/book-now"
-                                    className="flex items-center gap-1 font-semibold text-gold group"
+                                    className="flex items-center gap-1 font-semibold text-blue group"
                                 >
                                     <span className="relative">
                                         View All
 
                                         {/* underline animation */}
-                                        <span className="absolute left-0 -bottom-[2px] h-[1px] w-0 bg-gold transition-all duration-300 ease-out group-hover:w-full"></span>
+                                        <span className="absolute left-0 -bottom-[2px] h-[1px] w-0 bg-blue transition-all duration-300 ease-out group-hover:w-full"></span>
                                     </span>
 
                                     <FiArrowUpRight className="text-lg opacity-70 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />

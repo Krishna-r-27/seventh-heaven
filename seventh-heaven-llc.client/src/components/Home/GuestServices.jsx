@@ -4,22 +4,66 @@ import propertyPng from "@img/modern-villa-dubai-3d-render-luxurious-architectur
 import propertyWebp from "@img/modern-villa-dubai-3d-render-luxurious-architecture.webp";
 import checkedWhiteIconPng from "@img/checked-white-icon.png";
 import checkedWhiteIconWebp from "@img/checked-white-icon.webp";
+import { motion, useAnimation } from "framer-motion";
+
 function GuestServices() {
+    const controls = useAnimation();
   return (
       <section className="w-full pb-8 sm:pb-12 md:pb-14 lg:pb-16">
           <div className="container mx-auto px-4">
-              <div className="text-center">
+              <motion.div
+                  className="text-center"
+                  initial="hidden"
+                  animate={controls}
+                  onViewportEnter={() => controls.start("visible")}
+                  onViewportLeave={() => controls.start("hidden")}
+                  viewport={{ amount: 0.4 }}
+              >
                   <div className="inline-block">
-                      <h2 className="text-2xl md:text-3xl font-semibold text-theme text-left lg:text-center">
+
+                      <motion.h2
+                          className="text-2xl md:text-3xl font-semibold text-theme text-left lg:text-center"
+                          variants={{
+                              hidden: { y: 30, opacity: 0 },
+                              visible: {
+                                  y: 0,
+                                  opacity: 1,
+                                  transition: { duration: 0.6, ease: "easeOut" }
+                              }
+                          }}
+                      >
                           Guest <span className="text-gold">Services</span>
-                      </h2>
+                      </motion.h2>
 
                       <div className="text-center mt-2">
-                            <div className="w-[62%] h-[1px] bg-gold mx-auto"></div>
-                            <div className="w-[35%] h-[1px] bg-gold mt-1 mx-auto"></div>
-                        </div>
+                          <motion.div
+                              className="w-[62%] h-[1px] bg-gold mx-auto"
+                              style={{ originX: 0.5 }}
+                              variants={{
+                                  hidden: { scaleX: 0, opacity: 0 },
+                                  visible: {
+                                      scaleX: 1,
+                                      opacity: 1,
+                                      transition: { delay: 0.6, duration: 0.4 }
+                                  }
+                              }}
+                          />
+                          <motion.div
+                              className="w-[35%] h-[1px] bg-gold mt-1 mx-auto"
+                              style={{ originX: 0.5 }}
+                              variants={{
+                                  hidden: { scaleX: 0, opacity: 0 },
+                                  visible: {
+                                      scaleX: 1,
+                                      opacity: 1,
+                                      transition: { delay: 0.8, duration: 0.4 }
+                                  }
+                              }}
+                          />
+                      </div>
+
                   </div>
-              </div>
+              </motion.div>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center mt-4 lg:mt-5">
 
                   {/* LEFT */}

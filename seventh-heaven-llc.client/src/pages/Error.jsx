@@ -82,7 +82,7 @@ function Error() {
                       {/* Email */}
                       <li className="flex items-start gap-4">
 
-                          <span className="bg-blue p-2 rounded-sm flex-shrink-0">
+                          <span className="bg-gold p-2 rounded-sm flex-shrink-0">
                               <img
                                   src={emailIcon}
                                   alt="Email"
@@ -111,7 +111,7 @@ function Error() {
                       {/* Call */}
                       <li className="flex items-start gap-4">
 
-                          <span className="bg-blue p-2 rounded-sm flex-shrink-0">
+                          <span className="bg-gold p-2 rounded-sm flex-shrink-0">
                               <img
                                   src={callIcon}
                                   alt="Call"

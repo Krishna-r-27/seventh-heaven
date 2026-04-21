@@ -1,7 +1,10 @@
 ﻿import React from "react";
 import data from "../../data/AboutUs/successData";
+import { motion, useAnimation } from "framer-motion";
 
 const SuccessSection = () => {
+    const controls = useAnimation();
+
     return (
         <section className="w-full py-8 sm:py-12 md:py-14 lg:py-16 bg-[#E8EEF7] my-8 sm:my-12 md:my-14 lg:my-16">
             <div className="container mx-auto px-4">
@@ -24,17 +27,60 @@ const SuccessSection = () => {
                     <div className=" flex flex-col items-center items-start text-left">
 
                         {/* HEADING */}
-                        <div className="w-fit">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-theme inline-block">
+                        <motion.div
+                            className="w-fit"
+                            initial="hidden"
+                            animate={controls}
+                            onViewportEnter={() => controls.start("visible")}
+                            onViewportLeave={() => controls.start("hidden")}
+                            viewport={{ amount: 0.4 }}
+                        >
+                            {/* TITLE */}
+                            <motion.h2
+                                className="text-2xl md:text-3xl font-semibold text-theme inline-block"
+                                variants={{
+                                    hidden: { y: 30, opacity: 0 },
+                                    visible: {
+                                        y: 0,
+                                        opacity: 1,
+                                        transition: { duration: 0.6, ease: "easeOut" }
+                                    }
+                                }}
+                            >
                                 <span>{data.title} </span>
                                 <span className="text-[#C5A553]">{data.highlight}</span>
-                            </h2>
+                            </motion.h2>
 
+                            {/* LINES */}
                             <div className="mt-2">
-                                <div className="w-[62%] h-[1px] bg-[#C5A553]"></div>
-                                <div className="w-[35%] h-[1px] bg-[#C5A553] mt-1"></div>
+
+                                <motion.div
+                                    className="w-[62%] h-[1px] bg-[#C5A553]"
+                                    style={{ originX: 0.5 }}
+                                    variants={{
+                                        hidden: { scaleX: 0, opacity: 0 },
+                                        visible: {
+                                            scaleX: 1,
+                                            opacity: 1,
+                                            transition: { delay: 0.6, duration: 0.4 }
+                                        }
+                                    }}
+                                />
+
+                                <motion.div
+                                    className="w-[35%] h-[1px] bg-[#C5A553] mt-1"
+                                    style={{ originX: 0.5 }}
+                                    variants={{
+                                        hidden: { scaleX: 0, opacity: 0 },
+                                        visible: {
+                                            scaleX: 1,
+                                            opacity: 1,
+                                            transition: { delay: 0.8, duration: 0.4 }
+                                        }
+                                    }}
+                                />
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* SUBTEXT */}
                         <p className="text-theme text-md my-6">

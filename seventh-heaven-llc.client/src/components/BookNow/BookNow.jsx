@@ -5,7 +5,11 @@ import prevWebp from "@img/previous-icon.webp";
 import prevPng from "@img/previous-icon.png";
 import nextWebp from "@img/next-icon.webp";
 import nextPng from "@img/next-icon.png";
+import { motion, useAnimation } from "framer-motion";
+
 function BookNow() {
+
+    const controls = useAnimation();
 
     const [currentPage, setCurrentPage] = useState(1);
 
@@ -24,16 +28,53 @@ function BookNow() {
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
 
                   {/* Title */}
-                  <div className="inline-block">
-                      <h2 className="text-2xl md:text-3xl font-semibold text-theme">
+                  <motion.div
+                      className="inline-block"
+                      initial="hidden"
+                      animate={controls}
+                      onViewportEnter={() => controls.start("visible")}
+                      onViewportLeave={() => controls.start("hidden")}
+                      viewport={{ amount: 0.4 }}
+                  >
+                      <motion.h2
+                          className="text-2xl md:text-3xl font-semibold text-theme"
+                          variants={{
+                              hidden: { y: 30, opacity: 0 },
+                              visible: {
+                                  y: 0,
+                                  opacity: 1,
+                                  transition: { duration: 0.6, ease: "easeOut" }
+                              }
+                          }}
+                      >
                           Choose Your <span className="text-gold">Property</span>
-                      </h2>
+                      </motion.h2>
 
                       <div className="mt-2">
-                          <div className="w-[62%] h-[1px] bg-gold"></div>
-                          <div className="w-[35%] h-[1px] bg-gold mt-1"></div>
+                          <motion.div
+                              className="w-[62%] h-[1px] bg-gold"
+                              style={{ originX: 0.5 }}
+                              variants={{
+                                  hidden: { scaleX: 0 },
+                                  visible: {
+                                      scaleX: 1,
+                                      transition: { delay: 0.6, duration: 0.4 }
+                                  }
+                              }}
+                          />
+                          <motion.div
+                              className="w-[35%] h-[1px] bg-gold mt-1"
+                              style={{ originX: 0.5 }}
+                              variants={{
+                                  hidden: { scaleX: 0 },
+                                  visible: {
+                                      scaleX: 1,
+                                      transition: { delay: 0.8, duration: 0.4 }
+                                  }
+                              }}
+                          />
                       </div>
-                  </div>
+                  </motion.div>
 
                   {/* Dropdowns */}
                   <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
@@ -86,32 +127,40 @@ function BookNow() {
                       <PropertyCard key={item.id} property={item} />
                   ))}
               </div>
-              <div className="flex items-center justify-center gap-3 mt-8 flex-wrap">
+              <div className="flex items-center justify-center gap-2 mt-6 flex-wrap">
 
-                  <button onClick={() => setCurrentPage(p => p - 1)} disabled={currentPage === 1}
-                      className="w-12 h-12 rounded-md border border-gold flex items-center justify-center">
-                      <picture>
-                          <source srcSet={prevWebp} type="image/webp" />
-                          <img src={prevPng} className="w-4 h-4" />
-                      </picture>
+                  {/* Prev Button */}
+                  <button
+                      onClick={() => setCurrentPage(p => p - 1)}
+                      disabled={currentPage === 1}
+                      className="w-9 h-9 rounded-sm border border-gold flex items-center justify-center"
+                  >
+                      <img src={prevPng} className="w-3 h-3" />
                   </button>
 
+                  {/* Page Numbers */}
                   {Array.from({ length: totalPages }, (_, i) => i + 1)
                       .slice(0, 4)
                       .map((page) => (
-                          <button key={page} onClick={() => setCurrentPage(page)}
-                              className={`w-12 h-12 rounded-md border
-                                ${currentPage === page ? "bg-gold text-white" : "border-gold"}`}>
+                          <button
+                              key={page}
+                              onClick={() => setCurrentPage(page)}
+                              className={`w-9 h-9 rounded-sm text-md border flex items-center justify-center
+                ${currentPage === page
+                                      ? "bg-gold text-white border-gold"
+                                      : "border-gold text-black hover:bg-gold hover:text-white"}`}
+                          >
                               {page}
                           </button>
                       ))}
 
-                  <button onClick={() => setCurrentPage(p => p + 1)} disabled={currentPage === totalPages}
-                      className="w-12 h-12 rounded-md border border-gold flex items-center justify-center">
-                      <picture>
-                          <source srcSet={nextWebp} type="image/webp" />
-                          <img src={nextPng} className="w-4 h-4" />
-                      </picture>
+                  {/* Next Button */}
+                  <button
+                      onClick={() => setCurrentPage(p => p + 1)}
+                      disabled={currentPage === totalPages}
+                      className="w-9 h-9 rounded-sm border border-gold flex items-center justify-center"
+                  >
+                      <img src={nextPng} className="w-3 h-3" />
                   </button>
 
               </div>

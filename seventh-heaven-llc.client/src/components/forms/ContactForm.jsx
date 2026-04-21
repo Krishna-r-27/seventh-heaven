@@ -57,7 +57,7 @@ function ContactForm() {
                 </div>
 
                 {/* Button */}
-                <Button variant="primary" to="#" className="mt-2">
+                <Button variant="primary" size="sm" to="#" className="mt-2">
                     Submit Now
                 </Button>
             </form>

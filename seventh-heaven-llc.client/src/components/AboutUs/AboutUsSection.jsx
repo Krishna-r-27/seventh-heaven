@@ -1,8 +1,9 @@
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import React from "react";
 import aboutData from "../../data/AboutUs/aboutData";
 
 const AboutUsSection = () => {
+    const controls = useAnimation();
     return (
         <section className="w-full py-8 sm:py-12 md:py-14 lg:py-16">
             <div className="container mx-auto px-4">
@@ -10,16 +11,55 @@ const AboutUsSection = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-6 md:gap-10 items-center">
 
                     {/* HEADING (mobile) */}
-                    <div className="order-1 lg:hidden w-fit">
-                        <h2 className="text-2xl md:text-3xl font-semibold text-theme">
+                    <motion.div
+                        className="order-1 lg:hidden w-fit"
+                        initial="hidden"
+                        animate={controls}
+                        onViewportEnter={() => controls.start("visible")}
+                        onViewportLeave={() => controls.start("hidden")}
+                        viewport={{ amount: 0.4 }}
+                    >
+                        <motion.h2
+                            className="text-2xl md:text-3xl font-semibold text-theme"
+                            variants={{
+                                hidden: { y: 30, opacity: 0 },
+                                visible: {
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: { duration: 0.6, ease: "easeOut" }
+                                }
+                            }}
+                        >
                             About <span className="text-gold">Us</span>
-                        </h2>
+                        </motion.h2>
 
                         <div className="mt-2">
-                            <div className="w-[62%] h-[1px] bg-gold"></div>
-                            <div className="w-[35%] h-[1px] bg-gold mt-1"></div>
+                            <motion.div
+                                className="w-[62%] h-[1px] bg-gold"
+                                style={{ originX: 0 }}
+                                variants={{
+                                    hidden: { scaleX: 0, opacity: 0 },
+                                    visible: {
+                                        scaleX: 1,
+                                        opacity: 1,
+                                        transition: { delay: 0.6, duration: 0.4 }
+                                    }
+                                }}
+                            />
+                            <motion.div
+                                className="w-[35%] h-[1px] bg-gold mt-1"
+                                style={{ originX: 0 }}
+                                variants={{
+                                    hidden: { scaleX: 0, opacity: 0 },
+                                    visible: {
+                                        scaleX: 1,
+                                        opacity: 1,
+                                        transition: { delay: 0.8, duration: 0.4 }
+                                    }
+                                }}
+                            />
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* IMAGE (from LEFT) */}
                     <motion.div
@@ -56,16 +96,55 @@ const AboutUsSection = () => {
                     >
 
                         {/* HEADING (desktop) */}
-                        <div className="hidden min-[992px]:inline-block">
-                            <h2 className="text-2xl md:text-3xl font-semibold text-theme">
+                        <motion.div
+                            className="hidden min-[992px]:inline-block"
+                            initial="hidden"
+                            animate={controls}
+                            onViewportEnter={() => controls.start("visible")}
+                            onViewportLeave={() => controls.start("hidden")}
+                            viewport={{ amount: 0.4 }}
+                        >
+                            <motion.h2
+                                className="text-2xl md:text-3xl font-semibold text-theme"
+                                variants={{
+                                    hidden: { y: 30, opacity: 0 },
+                                    visible: {
+                                        y: 0,
+                                        opacity: 1,
+                                        transition: { duration: 0.6, ease: "easeOut" }
+                                    }
+                                }}
+                            >
                                 About <span className="text-gold">Us</span>
-                            </h2>
+                            </motion.h2>
 
                             <div className="mt-2">
-                                <div className="w-[62%] h-[1px] bg-gold"></div>
-                                <div className="w-[35%] h-[1px] bg-gold mt-1"></div>
+                                <motion.div
+                                    className="w-[62%] h-[1px] bg-gold"
+                                    style={{ originX: 0.5 }}
+                                    variants={{
+                                        hidden: { scaleX: 0, opacity: 0 },
+                                        visible: {
+                                            scaleX: 1,
+                                            opacity: 1,
+                                            transition: { delay: 0.6, duration: 0.4 }
+                                        }
+                                    }}
+                                />
+                                <motion.div
+                                    className="w-[35%] h-[1px] bg-gold mt-1"
+                                    style={{ originX: 0.5 }}
+                                    variants={{
+                                        hidden: { scaleX: 0, opacity: 0 },
+                                        visible: {
+                                            scaleX: 1,
+                                            opacity: 1,
+                                            transition: { delay: 0.8, duration: 0.4 }
+                                        }
+                                    }}
+                                />
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* DESCRIPTION */}
                         <div className="text-theme leading-relaxed space-y-4 text-md lg:text-left mx-auto lg:mx-0 md:mt-4">
