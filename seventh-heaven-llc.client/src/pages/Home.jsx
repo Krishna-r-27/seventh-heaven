@@ -12,7 +12,7 @@ import properties from "@/data/properties";
 export default function Home() {
     return (
         <>
-            <div key={Date.now()}>
+            <div>
                 <HomeBanner />
                 <PropertiesSection />
                 <AboutUsSection />
