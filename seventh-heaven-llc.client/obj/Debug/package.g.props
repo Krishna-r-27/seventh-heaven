@@ -9,8 +9,12 @@
     <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">vite build</PackageJsonScriptsBuild>
     <PackageJsonScriptsLint Condition="$(PackageJsonScriptsLint) == ''">eslint .</PackageJsonScriptsLint>
     <PackageJsonScriptsPreview Condition="$(PackageJsonScriptsPreview) == ''">vite preview</PackageJsonScriptsPreview>
+    <PackageJsonDependenciesDatatablesNet Condition="$(PackageJsonDependenciesDatatablesNet) == ''">^2.3.7</PackageJsonDependenciesDatatablesNet>
+    <PackageJsonDependenciesDatatablesNetDt Condition="$(PackageJsonDependenciesDatatablesNetDt) == ''">^2.3.7</PackageJsonDependenciesDatatablesNetDt>
+    <PackageJsonDependenciesDatatablesNetReact Condition="$(PackageJsonDependenciesDatatablesNetReact) == ''">^1.0.1</PackageJsonDependenciesDatatablesNetReact>
     <PackageJsonDependenciesReact Condition="$(PackageJsonDependenciesReact) == ''">^19.2.4</PackageJsonDependenciesReact>
     <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^19.2.4</PackageJsonDependenciesReactDom>
+    <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^7.14.0</PackageJsonDependenciesReactRouterDom>
     <PackageJsonDevdependenciesEslintJs Condition="$(PackageJsonDevdependenciesEslintJs) == ''">^9.39.4</PackageJsonDevdependenciesEslintJs>
     <PackageJsonDevdependenciesTailwindcssVite Condition="$(PackageJsonDevdependenciesTailwindcssVite) == ''">^4.2.2</PackageJsonDevdependenciesTailwindcssVite>
     <PackageJsonDevdependenciesTypesReact Condition="$(PackageJsonDevdependenciesTypesReact) == ''">^19.2.14</PackageJsonDevdependenciesTypesReact>

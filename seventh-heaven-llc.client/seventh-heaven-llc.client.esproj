@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2752196">
+﻿<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.2752196">
   <PropertyGroup>
     <StartupCommand>npm run dev</StartupCommand>
     <JavaScriptTestRoot>src\</JavaScriptTestRoot>
@@ -13,5 +13,6 @@
     <Folder Include="src\data\" />
     <Folder Include="src\layout\" />
     <Folder Include="src\pages\" />
+    <Folder Include="src\Poweradmin\Pages\SignIn\" />
   </ItemGroup>
 </Project>

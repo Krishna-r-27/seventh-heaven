@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vite';
-import plugin from '@vitejs/plugin-react';
+//import plugin from '@vitejs/plugin-react';
 import fs from 'fs';
 import path from 'path';
 import child_process from 'child_process';
@@ -48,6 +48,11 @@ export default defineConfig({
     },
     server: {
         proxy: {
+            '/api': {
+                target,
+                changeOrigin: true,
+                secure: false,
+            },
             '^/weatherforecast': {
                 target,
                 secure: false
