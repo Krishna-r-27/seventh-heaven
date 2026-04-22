@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj": {}
+    "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj": {
+    "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
+        "projectUniqueName": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
         "projectName": "Seventh-Heaven-LLC.Server",
-        "projectPath": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
-        "packagesPath": "C:\\Users\\DNC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\DNC\\Desktop\\Krishna Ravalji - DNC Projects\\React Projects\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\obj\\",
+        "projectPath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
+        "packagesPath": "C:\\Users\\DNC-BHUMIKA\\.nuget\\packages\\",
+        "outputPath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\DNC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DNC-BHUMIKA\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -45,19 +44,51 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            },
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.16.0, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.AspNetCore.SpaProxy": {
               "target": "Package",
               "version": "[8.*-*, )"
             },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[4.16.0, )"
+            },
+            "MySqlConnector": {
+              "target": "Package",
+              "version": "[2.5.0, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.0.3, )"
             }
           },
           "imports": [
@@ -79,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

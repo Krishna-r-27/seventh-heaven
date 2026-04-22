@@ -1,0 +1,20 @@
+/* Single toolbar + editor; toolbar may be in .ql-toolbar-wrapper */
+.rich-text-editor .ql-toolbar-wrapper + .ql-editor-root .ql-container {
+    border-top: 1px solid #ccc;
+}
+.rich-text-editor .ql-container {
+    min-height: 220px;
+}
+.rich-text-editor .ql-editor {
+    min-height: 220px;
+}
+
+/* Optional: dark theme overrides for Quill (toolbar lives in .ql-toolbar-wrapper) */
+.rich-text-editor.rich-editor-dark .ql-toolbar.ql-snow,
+.rich-text-editor.rich-editor-dark .ql-container.ql-snow {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.rich-editor-dark .ql-editor {
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+}

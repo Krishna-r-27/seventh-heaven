@@ -12,6 +12,9 @@
     <PackageJsonScriptsPreview Condition="$(PackageJsonScriptsPreview) == ''">vite preview</PackageJsonScriptsPreview>
     <PackageJsonDependenciesFancyappsUi Condition="$(PackageJsonDependenciesFancyappsUi) == ''">^6.1.13</PackageJsonDependenciesFancyappsUi>
     <PackageJsonDependenciesFramerMotion Condition="$(PackageJsonDependenciesFramerMotion) == ''">^12.38.0</PackageJsonDependenciesFramerMotion>
+    <PackageJsonDependenciesDatatablesNet Condition="$(PackageJsonDependenciesDatatablesNet) == ''">^2.3.7</PackageJsonDependenciesDatatablesNet>
+    <PackageJsonDependenciesDatatablesNetDt Condition="$(PackageJsonDependenciesDatatablesNetDt) == ''">^2.3.7</PackageJsonDependenciesDatatablesNetDt>
+    <PackageJsonDependenciesDatatablesNetReact Condition="$(PackageJsonDependenciesDatatablesNetReact) == ''">^1.0.1</PackageJsonDependenciesDatatablesNetReact>
     <PackageJsonDependenciesReact Condition="$(PackageJsonDependenciesReact) == ''">^19.2.4</PackageJsonDependenciesReact>
     <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^19.2.4</PackageJsonDependenciesReactDom>
     <PackageJsonDependenciesReactIcons Condition="$(PackageJsonDependenciesReactIcons) == ''">^5.6.0</PackageJsonDependenciesReactIcons>
