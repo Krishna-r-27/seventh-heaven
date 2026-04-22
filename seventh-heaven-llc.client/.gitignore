@@ -1,24 +1,62 @@
-# Logs
-logs
+#Seventh Heaven LLC
+
+# ==========================================
+# Visual Studio / .NET Specific
+# ==========================================
+.vs/
+[Bb]in/
+[Oo]bj/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.sln.docsettings.user
+*.userosscache
+*.slnx.user
+
+# Visual Studio extra cache (auto-generated)
+.vs/**/CopilotIndices/
+.vs/**/ProjectEvaluation/
+.vs/**/*.slnx
+
+# ==========================================
+# Node / React (Client) Specific
+# ==========================================
+node_modules/
+seventh-heaven-llc.client/node_modules/
+seventh-heaven-llc.client/dist/
+seventh-heaven-llc.client/dist-ssr/
+seventh-heaven-llc.client/coverage/
+.vite/
+*.tsbuildinfo
+
+# ==========================================
+# Environment & Logs
+# ==========================================
+.env
+.env.local
+.env.*.local
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ASP.NET Core environment files
+appsettings.Development.json
+appsettings.Local.json
 
-# Editor directories and files
+# ==========================================
+# Editor / IDE Specific
+# ==========================================
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
+*.swp
+*.swo
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# ==========================================
+# Build / Publish Outputs
+# ==========================================
+publish/
+out/

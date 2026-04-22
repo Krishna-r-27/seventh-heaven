@@ -1,121 +1,199 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 export default {
+
     content: [
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
-    theme: {
-        screens: {
-            mobile: { max: '767px' },
-            tablet: { max: '1023px' },
-            xxsm: '340px',
-            xsm: '480px',
-            sm: '576px',
-            md: '768px',
-            lg: '992px',
-            lg2: '1024px',
-            xl: '1280px',
-            '2xl': '1440px',
-            '3xl': '1630px',
-            '4xl': '1920px',
-        },
-        extend: {
-            fontFamily: {
-                primary: ["Poppins", "sans-serif"],
-                secondary: ["Poppins", "serif"],
-            },
-            container: {
-                center: true,
-                padding: {
-                    DEFAULT: '12px',
-                    md: '20px',
-                    lg: '24px',
-                    lg2: '32px',
-                    xl: '96px',
-                    '2xl': '128px',
-                    '3xl': '160px',
-                },
-                screens: {
-                    md: '768px',
-                    lg: '992px',
-                    lg2: '1024px',
-                    xl: '1280px',
-                    '2xl': '1440px',
-                    '3xl': '1630px',
-                },
-            },
 
-            spacing: {
-                30: "var(--space-30)",
-                50: "var(--space-50)",
-                70: "var(--space-70)",
-                100: "var(--space-100)",
-                200: "var(--space-200)",
-            },
-            fontSize: {
-                xxs: ['0.625rem', '1rem'], //10px
-                xs: ['0.75rem', '1.125rem'], //12px
-                sm: ['0.875rem', '1.5rem'], //14px
-                base: ['1rem', '1.5rem'], //16px
-                lg: ['1.125rem', '1.75rem'], //18px
-                xl: ['1.25rem', '2rem'], //20px
-                '1xl': ['1.375rem', '2rem'], //22px
-                '2xl': ['1.5rem', '2.125rem'], //24px
-                '3xl': ['2rem', '2.75rem'], //32px
-                '3.5xl': ['2.25rem', '3rem'], //36px
-                '4xl': ['2.5rem', '3.5rem'], //40px
-                '5xl': ['3rem', '4.125rem'], //48px
-                '6xl': ['3.5rem', '4.75rem'], //56px
-                '7xl': ['4rem', '5rem'], //64px
-                '8xl': ['4.5rem', '6.125rem'], //72px
-                '9xl': ['5rem', '6.625rem'], //80px
-            },
-            colors: {
-                'gray-f2f2f2': '#F2F2F2',
-                'gray-f3f3f3': '#F3F3F3',
-                'gray-555555': '#555555',
-                'gray-6e6e6e': '#6E6E6E',
-                'gray-9e9e9e': '#9E9E9E',
-                'gray-404040': '#404040',
-                'yellow-ffb200': '#FFB200',
-                'gray-333333': '#333333',
-                'gray-444444': '#444444',
-                'orange-ff8400': '#FF8400',
-                'gray-898989': '#898989'
-            },
+    // ─────────────────────────────────────
+    // Bootstrap container
+    // ─────────────────────────────────────
+    container: {
+        center: true,
+        margin: "auto",
+        padding: "0.75rem",
+        screens: {
+            sm: "540px",
+            md: "720px",
+            lg: "960px",
+            xl: "1140px",
+            "2xl": "1320px",
         },
     },
-    plugins: [
-        function ({ addComponents }) {
-            addComponents({
-                ".btn-primary": {
-                    padding: "0.5rem 1.5rem",
-                    border: "1px solid #000",
-                    borderRadius: "4px",
-                    fontSize: "0.875rem",
-                    fontWeight: "500",
-                    color: "#000",
-                    transition: "all 0.2s ease",
-                },
-                ".btn-primary:hover": {
-                    backgroundColor: "#000",
-                    color: "#fff",
-                },
-                /* Secondary Button */
-                ".btn-secondary": {
-                    padding: "0.5rem 1.5rem",
-                    border: "1px solid #fff",
-                    borderRadius: "4px",
-                    fontSize: "0.875rem",
-                    fontWeight: "500",
-                    color: "#fff",
-                    transition: "all 0.2s ease",
-                },
-                ".btn-secondary:hover": {
-                    backgroundColor: "#f5f5f5",
-                    color: "#000",
-                },
-            });
+
+    theme: {
+
+        // Bootstrap breakpoints
+        screens: {
+            sm: "576px",
+            md: "768px",
+            lg: "992px",
+            xl: "1200px",
+            "2xl": "1400px",
         },
-    ],
+
+        // Colors
+        colors: {
+            transparent: "transparent",
+            current: "currentColor",
+
+            white: "#FFFFFF",
+            black: "#000000",
+            theme: "#292929",
+
+            primary: {
+                DEFAULT: "#005AA4",
+                "overlay-light": "rgba(0,90,164,0.37)",
+                "overlay-mid": "rgba(0,90,164,0.51)",
+            },
+
+            gold: "#C5A553",
+            blue: "#005AA4",
+
+            dark: {
+                DEFAULT: "#292929",
+                overlay: "rgba(0,0,0,0.62)",
+            },
+
+            gray: {
+                light: "#F5F5F5",
+                silver: "#F1F1F1",
+            },
+
+            bg: {
+                peach: "#FFEFE1",
+                cream: "#FFF8F2",
+                blue: "#E8EEF7",
+                ice: "#F0F4FF",
+            },
+
+            accent: {
+                purple: "#8A38F5",
+            },
+        },
+
+        // Fonts
+        fontFamily: {
+            primary: ["Montserrat", "sans-serif"],
+            sans: ["Montserrat", "sans-serif"],
+            montserrat: ["Montserrat", "sans-serif"],
+            manrope: ["Manrope", "sans-serif"],
+        },
+
+        
+        // Border radius
+        borderRadius: {
+            xs: "5px",
+            sm: "8px",
+            md: "10px",
+            lg: "15px",
+            xl: "20px",
+            "2xl": "30px",
+            "3xl": "40px",
+            pill: "50px",
+            full: "9999px",
+        },
+
+        // Font weights
+        fontWeight: {
+            regular: "400",
+            medium: "500",
+            semibold: "600",
+            bold: "700",
+        },
+
+        extend: {
+
+            // Bootstrap gutter
+            spacing: {
+                gutter: "1.5rem",
+            },
+
+            // Shadows
+            boxShadow: {
+                card: "0 4px 20px rgba(0,90,164,0.10)",
+                "card-lg": "0 8px 40px rgba(0,90,164,0.15)",
+                btn: "0 4px 14px rgba(197,165,83,0.30)",
+                nav: "0 2px 20px rgba(0,0,0,0.08)",
+            },
+
+        },
+
+    },
+
+    // ─────────────────────────────────────
+    // Plugins
+    // ─────────────────────────────────────
+    plugins: [
+
+        function ({ addComponents }) {
+
+            addComponents({
+
+                /* ROW */
+
+                ".row": {
+                    display: "flex",
+                    flexWrap: "wrap",
+                    marginLeft: "-0.75rem",
+                    marginRight: "-0.75rem",
+                },
+
+                ".row > *": {
+                    paddingLeft: "0.75rem",
+                    paddingRight: "0.75rem",
+                    width: "100%",
+                },
+
+                /* COL */
+
+                ".col": {
+                    flex: "1 0 0%",
+                },
+
+                ".col-auto": {
+                    flex: "0 0 auto",
+                    width: "auto",
+                },
+
+                ".col-1": { width: "8.333333%" },
+                ".col-2": { width: "16.666667%" },
+                ".col-3": { width: "25%" },
+                ".col-4": { width: "33.333333%" },
+                ".col-5": { width: "41.666667%" },
+                ".col-6": { width: "50%" },
+                ".col-7": { width: "58.333333%" },
+                ".col-8": { width: "66.666667%" },
+                ".col-9": { width: "75%" },
+                ".col-10": { width: "83.333333%" },
+                ".col-11": { width: "91.666667%" },
+                ".col-12": { width: "100%" },
+
+            });
+
+        },
+
+        function ({ addUtilities, theme }) {
+
+            addUtilities({
+
+                ".g-gutter": {
+                    gap: theme("spacing.gutter"),
+                },
+
+                ".gx-gutter": {
+                    columnGap: theme("spacing.gutter"),
+                },
+
+                ".gy-gutter": {
+                    rowGap: theme("spacing.gutter"),
+                },
+
+            });
+
+        }
+
+    ]
+
 }
