@@ -1,77 +1,60 @@
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\spa.proxy.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\appsettings.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.staticwebassets.endpoints.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.exe
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.deps.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.runtimeconfig.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.pdb
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaProxy.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.csproj.AssemblyReference.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\spa.proxy.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.AssemblyInfoInputs.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.AssemblyInfo.cs
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.csproj.CoreCompileInputs.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\scopedcss\bundle\Seventh-Heaven-LLC.Server.styles.css
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.build.json.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-.E1969B29.Up2Date
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\refint\Seventh-Heaven-LLC.Server.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.pdb
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.genruntimeconfig.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\ref\Seventh-Heaven-LLC.Server.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\appsettings.Development.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\appsettings.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.staticwebassets.endpoints.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\spa.proxy.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.exe
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.deps.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.runtimeconfig.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.pdb
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaProxy.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.OpenApi.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.csproj.AssemblyReference.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\spa.proxy.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.AssemblyInfoInputs.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.AssemblyInfo.cs
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.csproj.CoreCompileInputs.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rjimswa.dswa.cache.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\scopedcss\bundle\Seventh-Heaven-LLC.Server.styles.css
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.build.json.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-.E1969B29.Up2Date
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\refint\Seventh-Heaven-LLC.Server.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.pdb
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.genruntimeconfig.cache
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC-old\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\ref\Seventh-Heaven-LLC.Server.dll
-C:\Users\DNC\Desktop\Krishna Ravalji - DNC Projects\React Projects\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.sourcelink.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\spa.proxy.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\appsettings.Development.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\appsettings.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.staticwebassets.runtime.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.staticwebassets.endpoints.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.exe
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.deps.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.runtimeconfig.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.pdb
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Dapper.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\MailKit.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.AspNetCore.SpaProxy.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\MimeKit.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\MySqlConnector.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\SixLabors.ImageSharp.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.csproj.AssemblyReference.cache
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\spa.proxy.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.GeneratedMSBuildEditorConfig.editorconfig
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.AssemblyInfoInputs.cache
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.AssemblyInfo.cs
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.csproj.CoreCompileInputs.cache
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.MvcApplicationPartsAssemblyInfo.cs
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.MvcApplicationPartsAssemblyInfo.cache
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.sourcelink.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\scopedcss\bundle\Seventh-Heaven-LLC.Server.styles.css
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.build.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.development.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\swae.build.ex.cache
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-.E1969B29.Up2Date
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\refint\Seventh-Heaven-LLC.Server.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.pdb
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.genruntimeconfig.cache
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\ref\Seventh-Heaven-LLC.Server.dll
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

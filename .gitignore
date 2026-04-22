@@ -60,3 +60,4 @@ appsettings.Local.json
 # ==========================================
 publish/
 out/
+/Seventh-Heaven-LLC.Server/obj/Debug/net8.0/Seventh-Heaven-LLC.Server.assets.cache
