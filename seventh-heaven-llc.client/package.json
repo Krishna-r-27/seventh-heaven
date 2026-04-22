@@ -12,6 +12,9 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^6.1.13",
+    "datatables.net": "^2.3.7",
+    "datatables.net-dt": "^2.3.7",
+    "datatables.net-react": "^1.0.1",
     "framer-motion": "^12.38.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
