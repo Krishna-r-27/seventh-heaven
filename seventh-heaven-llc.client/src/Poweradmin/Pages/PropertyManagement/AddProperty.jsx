@@ -286,12 +286,21 @@ export default function AddProperty() {
                             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Property Type</label>
-                                    <input
+                                    <select
                                         className="w-full rounded-lg border-2 border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
                                         value={model.propertyType}
                                         onChange={(e) => setField("propertyType", e.target.value)}
-                                        placeholder="e.g., Villa, Apartment"
-                                    />
+                                    >
+                                        <option value="">Property Type</option>
+                                        <option>Apartment</option>
+                                        <option>Villa</option>
+                                        <option>Studio</option>
+                                        <option>1 BHK</option>
+                                        <option>2 BHK</option>
+                                        <option>Commercial</option>
+                                        <option>Penthouse</option>
+                                        <option>Town Houses</option>
+                                    </select>
                                 </div>
 
                                 <div>

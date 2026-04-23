@@ -1,7 +1,7 @@
 ﻿import ListProperty from "../forms/ListProperty";
 import listingImg from "@img/high-angle-view-swimming-pool.png"; 
 import WhyPartnerSection from "./WhyPartnerSection";
-//import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 function Listing() {
     return (
         <section className="w-full">

@@ -124,6 +124,48 @@ using (var scope = app.Services.CreateScope())
     // Create table if it doesn't exist
     dal.ExecuteAsync(createSql).GetAwaiter().GetResult();
 
+    var createPropertyListingRequestsSql = @"CREATE TABLE IF NOT EXISTS `PropertyListingRequests` (
+        `Id` INT NOT NULL AUTO_INCREMENT,
+        `FirstName` VARCHAR(100) NOT NULL,
+        `LastName` VARCHAR(100) NOT NULL,
+        `Phone` VARCHAR(50) NOT NULL,
+        `Email` VARCHAR(255) NOT NULL,
+        `City` VARCHAR(100) NULL,
+        `PropertyType` VARCHAR(100) NULL,
+        `Rooms` VARCHAR(100) NULL,
+        `Bathrooms` VARCHAR(50) NULL,
+        `MaxGuests` VARCHAR(50) NULL,
+        `Amenities` VARCHAR(255) NULL,
+        `Address` VARCHAR(255) NULL,
+        `Details` TEXT NULL,
+        `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (`Id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+    dal.ExecuteAsync(createPropertyListingRequestsSql).GetAwaiter().GetResult();
+
+    var createPropertyListingImagesSql = @"CREATE TABLE IF NOT EXISTS `PropertyListingImages` (
+        `Id` INT NOT NULL AUTO_INCREMENT,
+        `PropertyListingRequestId` INT NOT NULL,
+        `FileName` TEXT NULL,
+        `ContentType` TEXT NULL,
+        `Data` MEDIUMTEXT NULL,
+        PRIMARY KEY (`Id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+    dal.ExecuteAsync(createPropertyListingImagesSql).GetAwaiter().GetResult();
+
+    var createContactInquiriesSql = @"CREATE TABLE IF NOT EXISTS `ContactInquiries` (
+        `Id` INT NOT NULL AUTO_INCREMENT,
+        `FirstName` VARCHAR(100) NOT NULL,
+        `LastName` VARCHAR(100) NOT NULL,
+        `Phone` VARCHAR(50) NOT NULL,
+        `Email` VARCHAR(255) NOT NULL,
+        `City` VARCHAR(100) NOT NULL,
+        `Message` TEXT NOT NULL,
+        `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (`Id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+    dal.ExecuteAsync(createContactInquiriesSql).GetAwaiter().GetResult();
+
     // Insert admin user if not exists
     var adminEmail = "admin@seventh.com";
     var adminPlain = "P@ssw0rd";
