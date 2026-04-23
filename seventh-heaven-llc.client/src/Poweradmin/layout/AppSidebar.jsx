@@ -52,7 +52,7 @@ const AppSidebar = ({ open, collapsed, onClose }) => {
             >
 
                 {/* Logo */}
-                <div className="flex h-20 items-center justify-center border-b border-gray-200 px-4 lg:justify-start dark:border-gray-200">
+                <div className="flex h-[75px] items-center justify-center border-b border-gray-200 px-4 lg:justify-start dark:border-gray-200">
                     {/* Icon (ONLY when collapsed) */}
                     <NavLink
                         to="/poweradmin/dashboard"
@@ -60,20 +60,20 @@ const AppSidebar = ({ open, collapsed, onClose }) => {
                     >
                         {/* Icon logo (collapsed) */}
                         <img
-                            src="/img/logo-vedic-stone.png"
+                            src="/src/assets/img/Seventh-Heaven-Holiday-Homes.png"
                             alt="Logo Icon"
                             className={`
-            h-8 w-8 transition-all duration-700
+            h-5 w-5 transition-all duration-700
             ${collapsed ? "block" : "hidden"}
         `}
                         />
 
                         {/* Full logo (expanded) */}
                         <img
-                            src="/img/logo-vedic-stone.png"
+                            src="/src/assets/img/Seventh-Heaven-Holiday-Homes.png"
                             alt="Logo"
                             className={`
-            h-19 w-auto transition-all ml-2 duration-700
+            h-10 w-auto transition-all ml-2 duration-700
             ${collapsed ? "hidden" : "block"}
         `}
                         />

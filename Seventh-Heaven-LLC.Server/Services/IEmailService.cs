@@ -12,6 +12,7 @@ namespace Seventh_Heaven_LLC.Server.Services
         Task SendPasswordResetLinkAsync(string toEmail, string resetLink);
         Task SendAdminOtpAsync(string toEmail, string otp);
         Task SendPasswordResetConfirmationAsync(string toEmail);
-        Task SendEmailVerificationAsync(string toEmail, string toName, string verifyLink, string otp);       
+        Task SendEmailVerificationAsync(string toEmail, string toName, string verifyLink, string otp);
+        Task SendContactInquiryNotificationToAdminAsync(string adminEmail, string firstName, string lastName, string phone, string email, string city, string message);
     }
 }

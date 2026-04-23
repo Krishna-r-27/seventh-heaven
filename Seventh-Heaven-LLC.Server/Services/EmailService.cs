@@ -145,6 +145,49 @@ namespace Seventh_Heaven_LLC.Server.Services
             await SendAsync(toEmail, toName, subject, body);
         }
 
+        public async Task SendContactInquiryNotificationToAdminAsync(
+            string adminEmail,
+            string firstName,
+            string lastName,
+            string phone,
+            string email,
+            string city,
+            string message)
+        {
+            var subject = "New contact inquiry received";
+            var safeFirstName = System.Net.WebUtility.HtmlEncode(firstName);
+            var safeLastName = System.Net.WebUtility.HtmlEncode(lastName);
+            var safePhone = System.Net.WebUtility.HtmlEncode(phone);
+            var safeEmail = System.Net.WebUtility.HtmlEncode(email);
+            var safeCity = System.Net.WebUtility.HtmlEncode(city);
+            var safeMessage = System.Net.WebUtility.HtmlEncode(message).Replace("\n", "<br/>");
+
+            var body = $@"<!doctype html>
+<html lang='en'>
+  <body style='margin:0;background:#f3f4f6;font-family:Segoe UI,Arial,sans-serif;'>
+    <div style='max-width:640px;margin:0 auto;padding:28px;'>
+      <div style='background:#0b1f4a;color:#fff;border-radius:10px;padding:18px 20px;'>
+        <div style='letter-spacing:.12em;font-weight:800;'>SEVENTH HEAVEN</div>
+        <div style='opacity:.9;margin-top:6px;'>New contact form submission</div>
+      </div>
+      <div style='background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:18px 20px;margin-top:14px;'>
+        <p style='margin:0 0 10px;color:#222;'>A new inquiry was submitted from the Contact form.</p>
+        <table style='width:100%;border-collapse:collapse;margin-top:12px;'>
+          <tr><td style='padding:6px 0;color:#555;font-weight:700;'>First Name:</td><td style='padding:6px 0;color:#111;'>{safeFirstName}</td></tr>
+          <tr><td style='padding:6px 0;color:#555;font-weight:700;'>Last Name:</td><td style='padding:6px 0;color:#111;'>{safeLastName}</td></tr>
+          <tr><td style='padding:6px 0;color:#555;font-weight:700;'>Phone:</td><td style='padding:6px 0;color:#111;'>{safePhone}</td></tr>
+          <tr><td style='padding:6px 0;color:#555;font-weight:700;'>Email:</td><td style='padding:6px 0;color:#111;'>{safeEmail}</td></tr>
+          <tr><td style='padding:6px 0;color:#555;font-weight:700;'>City:</td><td style='padding:6px 0;color:#111;'>{safeCity}</td></tr>
+          <tr><td style='padding:6px 0;color:#555;font-weight:700;vertical-align:top;'>Message:</td><td style='padding:6px 0;color:#111;'>{safeMessage}</td></tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>";
+
+            await SendAsync(adminEmail, adminEmail, subject, body);
+        }
+
         // ── Core Send ─────────────────────────────────────────────────────
         private async Task SendAsync(string toAddress, string toName, string subject, string htmlBody)
         {
