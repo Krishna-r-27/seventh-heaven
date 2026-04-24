@@ -1,26 +1,40 @@
-﻿import { useState } from "react";
+﻿import { useEffect, useState } from "react";
 import PropertyCard from "./PropertyCard";
-import properties from "@/data/properties";
 import prevWebp from "@img/previous-icon.webp";
 import prevPng from "@img/previous-icon.png";
 import nextWebp from "@img/next-icon.webp";
 import nextPng from "@img/next-icon.png";
 import { motion, useAnimation } from "framer-motion";
+import { fetchMappedProperties } from "@/services/propertyApi";
 
 function BookNow() {
 
     const controls = useAnimation();
+    const [properties, setProperties] = useState([]);
 
     const [currentPage, setCurrentPage] = useState(1);
 
     const itemsPerPage = 6;
 
-    const totalPages = Math.ceil(properties.length / itemsPerPage);
+    const totalPages = Math.max(1, Math.ceil(properties.length / itemsPerPage));
 
     const currentData = properties.slice(
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
     );
+
+    useEffect(() => {
+        const loadProperties = async () => {
+            try {
+                const data = await fetchMappedProperties();
+                setProperties(data.filter((item) => item.isVisible !== false));
+            } catch (error) {
+                console.error("Failed to load properties for book now page.", error);
+            }
+        };
+
+        loadProperties();
+    }, []);
 
   return (
       <section className="w-full py-8 sm:py-12 md:py-14 lg:py-16">
@@ -123,7 +137,7 @@ function BookNow() {
                       gap-6 
                       mt-8
                     ">
-                  {properties.map((item) => (
+                  {currentData.map((item) => (
                       <PropertyCard key={item.id} property={item} />
                   ))}
               </div>

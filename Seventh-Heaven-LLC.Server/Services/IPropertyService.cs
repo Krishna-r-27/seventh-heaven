@@ -11,6 +11,7 @@ namespace Seventh_Heaven_LLC.Server.Services
         Task<PropertyResponse?> GetByIdAsync(int id);
         Task<PropertyResponse> CreateAsync(CreatePropertyRequest request);
         Task InsertPropertyImageAsync(Controllers.PropertyImageDto img, int propertyId);
+        Task SetPrimaryImageAsync(int propertyId, int imageId);
         Task<PropertyResponse?> UpdateAsync(int id, UpdatePropertyRequest request);
         Task<bool> DeleteAsync(int id);
 

@@ -150,8 +150,8 @@ const AppSidebar = ({ open, collapsed, onClose }) => {
                     {/* Other Items */}
                     {[
                         { to: "/poweradmin/enquiries", label: "Enquiries", Icon: HiOutlineClipboardDocumentList },
-                        { to: "/poweradmin/listed-properties", label: "Listed Properties", Icon: HiOutlineClipboardDocumentList },
-                        //{ to: "/poweradmin/page-content", label: "Page Content", Icon: RiFileEditLine },
+                        { to: "/poweradmin/property/listing", label: "Listed Properties", Icon: HiOutlineClipboardDocumentList },
+                        { to: "/poweradmin/property/enquiry", label: "Property Enquiries", Icon: RiFileEditLine },
                         /*{ to: "/poweradmin/inquiry", label: "Inquiry Managements", Icon: FaWpforms },*/
                     ].map((item) => {
                         const { Icon } = item; // ✅ THIS LINE

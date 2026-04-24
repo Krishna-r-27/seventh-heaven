@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Seventh-Heaven-LLC.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+030d6d6406d5ee84c79b26e45704dd5969513d7a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50b47ce0ec58df201ac65be2151acd8410c8d227")]
 [assembly: System.Reflection.AssemblyProductAttribute("Seventh-Heaven-LLC.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Seventh-Heaven-LLC.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

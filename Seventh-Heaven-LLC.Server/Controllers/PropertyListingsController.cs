@@ -154,6 +154,120 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                 });
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                const string sql = @"
+        SELECT 
+            Id,
+            FirstName,
+            LastName,
+            Phone,
+            Email,
+            City,
+            PropertyType,
+            CreatedAt
+        FROM PropertyListingRequests
+        ORDER BY Id DESC;";
+
+                var data = (await _dal.QueryAsync<dynamic>(sql))
+    .Select(x => new
+    {
+        id = x.Id,
+        firstname = x.FirstName,
+        lastname = x.LastName,
+        phone = x.Phone,
+        email = x.Email,
+        city = x.City,
+        propertyType = x.PropertyType
+    });
+
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Failed to load property listings.",
+                    error = ex.Message
+                });
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            try
+            {
+                const string sql = @"
+        SELECT 
+            pl.Id,
+            pl.FirstName,
+            pl.LastName,
+            pl.Phone,
+            pl.Email,
+            pl.City,
+            pl.PropertyType,
+            pl.Rooms,
+            pl.Bathrooms,
+            pl.MaxGuests,
+            pl.Amenities,
+            pl.Address,
+            pl.Details,
+            pl.CreatedAt,
+            img.Data AS ImageUrl
+        FROM PropertyListingRequests pl
+        LEFT JOIN PropertyListingImages img 
+            ON img.PropertyListingRequestId = pl.Id
+        WHERE pl.Id = @Id;";
+
+                var rows = (await _dal.QueryAsync<dynamic>(sql, new { Id = id })).ToList();
+
+                if (rows == null || rows.Count == 0)
+                    return NotFound(new { message = "Property not found." });
+
+                var first = rows.First();
+
+                var result = new
+                {
+                    id = first.Id,
+                    firstname = first.FirstName,
+                    lastname = first.LastName,
+                    phone = first.Phone,
+                    email = first.Email,
+                    city = first.City,
+                    propertyType = first.PropertyType,
+                    rooms = first.Rooms,
+                    bathrooms = first.Bathrooms,
+                    maxGuests = first.MaxGuests,
+                    amenities = first.Amenities,
+                    address = first.Address,
+                    details = first.Details,
+                    createdAt = first.CreatedAt,
+
+                    images = rows
+                        .Where(x => x.ImageUrl != null)
+                        .Select(x => new
+                        {
+                            imageUrl = x.ImageUrl
+                        })
+                        .ToList()
+                };
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Failed to load property details.",
+                    error = ex.Message
+                });
+            }
+        }
     }
 
     public class CreatePropertyListingRequest

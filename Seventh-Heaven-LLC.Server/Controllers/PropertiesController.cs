@@ -158,12 +158,17 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                     if (f != null && f.Length > 0)
                     {
                         var pair = await _imageStorage.SaveImageAsync(f, "properties");
-                        newImages.Add(new PropertyImageDto
+                        var newImage = new PropertyImageDto
                         {
                             ImageUrl = pair.originalPath,
                             ImageWebpUrl = pair.webpPath,
                             IsPrimary = false
-                        });
+                        };
+                        newImages.Add(newImage);
+
+                        
+                            // use 1/0 for IsPrimary to be DB-friendly
+                            await _propertyService.InsertPropertyImageAsync(newImage, id);                        
                     }
                 }
             }
@@ -189,6 +194,13 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                 combined[0].IsPrimary = true;
 
             request.Images = combined;
+
+            // Persist primary marker in PropertyImages table for edit mode.
+            var primaryImage = combined.FirstOrDefault(i => i.IsPrimary);
+            if (primaryImage != null && primaryImage.Id > 0)
+            {
+                await _propertyService.SetPrimaryImageAsync(id, primaryImage.Id);
+            }
 
             var updated = await _propertyService.UpdateAsync(id, request);
             if (updated == null) return NotFound();

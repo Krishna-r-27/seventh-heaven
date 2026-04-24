@@ -1,7 +1,0 @@
-wwwroot\uploads\properties\44f2e61597094591a62e4dda3def754e.webp
-wwwroot\uploads\properties\4adc6fe900ec401796f8c91cbb3071c9.jpg
-wwwroot\uploads\properties\4adc6fe900ec401796f8c91cbb3071c9.webp
-wwwroot\uploads\properties\6916fa62d19045039b1702784503b133.jpg
-wwwroot\uploads\properties\6916fa62d19045039b1702784503b133.webp
-wwwroot\uploads\properties\9ba868dda4ff442192ad03bfd7cf8c00.jpg
-wwwroot\uploads\properties\9ba868dda4ff442192ad03bfd7cf8c00.webp

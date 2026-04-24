@@ -8,12 +8,12 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Autoplay } from "swiper/modules";
 import BannerSection from "../BannerSection/BannerSection";
-import properties from "@/data/properties";
 import EnquiryNow from "../forms/EnquiryNow";
 import arrowWebp from "@img/list-arrow.webp";
 import arrowPng from "@img/list-arrow.png";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { fetchMappedProperties } from "@/services/propertyApi";
 
 function PropertyDetail() {
     const { slug } = useParams();
@@ -21,8 +21,8 @@ function PropertyDetail() {
     const swiperRef = useRef(null);
 
     const [isLargeScreen, setIsLargeScreen] = useState(false);
-
-    const property = properties.find(p => p.slug === slug);
+    const [property, setProperty] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const totalImages = property?.images.length || 0;
 
@@ -30,10 +30,22 @@ function PropertyDetail() {
         (isLargeScreen && totalImages > 3) || // desktop
         (!isLargeScreen && totalImages > 2);  // mobile/tablet
 
+    useEffect(() => {
+        const loadProperty = async () => {
+            try {
+                const data = await fetchMappedProperties();
+                const matched = data.find((item) => item.slug === slug);
+                setProperty(matched || null);
+            } catch (error) {
+                console.error("Failed to load property details.", error);
+                setProperty(null);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    if (!property) {
-        return <p className="p-6">Property not found</p>;
-    }
+        loadProperty();
+    }, [slug]);
 
     useEffect(() => {
         Fancybox.bind("[data-fancybox='gallery']", {
@@ -57,6 +69,14 @@ function PropertyDetail() {
 
         return () => window.removeEventListener("resize", checkScreen);
     }, []);
+
+    if (loading) {
+        return <p className="p-6">Loading property...</p>;
+    }
+
+    if (!property) {
+        return <p className="p-6">Property not found</p>;
+    }
    
     return (
         <>
@@ -338,7 +358,7 @@ function PropertyDetail() {
 
                         <div>
                             <div className="lg:sticky lg:top-24">
-                                <EnquiryNow />
+                                <EnquiryNow defaultPropertyType={property?.type || ""} propertyId={property?.id} />
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,6 @@ D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seven
 D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\appsettings.json
 D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.staticwebassets.runtime.json
 D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.staticwebassets.endpoints.json
-D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.exe
 D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.deps.json
 D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.runtimeconfig.json
 D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.dll
@@ -57,4 +56,5 @@ D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seven
 D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.pdb
 D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\Seventh-Heaven-LLC.Server.genruntimeconfig.cache
 D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\ref\Seventh-Heaven-LLC.Server.dll
-D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\Seventh-Heaven-LLC.Server.exe
+D:\Bhumika\Bhumika\Projects\NEW\2026\Seventh-Heaven-LLC\Seventh-Heaven-LLC\Seventh-Heaven-LLC.Server\bin\Debug\net8.0\web.config
