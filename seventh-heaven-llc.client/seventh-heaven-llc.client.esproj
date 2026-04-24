@@ -15,6 +15,7 @@
     <Folder Include="src\data\" />
     <Folder Include="src\layout\" />
     <Folder Include="src\pages\" />
+    <Folder Include="src\Poweradmin\Pages\PropertyEnquiry\" />
     <Folder Include="src\Poweradmin\Pages\SignIn\" />
   </ItemGroup>
 </Project>

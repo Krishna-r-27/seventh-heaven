@@ -134,15 +134,7 @@ const AppHeader = ({ onMenuClick }) => {
                     </div>
 
                     <div className="mt-2">
-                        <button
-                            onClick={() => { navigate("/poweradmin/shipping-settings"); setOpen(false); }}
-                            className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200
-                                       hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center gap-2"
-                        >
-                            <MdLocalShipping className="h-4 w-4 text-gray-400" />
-                            Shipping Settings
-                        </button>
-
+                        
                         <button
                             onClick={() => { navigate("/poweradmin/change-password"); setOpen(false); }}
                             className="w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-200

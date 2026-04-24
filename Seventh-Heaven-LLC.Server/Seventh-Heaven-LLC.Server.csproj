@@ -1,42 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>Seventh_Heaven_LLC.Server</RootNamespace>
-    <SpaRoot>..\seventh-heaven-llc.client</SpaRoot>
-    <SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
-    <SpaProxyServerUrl>https://localhost:56341</SpaProxyServerUrl>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<RootNamespace>Seventh_Heaven_LLC.Server</RootNamespace>
+		<SpaRoot>..\seventh-heaven-llc.client</SpaRoot>
+		<SpaProxyLaunchCommand>npm run dev</SpaProxyLaunchCommand>
+		<SpaProxyServerUrl>https://localhost:56341</SpaProxyServerUrl>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MailKit" Version="4.16.0" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaProxy">
-      <Version>8.*-*</Version>
-    </PackageReference>
-    <PackageReference Include="MimeKit" Version="4.16.0" />
-    <PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-    <PackageReference Include="Dapper" Version="2.0.123" />
-    <PackageReference Include="MySqlConnector" Version="2.5.0" />
-    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+	<ItemGroup>
+		<PackageReference Include="MailKit" Version="4.16.0" />
+		<PackageReference Include="Microsoft.AspNetCore.SpaProxy">
+			<Version>8.*-*</Version>
+		</PackageReference>
+		<PackageReference Include="MimeKit" Version="4.16.0" />
+		<PackageReference Include="SixLabors.ImageSharp" Version="3.1.12" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+		<PackageReference Include="Dapper" Version="2.0.123" />
+		<PackageReference Include="MySqlConnector" Version="2.5.0" />
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
 
-    <!-- Directly reference a compatible System.IdentityModel.Tokens.Jwt version
+		<!-- Directly reference a compatible System.IdentityModel.Tokens.Jwt version
          to avoid the package-downgrade warning caused by transitive dependencies. -->
-    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.0.3" />
 
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
-  </ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\seventh-heaven-llc.client\seventh-heaven-llc.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\seventh-heaven-llc.client\seventh-heaven-llc.client.esproj">
+			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+		</ProjectReference>
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Folder Include="Model\" />
+	</ItemGroup>
 
 </Project>

@@ -196,6 +196,28 @@ export default function AddProperty() {
             // attach new files
             files.forEach((f) => form.append("files", f));
 
+            // PrimaryIndex maps to the combined image list order expected by backend:
+            // - Create: only new files => first new file is primary by default
+            // - Update: kept existing images first, then newly uploaded images
+            let primaryIndex = null;
+            if (id) {
+                const existingPrimaryIndex = existingImages.findIndex((img) => !!img.isPrimary);
+                if (existingPrimaryIndex >= 0) {
+                    primaryIndex = existingPrimaryIndex;
+                } else if (files.length > 0) {
+                    // combined list starts with existing images, so first new image comes after them
+                    primaryIndex = existingImages.length;
+                } else if (existingImages.length > 0) {
+                    primaryIndex = 0;
+                }
+            } else if (files.length > 0) {
+                primaryIndex = 0;
+            }
+
+            if (primaryIndex !== null) {
+                form.append("PrimaryIndex", String(primaryIndex));
+            }
+
             // let browser set multipart boundary
             if (id) {
                 // edit -> PUT
@@ -286,12 +308,21 @@ export default function AddProperty() {
                             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Property Type</label>
-                                    <input
+                                    <select
                                         className="w-full rounded-lg border-2 border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
                                         value={model.propertyType}
                                         onChange={(e) => setField("propertyType", e.target.value)}
-                                        placeholder="e.g., Villa, Apartment"
-                                    />
+                                    >
+                                        <option value="">Property Type</option>
+                                        <option>Apartment</option>
+                                        <option>Villa</option>
+                                        <option>Studio</option>
+                                        <option>1 BHK</option>
+                                        <option>2 BHK</option>
+                                        <option>Commercial</option>
+                                        <option>Penthouse</option>
+                                        <option>Town Houses</option>
+                                    </select>
                                 </div>
 
                                 <div>

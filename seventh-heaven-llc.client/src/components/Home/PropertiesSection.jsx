@@ -1,10 +1,34 @@
 ﻿import { motion, useAnimation } from "framer-motion";
-import propertiesData from "@/data/Home/propertiesData";
+import { useEffect, useState } from "react";
+import propertiesData, { buildHomePropertiesData } from "@/data/Home/propertiesData";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 export default function PropertiesSection() {
     const controls = useAnimation();
+    const [cards, setCards] = useState(propertiesData);
+
+    useEffect(() => {
+        const fetchProperties = async () => {
+            try {
+                const apiBase = import.meta.env.VITE_API_BASE || "/api";
+                const response = await fetch(`${apiBase}/properties`);
+
+                if (!response.ok) {
+                    throw new Error(`Failed to load properties: ${response.status}`);
+                }
+
+                const data = await response.json();
+                const formattedCards = buildHomePropertiesData(Array.isArray(data) ? data : []);
+                setCards(formattedCards);
+            } catch (error) {
+                console.error("Unable to fetch home properties data.", error);
+            }
+        };
+
+        fetchProperties();
+    }, []);
+
     return (
         <section className="w-full py-8 sm:py-12 md:py-14 lg:py-16">
             <div className="container mx-auto px-4">
@@ -82,7 +106,7 @@ export default function PropertiesSection() {
                 {/* CARDS */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                    {propertiesData.map((item, index) => (
+                    {cards.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 12 }}

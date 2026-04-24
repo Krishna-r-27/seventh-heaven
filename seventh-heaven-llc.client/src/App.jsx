@@ -25,6 +25,11 @@ import AdminAppLayout from "./poweradmin/layout/AppLayout";
 import ViewProperty from "./Poweradmin/Pages/PropertyManagement/ViewProperty";
 import AddProperty from "./Poweradmin/Pages/PropertyManagement/AddProperty";
 import Dashboard from "./poweradmin/pages/Dashboard/Dashboard";
+import PropertyListing from "./poweradmin/pages/PropertyListing/listing";
+import PropertyListingDetail from "./poweradmin/pages/PropertyListing/Details";
+import PropertyEnquiry from "./poweradmin/pages/PropertyEnquiry/View";
+import PropertyEnquiryDetail from "./poweradmin/pages/PropertyEnquiry/details";
+
 
 function App() {
     return (
@@ -70,6 +75,10 @@ function App() {
                                 <Route path="properties" element={<ViewProperty />} />
                                 <Route path="properties/add" element={<AddProperty />} />
                                 <Route path="properties/edit/:id" element={<AddProperty />} />
+                                <Route path="property/listing" element={<PropertyListing />} />
+                                <Route path="property/detail/:id" element={<PropertyListingDetail />} />
+                                <Route path="property/enquiry" element={<PropertyEnquiry />} />
+                                <Route path="property/enquiry/detail/:id" element={<PropertyEnquiryDetail />} />
                             </Route>
                         </Route>
 
