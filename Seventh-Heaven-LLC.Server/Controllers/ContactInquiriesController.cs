@@ -30,6 +30,19 @@ namespace Seventh_Heaven_LLC.Server.Controllers
         {
             try
             {
+                const string ensureTableSql = @"CREATE TABLE IF NOT EXISTS `ContactInquiries` (
+                    `Id` INT NOT NULL AUTO_INCREMENT,
+                    `FirstName` VARCHAR(100) NOT NULL,
+                    `LastName` VARCHAR(100) NOT NULL,
+                    `Phone` VARCHAR(50) NOT NULL,
+                    `Email` VARCHAR(255) NOT NULL,
+                    `City` VARCHAR(100) NOT NULL,
+                    `Message` TEXT NOT NULL,
+                    `CreatedAt` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                    PRIMARY KEY (`Id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+                await _dal.ExecuteAsync(ensureTableSql);
+
                 if (string.IsNullOrWhiteSpace(request.FirstName))
                     return BadRequest(new { message = "First name is required." });
                 if (string.IsNullOrWhiteSpace(request.LastName))

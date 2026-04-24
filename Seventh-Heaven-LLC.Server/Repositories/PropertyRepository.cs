@@ -16,8 +16,33 @@ namespace Seventh_Heaven_LLC.Server.Repositories
 
         public async Task<IEnumerable<Property>> GetAllAsync()
         {
-            var sql = "SELECT * from Properties ORDER BY Title";
-            return await _dal.QueryAsync<Property>(sql);
+            var sql = "SELECT * FROM Properties ORDER BY SortOrder, Title";
+            var properties = (await _dal.QueryAsync<Property>(sql)).ToList();
+            if (properties.Count == 0)
+            {
+                return properties;
+            }
+
+            var sqlImages = "SELECT * FROM PropertyImages";
+            var allImages = await _dal.QueryAsync<PropertyImage>(sqlImages);
+            var imagesByPropertyId = allImages
+                .GroupBy(img => img.PropertyId)
+                .ToDictionary(
+                    group => group.Key,
+                    group => group
+                        .OrderByDescending(img => img.IsPrimary)
+                        .ThenBy(img => img.Id)
+                        .ToList());
+
+            foreach (var property in properties)
+            {
+                if (imagesByPropertyId.TryGetValue(property.Id, out var images))
+                {
+                    property.Images = images;
+                }
+            }
+
+            return properties;
         }
 
         public async Task<Property?> GetByIdAsync(int id)
@@ -100,6 +125,15 @@ namespace Seventh_Heaven_LLC.Server.Repositories
 
             // optional: populate Id back on DTO
             img.Id = newId;
+        }
+
+        public async Task SetPrimaryImageAsync(int propertyId, int imageId)
+        {
+            const string resetSql = "UPDATE PropertyImages SET IsPrimary = 0 WHERE PropertyId = @PropertyId;";
+            await _dal.ExecuteAsync(resetSql, new { PropertyId = propertyId });
+
+            const string setSql = "UPDATE PropertyImages SET IsPrimary = 1 WHERE PropertyId = @PropertyId AND Id = @ImageId;";
+            await _dal.ExecuteAsync(setSql, new { PropertyId = propertyId, ImageId = imageId });
         }
     }
 }

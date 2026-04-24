@@ -82,6 +82,11 @@ namespace Seventh_Heaven_LLC.Server.Services
             await _repo.InsertPropertyImageAsync(repoDto, propertyId);
         }
 
+        public async Task SetPrimaryImageAsync(int propertyId, int imageId)
+        {
+            await _repo.SetPrimaryImageAsync(propertyId, imageId);
+        }
+
         public async Task<PropertyResponse?> UpdateAsync(int id, UpdatePropertyRequest request)
         {
             var existing = await _repo.GetByIdAsync(id);

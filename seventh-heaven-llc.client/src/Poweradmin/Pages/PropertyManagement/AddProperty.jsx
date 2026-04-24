@@ -196,6 +196,28 @@ export default function AddProperty() {
             // attach new files
             files.forEach((f) => form.append("files", f));
 
+            // PrimaryIndex maps to the combined image list order expected by backend:
+            // - Create: only new files => first new file is primary by default
+            // - Update: kept existing images first, then newly uploaded images
+            let primaryIndex = null;
+            if (id) {
+                const existingPrimaryIndex = existingImages.findIndex((img) => !!img.isPrimary);
+                if (existingPrimaryIndex >= 0) {
+                    primaryIndex = existingPrimaryIndex;
+                } else if (files.length > 0) {
+                    // combined list starts with existing images, so first new image comes after them
+                    primaryIndex = existingImages.length;
+                } else if (existingImages.length > 0) {
+                    primaryIndex = 0;
+                }
+            } else if (files.length > 0) {
+                primaryIndex = 0;
+            }
+
+            if (primaryIndex !== null) {
+                form.append("PrimaryIndex", String(primaryIndex));
+            }
+
             // let browser set multipart boundary
             if (id) {
                 // edit -> PUT

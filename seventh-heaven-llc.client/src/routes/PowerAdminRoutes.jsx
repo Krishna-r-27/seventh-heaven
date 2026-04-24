@@ -36,6 +36,11 @@ import OtpVerify from "../poweradmin/pages/ForgotPassword/OtpVerify";
 // Property pages
 import ViewProperty from "./Poweradmin/Pages/PropertyManagement/ViewProperty";
 import AddProperty from "./Poweradmin/Pages/PropertyManagement/AddProperty";
+import PropertyListing from "./poweradmin/pages/PropertyListing/listing";
+import PropertyListingDetail from "./poweradmin/pages/PropertyListing/Details"; 
+import PropertyEnquiry from "./poweradmin/pages/PropertyEnquiry/View";
+import PropertyEnquiryDetail from "./poweradmin/pages/PropertyEnquiry/EnquiryDetails";
+
 
 const PowerAdminRoutes = () => {
     return (
@@ -87,6 +92,10 @@ const PowerAdminRoutes = () => {
                 <Route path="properties" element={<ViewProperty />} />
                 <Route path="properties/add" element={<AddProperty />} />
                 <Route path="properties/edit/:id" element={<AddProperty />} />
+                <Route path="property/listing" element={<PropertyListing />} />
+                <Route path="property/detail/:id" element={<PropertyListingDetail />} />
+                <Route path="property/enquiry" element={<PropertyEnquiry />} />
+                <Route path="property/enquiry/detail/:id" element={<PropertyEnquiryDetail />} />
 
                 {/* Gemstones (Info) */}
                 <Route path="add-gemstone" element={<AddGemstone />} />
