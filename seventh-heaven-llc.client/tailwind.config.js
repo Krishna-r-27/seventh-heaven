@@ -1,116 +1,82 @@
 ﻿/** @type {import('tailwindcss').Config} */
 export default {
-
     content: [
         "./index.html",
         "./src/**/*.{js,ts,jsx,tsx}",
     ],
 
-    // ─────────────────────────────────────
-    // Bootstrap container
-    // ─────────────────────────────────────
-    container: {
-        center: true,
-        margin: "auto",
-        padding: "0.75rem",
-        screens: {
-            sm: "540px",
-            md: "720px",
-            lg: "960px",
-            xl: "1140px",
-            "2xl": "1320px",
-        },
-    },
-
+    // Bootstrap-like container (safe)
     theme: {
-
-        // Bootstrap breakpoints
-        screens: {
-            sm: "576px",
-            md: "768px",
-            lg: "992px",
-            xl: "1200px",
-            "2xl": "1400px",
-        },
-
-        // Colors
-        colors: {
-            transparent: "transparent",
-            current: "currentColor",
-
-            white: "#FFFFFF",
-            black: "#000000",
-            theme: "#292929",
-
-            primary: {
-                DEFAULT: "#005AA4",
-                "overlay-light": "rgba(0,90,164,0.37)",
-                "overlay-mid": "rgba(0,90,164,0.51)",
-            },
-
-            gold: "#C5A553",
-            blue: "#005AA4",
-
-            dark: {
-                DEFAULT: "#292929",
-                overlay: "rgba(0,0,0,0.62)",
-            },
-
-            gray: {
-                light: "#F5F5F5",
-                silver: "#F1F1F1",
-            },
-
-            bg: {
-                peach: "#FFEFE1",
-                cream: "#FFF8F2",
-                blue: "#E8EEF7",
-                ice: "#F0F4FF",
-            },
-
-            accent: {
-                purple: "#8A38F5",
+        container: {
+            center: true,
+            padding: "0.75rem",
+            screens: {
+                sm: "540px",
+                md: "720px",
+                lg: "960px",
+                xl: "1140px",
+                "2xl": "1320px",
             },
         },
 
-        // Fonts
-        fontFamily: {
-            primary: ["Montserrat", "sans-serif"],
-            sans: ["Montserrat", "sans-serif"],
-            montserrat: ["Montserrat", "sans-serif"],
-            manrope: ["Manrope", "sans-serif"],
-        },
-
-        
-        // Border radius
-        borderRadius: {
-            xs: "5px",
-            sm: "8px",
-            md: "10px",
-            lg: "15px",
-            xl: "20px",
-            "2xl": "30px",
-            "3xl": "40px",
-            pill: "50px",
-            full: "9999px",
-        },
-
-        // Font weights
-        fontWeight: {
-            regular: "400",
-            medium: "500",
-            semibold: "600",
-            bold: "700",
-        },
-
+        // ✅ DO NOT override theme directly
         extend: {
 
-            // Bootstrap gutter
-            spacing: {
-                gutter: "1.5rem",
+            // ✅ Custom colors (does NOT remove Tailwind defaults)
+            colors: {
+                theme: "#292929",
+
+                primary: {
+                    DEFAULT: "#005AA4",
+                    "overlay-light": "rgba(0,90,164,0.37)",
+                    "overlay-mid": "rgba(0,90,164,0.51)",
+                },
+
+                gold: "#C5A553",
+                blue: "#005AA4",
+
+                dark: {
+                    DEFAULT: "#292929",
+                    overlay: "rgba(0,0,0,0.62)",
+                },
+
+                grayCustom: {
+                    light: "#F5F5F5",
+                    silver: "#F1F1F1",
+                },
+
+                bg: {
+                    peach: "#FFEFE1",
+                    cream: "#FFF8F2",
+                    blue: "#E8EEF7",
+                    ice: "#F0F4FF",
+                },
+
+                accent: {
+                    purple: "#8A38F5",
+                },
             },
 
-            // Shadows
+            // ✅ Fonts
+            fontFamily: {
+                primary: ["Montserrat", "sans-serif"],
+                montserrat: ["Montserrat", "sans-serif"],
+                manrope: ["Manrope", "sans-serif"],
+            },
+
+            // ✅ Border radius (extend, don’t override)
+            borderRadius: {
+                xs: "5px",
+                sm: "8px",
+                md: "10px",
+                lg: "15px",
+                xl: "20px",
+                "2xl": "30px",
+                "3xl": "40px",
+                pill: "50px",
+            },
+
+            // ✅ Shadows
             boxShadow: {
                 card: "0 4px 20px rgba(0,90,164,0.10)",
                 "card-lg": "0 8px 40px rgba(0,90,164,0.15)",
@@ -118,20 +84,18 @@ export default {
                 nav: "0 2px 20px rgba(0,0,0,0.08)",
             },
 
+            // ✅ Spacing
+            spacing: {
+                gutter: "1.5rem",
+            },
         },
-
     },
 
-    // ─────────────────────────────────────
-    // Plugins
-    // ─────────────────────────────────────
     plugins: [
 
+        // Bootstrap-like grid
         function ({ addComponents }) {
-
             addComponents({
-
-                /* ROW */
 
                 ".row": {
                     display: "flex",
@@ -145,8 +109,6 @@ export default {
                     paddingRight: "0.75rem",
                     width: "100%",
                 },
-
-                /* COL */
 
                 ".col": {
                     flex: "1 0 0%",
@@ -169,31 +131,22 @@ export default {
                 ".col-10": { width: "83.333333%" },
                 ".col-11": { width: "91.666667%" },
                 ".col-12": { width: "100%" },
-
             });
-
         },
 
+        // Gutter utilities
         function ({ addUtilities, theme }) {
-
             addUtilities({
-
                 ".g-gutter": {
                     gap: theme("spacing.gutter"),
                 },
-
                 ".gx-gutter": {
                     columnGap: theme("spacing.gutter"),
                 },
-
                 ".gy-gutter": {
                     rowGap: theme("spacing.gutter"),
                 },
-
             });
-
         }
-
     ]
-
-}
+};
