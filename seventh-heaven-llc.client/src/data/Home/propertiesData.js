@@ -7,17 +7,17 @@ import studioWebp from "../../assets/img/studio.webp";
 
 const defaultPropertiesData = [
     {
-        title: "1 BHK",
-        description: "Cozy & Stylish One-Bedroom Apartments perfect for couples or solo travelers.",
+        title: "Studio",
+        description: "Modern open-plan studio apartments designed for smart, efficient, and comfortable urban living spaces with interiors.",
         count: "56 Properties",
         icon: {
-            png: bhk1Png,
-            webp: bhk1Webp,
+            png: studioPng,
+            webp: studioWebp,
         },
     },
     {
-        title: "2 BHK",
-        description: "Spacious two-bedroom units ideals for families or groups seeking extra room.",
+        title: "1BR",
+        description: "Cozy and stylish one-bedroom apartments perfect for singles or couples seeking privacy and comfort in modern city environments.",
         count: "24 Properties",
         icon: {
             png: bhk1Png,
@@ -25,12 +25,30 @@ const defaultPropertiesData = [
         },
     },
     {
-        title: "Studio Apartment",
-        description: "Modern open-plan studio - smart efficient, and centrally located.",
+        title: "2BR",
+        description: "Spacious two-bedroom homes ideal for families or groups looking for extra room and flexible living arrangements.",
         count: "14 Properties",
         icon: {
-            png: studioPng,
-            webp: studioWebp,
+            png: bhk1Png,
+            webp: bhk1Webp,
+        },
+    },
+    {
+        title: "3BR",
+        description: "Large and comfortable three-bedroom residences perfect for growing families or shared living with enhanced lifestyle features.",
+        count: "9 Properties",
+        icon: {
+            png: bhk1Png,
+            webp: bhk1Webp,
+        },
+    },
+    {
+        title: "4BR+",
+        description: "Premium multi-bedroom properties offering expansive space, luxury, and top-tier amenities with elegant modern architecture.",
+        count: "27 Properties",
+        icon: {
+            png: bhk1Png,
+            webp: bhk1Webp,
         },
     },
 ];

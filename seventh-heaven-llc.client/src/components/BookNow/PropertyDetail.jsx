@@ -210,6 +210,9 @@ function PropertyDetail() {
                                     <p>
                                         <span className="font-semibold">Location:</span> <span className="text-theme">{property.location}</span>
                                     </p>
+                                    <p>
+                                        <span className="font-semibold">Furnishing Status:</span> <span className="text-theme">Furnished</span>
+                                    </p>
                                 </div>
 
                                 {/* Title */}
@@ -251,11 +254,14 @@ function PropertyDetail() {
                         
 
                             <div>
-                                {property.description.map((para, i) => (
-                                    <p key={i} className="text-theme leading-7 mb-2">
-                                        {para}
-                                    </p>
-                                ))}
+                                {property.description
+                                    ?.split(/\n+/) // split by line breaks
+                                    .filter(para => para.trim() !== "")
+                                    .map((para, i) => (
+                                        <p key={i} className="text-theme leading-7 mb-2">
+                                            {para.trim()}
+                                        </p>
+                                    ))}
                             </div>
 
                             <div className="my-8">
