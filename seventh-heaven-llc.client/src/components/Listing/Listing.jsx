@@ -25,7 +25,7 @@ function Listing() {
                                 <img
                                     src={listingImg}
                                     alt="listing"
-                                    className="w-full h-[220px] sm:h-[260px] md:h-[300px] lg:h-[965px] object-cover rounded-none lg:rounded-xl"
+                                    className="w-full h-[250px] sm:h-[300px] md:h-[340px] lg:h-[1088px] object-cover rounded-none lg:rounded-xl"
                                 />
                             </picture>
                         </div>
