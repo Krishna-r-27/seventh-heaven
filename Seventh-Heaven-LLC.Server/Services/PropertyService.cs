@@ -42,6 +42,8 @@ namespace Seventh_Heaven_LLC.Server.Services
                 Bathrooms = request.Bathrooms,
                 Amenities = request.Amenities != null ? string.Join(",", request.Amenities) : null,
                 LocationLink = request.LocationLink,
+                ShortLocation = request.ShortLocation,
+                NearestLocation = request.NearestLocation,
                 HouseRules = request.HouseRules,
                 CancellationPolicy = request.CancellationPolicy,
                 ShowOnHomepage = request.ShowOnHomepage,
@@ -100,6 +102,9 @@ namespace Seventh_Heaven_LLC.Server.Services
             existing.Bathrooms = request.Bathrooms;
             existing.Amenities = request.Amenities != null ? string.Join(",", request.Amenities) : null;
             existing.LocationLink = request.LocationLink;
+            existing.ShortLocation = request.ShortLocation;
+            existing.NearestLocation = request.NearestLocation;
+            existing.FurnishingStatus = request.FurnishingStatus;
             existing.HouseRules = request.HouseRules;
             existing.CancellationPolicy = request.CancellationPolicy;
             existing.IsVisible = request.IsVisible;
@@ -150,6 +155,9 @@ namespace Seventh_Heaven_LLC.Server.Services
                 .Select(a => a.Trim())
                 .ToList(),
             LocationLink = property.LocationLink,
+            ShortLocation = property.ShortLocation,
+            NearestLocation = property.NearestLocation,
+            FurnishingStatus = property.FurnishingStatus,
             HouseRules = property.HouseRules,
             CancellationPolicy = property.CancellationPolicy,
             IsVisible = property.IsVisible,

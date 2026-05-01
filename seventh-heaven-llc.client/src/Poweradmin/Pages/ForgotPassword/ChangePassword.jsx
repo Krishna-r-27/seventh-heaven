@@ -1,28 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { adminApi } from "../../../services/adminApi";
+import { useNavigate } from "react-router-dom";
 
 // ── Password field ────────────────────────────────────────────────────────────
-// Defined at module scope so React reuses the same DOM node across renders.
-// All state values it needs (value, show, onChange, onToggle) come in as props.
-const PasswordField = ({ label, name, value, show, onChange, onToggle }) => (
-    <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+const PasswordField = ({ label, id, name, value, show, onChange, onToggle }) => (
+    <div className="space-y-2">
+        <label htmlFor={id} className="block text-[15px] font-medium" style={{ color: "#444" }}>
             {label}
         </label>
         <div className="relative">
             <input
+                id={id}
                 type={show ? "text" : "password"}
                 name={name}
                 value={value}
                 onChange={onChange}
                 required
                 autoComplete="new-password"
-                className="w-full pr-10 pl-4 py-2.5 text-sm border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="block w-full px-4 py-2.5 border-2 text-[15px] rounded-lg focus:outline-none focus:ring-4 focus:ring-red-100 transition pr-16"
+                style={{
+                    background: "#fff",
+                    borderColor: value.length === 0 ? "#e5e7eb" : "#fca5a5",
+                }}
             />
             <button
                 type="button"
                 onClick={onToggle}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 text-xs select-none"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold focus:outline-none"
+                style={{ color: "#cf1f1f" }}
                 tabIndex={-1}
             >
                 {show ? "Hide" : "Show"}
@@ -33,6 +38,7 @@ const PasswordField = ({ label, name, value, show, onChange, onToggle }) => (
 
 // ── Main page component ───────────────────────────────────────────────────────
 const ChangePassword = () => {
+    const navigate = useNavigate();
     const [form, setForm] = useState({
         currentPassword: "",
         newPassword: "",
@@ -97,6 +103,9 @@ const ChangePassword = () => {
 
             setSuccessMsg("Password updated successfully.");
             setForm({ currentPassword: "", newPassword: "", confirmPassword: "" });
+            navigate("/poweradmin", {
+                state: { message: "Password updated successfully. Please sign in again." }
+            });
         } catch (err) {
             const msg =
                 err?.response?.data?.message ||
@@ -107,73 +116,131 @@ const ChangePassword = () => {
         }
     };
 
+    const formIsValid =
+        form.currentPassword.length > 0 &&
+        form.newPassword.length >= 8 &&
+        form.confirmPassword.length > 0;
+
     // ── Render ────────────────────────────────────────────────────────────────
-
     return (
-        <div className="p-6 max-w-lg">
-            {/* Page heading */}
-            <div className="mb-6">
-                <h1 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
-                    Change Password
-                </h1>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                    Update your admin account password. You will remain logged in after saving.
-                </p>
-            </div>
+        <div className="min-h-screen bg-gradient-to-tr from-red-100 via-white to-blue-50 flex items-center justify-center p-6">
+            <div className="w-full max-w-lg mx-auto shadow-xl rounded-2xl overflow-hidden bg-white/70 backdrop-blur-md">
+                <div className="flex flex-col justify-center py-12 px-6 sm:px-10 bg-white bg-opacity-90 backdrop-blur w-full">
+                    <form onSubmit={handleSubmit} noValidate className="space-y-7">
 
-            {/* Feedback banners */}
-            {successMsg && (
-                <div className="mb-4 px-4 py-3 rounded-lg bg-green-50 border border-green-200 text-green-700 text-sm">
-                    {successMsg}
+                        {/* Header / Icon */}
+                        <div className="flex flex-col items-center mb-5">
+                            <div className="bg-gradient-to-br from-red-600 via-red-400 to-red-200 h-14 w-14 flex items-center justify-center rounded-full shadow-md mb-3">
+                                {saving ? (
+                                    <svg className="animate-spin w-7 h-7 text-white" viewBox="0 0 28 28" fill="none">
+                                        <circle cx="14" cy="14" r="12" stroke="currentColor" strokeWidth="3" className="opacity-30" />
+                                        <path d="M14 2a12 12 0 0 1 0 24" stroke="currentColor" strokeWidth="3" className="opacity-70" />
+                                    </svg>
+                                ) : (
+                                    <svg viewBox="0 0 28 28" fill="none" className="w-7 h-7 text-white">
+                                        <circle cx="14" cy="14" r="14" fill="currentColor" fillOpacity="0.2" />
+                                        <rect x="7" y="13" width="14" height="9" rx="2" stroke="currentColor" strokeWidth="1.5" fill="none" />
+                                        <path d="M10 13v-3a4 4 0 0 1 8 0v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                        <circle cx="14" cy="17.5" r="1.2" fill="currentColor" />
+                                    </svg>
+                                )}
+                            </div>
+                            <h2 className="text-2xl font-bold" style={{ color: "#cf1f1f" }}>
+                                Change Password
+                            </h2>
+                            <span className="text-sm mt-1" style={{ color: "#b91c1c", fontWeight: 600 }}>
+                                Update your admin account password
+                            </span>
+                        </div>
+
+                        {/* Success banner */}
+                        {successMsg && (
+                            <div role="status" className="text-[15px] p-3 rounded-lg flex items-center gap-2 shadow border" style={{ background: "#dcfce7", borderColor: "#bbf7d0", color: "#166534" }}>
+                                <svg height="18" width="18" fill="none" viewBox="0 0 24 24" className="min-w-[18px]" style={{ color: "#16a34a" }}>
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.7" />
+                                    <path d="M8.8 13.2l2.1 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                                {successMsg}
+                            </div>
+                        )}
+
+                        {/* Error banner */}
+                        {errorMsg && (
+                            <div role="alert" className="text-[15px] p-3 rounded-lg flex items-center gap-2 shadow" style={{ background: "#f8d7da", border: "1px solid #f5c2c7", color: "#cf1f1f", fontWeight: 500 }}>
+                                <svg height="18" width="18" fill="none" viewBox="0 0 24 24" className="min-w-[18px]" style={{ color: "#cf1f1f" }}>
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="1.7" />
+                                    <path d="M12 7.5v4m0 2.5v1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                </svg>
+                                {errorMsg}
+                            </div>
+                        )}
+
+                        {/* Password fields */}
+                        <PasswordField
+                            label="Current Password"
+                            id="currentPassword"
+                            name="currentPassword"
+                            value={form.currentPassword}
+                            show={showPasswords.current}
+                            onChange={handleChange}
+                            onToggle={() => toggleShow("current")}
+                        />
+                        <PasswordField
+                            label="New Password"
+                            id="newPassword"
+                            name="newPassword"
+                            value={form.newPassword}
+                            show={showPasswords.new}
+                            onChange={handleChange}
+                            onToggle={() => toggleShow("new")}
+                        />
+                        <PasswordField
+                            label="Confirm New Password"
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            value={form.confirmPassword}
+                            show={showPasswords.confirm}
+                            onChange={handleChange}
+                            onToggle={() => toggleShow("confirm")}
+                        />
+
+                        {/* Hint */}
+                        <p className="text-xs mt-1" style={{ color: "#9ca3af" }}>
+                            Minimum 8 characters. Must differ from your current password.
+                        </p>
+
+                        {/* Submit Button */}
+                        <button
+                            type="submit"
+                            disabled={saving || !formIsValid}
+                            className="w-full flex items-center justify-center gap-2 shadow text-white py-2.5 rounded-lg text-lg font-bold focus:outline-none focus:ring-4 focus:ring-red-200 transition"
+                            style={{
+                                background: "linear-gradient(90deg, #f44336 0%, #ff6363 100%)",
+                                boxShadow: "0 2px 8px #f58080a3",
+                                fontWeight: 700,
+                                fontSize: "18px",
+                                opacity: (saving || !formIsValid) ? 0.55 : 1,
+                                cursor: (saving || !formIsValid) ? "not-allowed" : "pointer",
+                            }}
+                        >
+                            {saving ? (
+                                <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                                </svg>
+                            ) : null}
+                            <span>{saving ? "Updating…" : "Update Password"}</span>
+                        </button>
+
+                        {/* Footer note */}
+                        <div className="pt-4 text-center text-[15px]" style={{ color: "#7d7d7d" }}>
+                            <span>
+                                You will remain logged in after saving.
+                            </span>
+                        </div>
+
+                    </form>
                 </div>
-            )}
-            {errorMsg && (
-                <div className="mb-4 px-4 py-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
-                    {errorMsg}
-                </div>
-            )}
-
-            {/* Form card */}
-            <div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-sm px-6 py-6">
-                <form onSubmit={handleSubmit} noValidate>
-                    <PasswordField
-                        label="Current Password"
-                        name="currentPassword"
-                        value={form.currentPassword}
-                        show={showPasswords.current}
-                        onChange={handleChange}
-                        onToggle={() => toggleShow("current")}
-                    />
-                    <PasswordField
-                        label="New Password"
-                        name="newPassword"
-                        value={form.newPassword}
-                        show={showPasswords.new}
-                        onChange={handleChange}
-                        onToggle={() => toggleShow("new")}
-                    />
-                    <PasswordField
-                        label="Confirm New Password"
-                        name="confirmPassword"
-                        value={form.confirmPassword}
-                        show={showPasswords.confirm}
-                        onChange={handleChange}
-                        onToggle={() => toggleShow("confirm")}
-                    />
-
-                    {/* Password requirements hint */}
-                    <p className="text-xs text-gray-400 mt-1 mb-5">
-                        Minimum 6 characters. Must differ from your current password.
-                    </p>
-
-                    <button
-                        type="submit"
-                        disabled={saving}
-                        className="w-full py-2.5 bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                        {saving ? "Updating…" : "Update Password"}
-                    </button>
-                </form>
             </div>
         </div>
     );

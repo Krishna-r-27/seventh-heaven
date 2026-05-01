@@ -133,7 +133,7 @@ export default function ForgotPassword() {
             <div className="flex items-center justify-between gap-4">
               <div />
               <Link
-                to="/poweradmin/signin"
+                to="/poweradmin"
                 className="text-[15px] text-red-600 font-medium hover:underline hover:text-red-500 focus:outline-none focus:ring-1 focus:ring-red-300 transition"
                 style={{ color: "#cf1f1f" }}
               >

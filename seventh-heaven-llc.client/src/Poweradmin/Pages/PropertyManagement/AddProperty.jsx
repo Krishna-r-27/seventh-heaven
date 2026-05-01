@@ -10,10 +10,13 @@ const emptyModel = {
     description: "",
     propertyType: "",
     guestrooms: 1,
-    bedrooms: 1,
+    bedrooms: "",
     bathrooms: 1,
     amenities: "",
     locationLink: "",
+    shortLocation: "",
+    nearestLocation: "",
+    furnishingStatus: "",
     houseRules: "",
     cancellationPolicy: "",
     showOnHomepage: false,
@@ -33,7 +36,7 @@ export default function AddProperty() {
     const [homepageImages, setHomepageImages] = useState([]);
     const [saving, setSaving] = useState(false);
     const [errors, setErrors] = useState({});
-    const BACKEND_BASE_URL = "https://localhost:7176";
+    const BACKEND_BASE_URL = "https://www.seventh-heaven.ae";
     useEffect(() => {
         document.title = id ? "Edit Property | PowerAdmin" : "Add Property | PowerAdmin";
     }, [id]);
@@ -53,9 +56,12 @@ export default function AddProperty() {
                     description: data.description ?? "",
                     propertyType: data.propertyType ?? "",
                     guestrooms: data.guestrooms ?? 1,
-                    bedrooms: data.bedrooms ?? 0,
+                    bedrooms: data.bedrooms ?? "",
                     bathrooms: data.bathrooms ?? 0,
                     amenities: (data.amenities || []).join(", "),
+                    shortLocation: data.shortLocation ?? "",
+                    nearestLocation: data.nearestLocation ?? "",
+                    furnishingStatus: data.furnishingStatus ?? "",
                     locationLink: data.locationLink ?? "",
                     houseRules: data.houseRules ?? "",
                     cancellationPolicy: data.cancellationPolicy ?? "",
@@ -131,6 +137,12 @@ export default function AddProperty() {
         if (!model.title || model.title.trim().length === 0) {
             newErrors.title = "Title is required.";
         }
+        if (!model.shortLocation || model.shortLocation.trim().length === 0) {
+            newErrors.shortLocation = "Short Location is required.";
+        }
+        if (!model.nearestLocation || model.nearestLocation.trim().length === 0) {
+            newErrors.nearestLocation = "Near by Location is required.";
+        }
         // For edit allow existing images to satisfy requirement
         if (files.length === 0 && existingImages.length === 0) {
             newErrors.files = "At least one image is required.";
@@ -158,9 +170,12 @@ export default function AddProperty() {
                 description: model.description,
                 propertyType: model.propertyType,
                 guestrooms: Number(model.guestrooms) || 1,
-                bedrooms: Number(model.bedrooms) || 0,
+                bedrooms: Number(model.bedrooms) ?? "",
                 bathrooms: Number(model.bathrooms) || 0,
                 amenities: (model.amenities || "").split(",").map((x) => x.trim()).filter(Boolean),
+                shortLocation: model.shortLocation ?? "",
+                nearestLocation: model.nearestLocation ?? "",
+                furnishingStatus: model.furnishingStatus ?? "",
                 locationLink: model.locationLink,
                 houseRules: model.houseRules,
                 cancellationPolicy: model.cancellationPolicy,
@@ -176,9 +191,12 @@ export default function AddProperty() {
             form.append("Description", model.description ?? "");
             form.append("PropertyType", model.propertyType ?? "");
             form.append("Guestrooms", String(model.guestrooms ?? 1));
-            form.append("Bedrooms", String(model.bedrooms ?? 0));
+            form.append("Bedrooms", String(model.bedrooms ?? ""));
             form.append("Bathrooms", String(model.bathrooms ?? 0));
             form.append("Amenities", model.amenities ?? "");
+            form.append("shortLocation", model.shortLocation ?? "");
+            form.append("nearestLocation", model.nearestLocation ?? "");
+            form.append("furnishingStatus", model.furnishingStatus ?? "");
             form.append("LocationLink", model.locationLink ?? "");
             form.append("HouseRules", model.houseRules ?? "");
             form.append("CancellationPolicy", model.cancellationPolicy ?? "");
@@ -239,7 +257,7 @@ export default function AddProperty() {
 
             if (err?.response?.status === 401) {
                 showToast.error("Session expired. Please sign in.");
-                navigate("/poweradmin/signin");
+                navigate("/poweradmin");
                 return;
             }
 
@@ -305,7 +323,7 @@ export default function AddProperty() {
                         <div className="space-y-4 pb-6 border-b border-gray-200">
                             <h3 className="text-lg font-semibold text-gray-800">Property Details</h3>
 
-                            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Property Type</label>
                                     <select
@@ -316,16 +334,12 @@ export default function AddProperty() {
                                         <option value="">Property Type</option>
                                         <option>Apartment</option>
                                         <option>Villa</option>
-                                        <option>Studio</option>
-                                        <option>1 BHK</option>
-                                        <option>2 BHK</option>
-                                        <option>Commercial</option>
-                                        <option>Penthouse</option>
                                         <option>Town Houses</option>
+                                        <option>Penthouse</option>
                                     </select>
                                 </div>
 
-                                <div>
+                                <div className="hidden">
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Guests</label>
                                     <input
                                         type="number"
@@ -333,17 +347,6 @@ export default function AddProperty() {
                                         className="w-full rounded-lg border-2 border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
                                         value={model.guestrooms}
                                         onChange={(e) => setField("guestrooms", e.target.value)}
-                                    />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Bedrooms</label>
-                                    <input
-                                        type="number"
-                                        min={0}
-                                        className="w-full rounded-lg border-2 border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
-                                        value={model.bedrooms}
-                                        onChange={(e) => setField("bedrooms", e.target.value)}
                                     />
                                 </div>
 
@@ -356,6 +359,37 @@ export default function AddProperty() {
                                         value={model.bathrooms}
                                         onChange={(e) => setField("bathrooms", e.target.value)}
                                     />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Bedrooms</label>   
+                                    <select
+                                        className="w-full rounded-lg border-2 border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
+                                        value={model.bedrooms}
+                                        onChange={(e) => setField("bedrooms", e.target.value)}
+                                    >
+                                        <option value="">--Bed Rooms--</option>
+                                        <option>Studio</option>
+                                        <option>1BR</option>
+                                        <option>2BR</option>
+                                        <option>3BR</option>
+                                        <option>4BR+</option>
+                                    </select>
+                                    {/*<FiChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />*/}
+                                </div>                                
+
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Furnishing Status</label>
+                                    <select
+                                        className="w-full rounded-lg border-2 border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
+                                        value={model.furnishingStatus}
+                                        onChange={(e) => setField("furnishingStatus", e.target.value)}
+                                    >
+                                        <option value="">--Furnishing Status--</option>
+                                        <option>Furnished</option>
+                                        <option>Unfurnished</option>
+                                        <option>Semi Furnished</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -382,6 +416,32 @@ export default function AddProperty() {
                                     onChange={(e) => setField("locationLink", e.target.value)}
                                     placeholder="https://maps.google.com/..."
                                 />
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Area / Location *</label>
+                                <input
+                                    required
+                                    className={`w-full rounded-lg border-2 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 transition ${errors.shortLocation ? "border-red-300 focus:ring-red-100" : "border-gray-200 focus:ring-indigo-100"
+                                        }`}
+                                    value={model.shortLocation}
+                                    onChange={(e) => setField("shortLocation", e.target.value)}
+                                    placeholder="e.g., Near Central Park"
+                                />
+                                {errors.shortLocation && <p className="text-xs text-red-600 mt-1">{errors.shortLocation}</p>}
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">Near by Location *</label>
+                                <input
+                                    required
+                                    className={`w-full rounded-lg border-2 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 transition ${errors.nearestLocation ? "border-red-300 focus:ring-red-100" : "border-gray-200 focus:ring-indigo-100"
+                                        }`}
+                                    value={model.nearestLocation}
+                                    onChange={(e) => setField("nearestLocation", e.target.value)}
+                                    placeholder="e.g., Near Central Park"
+                                />
+                                {errors.nearestLocation && <p className="text-xs text-red-600 mt-1">{errors.nearestLocation}</p>}
                             </div>
                         </div>
 

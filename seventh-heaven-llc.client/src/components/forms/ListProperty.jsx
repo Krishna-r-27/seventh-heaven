@@ -76,12 +76,17 @@ function ListProperty() {
       nextValue = value.replace(/[^A-Za-z ]+/g, "");
     }
 
-    if (name === "phone") {
-      nextValue = value.replace(/[^\d+ ]+/g, "");
-      nextValue = nextValue.replace(/\+/g, (match, offset) => (offset === 0 ? match : ""));
-    }
+    //if (name === "phone") {
+    //  nextValue = value.replace(/[^\d+ ]+/g, "");
+    //  nextValue = nextValue.replace(/\+/g, (match, offset) => (offset === 0 ? match : ""));
+      //}
+      if (name === "phone") {
+          //nextValue = value.replace(/[^\d+ ]+/g, "");
+          nextValue = value.replace(/\D+/g, "").slice(0, 10);
+          nextValue = nextValue.replace(/\+/g, (match, offset) => (offset === 0 ? match : ""));
+      }
 
-    if (name === "rooms" || name === "bathrooms" || name === "maxGuests" || name === "captcha") {
+    if ( name === "bathrooms" || name === "maxGuests" || name === "captcha") {
       nextValue = value.replace(/\D+/g, "");
     }
 
@@ -245,12 +250,8 @@ function ListProperty() {
                           <option value="">--Property Type--</option>
                           <option>Apartment</option>
                           <option>Villa</option>
-                          <option>Studio</option>
-                          <option>1 BHK</option>
-                          <option>2 BHK</option>
-                          <option>Commercial</option>
-                          <option>Penthouse</option>
                           <option>Town Houses</option>
+                          <option>Penthouse</option>
                       </select>
                       <FiChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
@@ -260,18 +261,19 @@ function ListProperty() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 
                   <div className="relative">
-                      <input
-                          type="number"
-                          min={0}
-                          placeholder="Rooms"
+                      <select
                           value={form.rooms}
                           onChange={(e) => onFieldChange("rooms", e.target.value)}
-                          inputMode="numeric"
-                          required
-                          className="w-full border border-theme placeholder:text-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4]"
-                      />
-                      {errors.rooms && <p className="text-red-600 text-sm mt-1">{errors.rooms}</p>}
-                      {/*<FiChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />*/}
+                          className="w-full appearance-none border border-theme rounded-md px-4 py-3 pr-10 text-theme focus:outline-none focus:border-[#005AA4]"
+                      >
+                          <option value="">--Rooms--</option>
+                          <option>Studio</option>
+                          <option>1BR</option>
+                          <option>2BR</option>
+                          <option>3BR</option>
+                          <option>4BR+</option>
+                      </select>
+                      <FiChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
 
                   <div className="relative">

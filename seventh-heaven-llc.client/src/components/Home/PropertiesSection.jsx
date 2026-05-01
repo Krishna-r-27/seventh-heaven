@@ -12,26 +12,26 @@ export default function PropertiesSection() {
     const [cards, setCards] = useState(propertiesData);
     const swiperRef = useRef(null);
 
-    //useEffect(() => {
-    //    const fetchProperties = async () => {
-    //        try {
-    //            const apiBase = import.meta.env.VITE_API_BASE || "/api";
-    //            const response = await fetch(`${apiBase}/properties`);
+    useEffect(() => {
+        const fetchProperties = async () => {
+            try {
+                const apiBase = import.meta.env.VITE_API_BASE || "/api";
+                const response = await fetch(`${apiBase}/properties`);
 
-    //            if (!response.ok) {
-    //                throw new Error(`Failed to load properties: ${response.status}`);
-    //            }
+                if (!response.ok) {
+                    throw new Error(`Failed to load properties: ${response.status}`);
+                }
 
-    //            const data = await response.json();
-    //            const formattedCards = buildHomePropertiesData(Array.isArray(data) ? data : []);
-    //            setCards(formattedCards);
-    //        } catch (error) {
-    //            console.error("Unable to fetch home properties data.", error);
-    //        }
-    //    };
+                const data = await response.json();
+                const formattedCards = buildHomePropertiesData(Array.isArray(data) ? data : []);
+                setCards(formattedCards);
+            } catch (error) {
+                console.error("Unable to fetch home properties data.", error);
+            }
+        };
 
-    //    fetchProperties();
-    //}, []);
+        fetchProperties();
+    }, []);
 
     return (
         <section className="w-full py-8 sm:py-12 md:py-14 lg:py-16">
@@ -162,6 +162,7 @@ export default function PropertiesSection() {
 
                                     <Link
                                         to="/book-now"
+                                        state={{ propertyType: item.title }} 
                                         className="flex items-center gap-1 font-semibold text-blue group"
                                     >
                                         <span className="relative">
