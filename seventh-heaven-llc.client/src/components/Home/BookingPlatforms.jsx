@@ -69,14 +69,20 @@ function BookingPlatforms() {
                     <div className="flex gap-3">
                         <button
                             ref={prevRef}
-                            className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-gold shadow hover:bg-black hover:text-white transition"
+                            className="w-10 h-10 flex items-center justify-center rounded-full 
+                                bg-gold text-white border border-white shadow-sm 
+                                hover:bg-white hover:text-gold hover:border-transparent 
+                                transition duration-300"
                         >
                             <FiChevronLeft size={20} />
                         </button>
 
                         <button
                             ref={nextRef}
-                            className="w-10 h-10 flex items-center justify-center rounded-full bg-white text-gold shadow hover:bg-black hover:text-white transition"
+                            className="w-10 h-10 flex items-center justify-center rounded-full 
+                                bg-gold text-white border border-white shadow-sm 
+                                hover:bg-white hover:text-gold hover:border-transparent 
+                                transition duration-300"
                         >
                             <FiChevronRight size={20} />
                         </button>
