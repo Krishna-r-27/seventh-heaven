@@ -23,7 +23,7 @@ const AppLayout = () => {
         refreshing,
         handleStayLoggedIn,
         handleSignOut,
-    } = useSessionTimeout(() => navigate("/poweradmin/signin"));
+    } = useSessionTimeout(() => navigate("/poweradmin"));
 
     return (
         <div className="dashboard flex h-screen overflow-hidden bg-gray-50">

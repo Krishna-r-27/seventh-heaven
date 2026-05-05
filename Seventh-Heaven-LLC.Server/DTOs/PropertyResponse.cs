@@ -21,13 +21,16 @@ namespace Seventh_Heaven_LLC.Server.DTOs
         public string? PropertyType { get; set; }
 
         public int Guestrooms { get; set; } = 1;
-        public int Bedrooms { get; set; } = 1;
+        public string? Bedrooms { get; set; }
         public int Bathrooms { get; set; } = 1;
 
         // Amenities returned as a simple list of strings
         public IEnumerable<string> Amenities { get; set; } = new List<string>();
 
         public string? LocationLink { get; set; }
+        public string? ShortLocation { get; set; }
+        public string? NearestLocation { get; set; }
+        public string? FurnishingStatus { get; set; }
         public string? HouseRules { get; set; }
         public string? CancellationPolicy { get; set; }
 
