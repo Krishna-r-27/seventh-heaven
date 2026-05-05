@@ -254,9 +254,11 @@ function PropertyDetail() {
                         
 
                             <div>
-                                {property.description
-                                    ?.split(/\n+/) // split by line breaks
-                                    .filter(para => para.trim() !== "")
+                                {(Array.isArray(property.description)
+                                    ? property.description
+                                    : property.description?.split(/\n+/)
+                                )
+                                    ?.filter(para => para.trim() !== "")
                                     .map((para, i) => (
                                         <p key={i} className="text-theme leading-7 mb-2">
                                             {para.trim()}
