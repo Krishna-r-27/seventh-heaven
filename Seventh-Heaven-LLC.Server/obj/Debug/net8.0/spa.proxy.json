@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:56341",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\..\\seventh-heaven-llc.client",
+"WorkingDirectory": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\seventh2\\seventh-heaven\\Seventh-Heaven-LLC.Server\\..\\seventh-heaven-llc.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

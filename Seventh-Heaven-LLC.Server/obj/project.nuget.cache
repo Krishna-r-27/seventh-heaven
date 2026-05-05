@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JiOWP6BxgMY=",
+  "dgSpecHash": "7MdAFAszl/g=",
   "success": true,
-  "projectFilePath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
+  "projectFilePath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\seventh2\\seventh-heaven\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DNC-BHUMIKA\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\DNC-BHUMIKA\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
@@ -36,9 +36,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'System.IdentityModel.Tokens.Jwt' 7.0.3 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-59j7-ghrg-fj52",
-      "projectPath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
+      "projectPath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\seventh2\\seventh-heaven\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
       "warningLevel": 1,
-      "filePath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
+      "filePath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\seventh2\\seventh-heaven\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
       "libraryId": "System.IdentityModel.Tokens.Jwt",
       "targetGraphs": [
         "net8.0"
