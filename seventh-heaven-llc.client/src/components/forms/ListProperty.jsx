@@ -114,7 +114,7 @@ function ListProperty() {
     if (!form.bathrooms.trim()) nextErrors.bathrooms = "Bathrooms is mandatory.";
     if (!form.maxGuests.trim()) nextErrors.maxGuests = "Guests is mandatory.";
     if (!form.captcha.trim()) nextErrors.captcha = "Captcha is mandatory.";
-
+    else if (Number(form.captcha) !== captcha.answer) nextErrors.captcha = "Captcha answer is incorrect.";
     return nextErrors;
   }
 

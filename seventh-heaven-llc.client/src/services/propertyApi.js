@@ -1,8 +1,8 @@
 import fallbackImage from "@img/deyafa-apartments.png";
-import gym from "@img/gym.png";
-import pool from "@img/pool.png";
-import parking from "@img/parking-meter.png";
-import security from "@img/security-lock.png";
+//import gym from "@img/gym.png";
+//import pool from "@img/pool.png";
+//import parking from "@img/parking-meter.png";
+import security from "@img/blue-icon.png";
 
 const getField = (obj, camelKey, pascalKey) => obj?.[camelKey] ?? obj?.[pascalKey];
 
@@ -43,9 +43,9 @@ const normalizeImageUrl = (url) => {
 
 const amenityIconFor = (name = "") => {
     const key = name.toLowerCase();
-    if (key.includes("gym")) return gym;
-    if (key.includes("pool")) return pool;
-    if (key.includes("parking")) return parking;
+    if (key.includes("gym")) return security;
+    if (key.includes("pool")) return security;
+    if (key.includes("parking")) return security;
     if (key.includes("security")) return security;
     return security;
 };

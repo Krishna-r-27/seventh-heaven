@@ -109,6 +109,7 @@ function ContactForm() {
         if (!form.city.trim()) nextErrors.city = "City is mandatory.";
         if (!form.message.trim()) nextErrors.message = "Message is mandatory.";
         if (!form.captcha.trim()) nextErrors.captcha = "Captcha is mandatory.";
+        else if (Number(form.captcha) !== captcha.answer) nextErrors.captcha = "Captcha answer is incorrect.";
 
         return nextErrors;
     }
