@@ -77,7 +77,7 @@ function PropertyDetail() {
     if (!property) {
         return <p className="p-6">Property not found</p>;
     }
-   
+
     return (
         <>
             <BannerSection title="Book Now" pageName="Book Now" />
@@ -109,7 +109,7 @@ function PropertyDetail() {
                             <div className="w-[35%] h-[1px] bg-gold mt-1"></div>
                         </div>
                     </div>
-                   
+
                     <div className="mb-6 md:mb-10 mt-5 md:mt-6 relative">
 
                         {/* LEFT BUTTON */}
@@ -195,8 +195,8 @@ function PropertyDetail() {
                         </Swiper>
 
                     </div>
-                  
-                  
+
+
                     <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-4 lg:gap-6 mt-5">
 
                         <div className="lg:pe-18">
@@ -237,7 +237,7 @@ function PropertyDetail() {
                                             <img
                                                 src={item.icon}
                                                 alt={item.name}
-                                                className="w-6 h-6"
+                                                className="w-3 h-3"
                                             />
 
                                             {/* Name */}
@@ -251,7 +251,7 @@ function PropertyDetail() {
                                 </div>
 
                             </div>
-                        
+
 
                             {/*<div>*/}
                             {/*    {typeof property.description === "string" &&*/}
@@ -264,6 +264,12 @@ function PropertyDetail() {
                             {/*                </p>*/}
                             {/*            ))}*/}
                             {/*</div>*/}
+                            <div className="my-8">
+                                <p className="text-theme text-md font-semibold mt-4">
+                                    Bedrooms : {property.bedrooms}
+                                </p>
+                            </div>
+
                             <div>
                                 {property.description.map((para, i) => (
                                     <p key={i} className="text-theme leading-7 mb-2">

@@ -8,15 +8,16 @@ import { useLocation } from "react-router-dom";
 
 function BookNow() {
     const controls = useAnimation();
+    const location = useLocation();
+    const selectedType = location.state?.propertyType;
+
     const [properties, setProperties] = useState([]);
-    const [selectedPropertyType, setSelectedPropertyType] = useState("");
+    const [selectedPropertyType, setSelectedPropertyType] = useState(selectedType || "");
     const [selectedLocation, setSelectedLocation] = useState("");
     const [selectedBedrooms, setSelectedBedrooms] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
 
     const itemsPerPage = 6;
-    const location = useLocation();
-    const selectedType = location.state?.propertyType;
 
     const normalizeFilterValue = (value = "") =>
         value.toString().trim().toLowerCase().replace(/[\s-]+/g, "");
@@ -82,13 +83,6 @@ function BookNow() {
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
     );
-
-    useEffect(() => {
-        setSelectedPropertyType(selectedType || "");
-        setSelectedLocation("");
-        setSelectedBedrooms("");
-        setCurrentPage(1);
-    }, [selectedType]);
 
     useEffect(() => {
         const loadProperties = async () => {
@@ -234,8 +228,8 @@ function BookNow() {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </div>
-                        </div>                        
-
+                        </div>
+                        
                     </div>
 
                 </div>
