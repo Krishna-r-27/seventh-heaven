@@ -10,6 +10,8 @@ function BookNow() {
     const controls = useAnimation();
     const [properties, setProperties] = useState([]);
     const [selectedPropertyType, setSelectedPropertyType] = useState("");
+    const [selectedLocation, setSelectedLocation] = useState("");
+    const [selectedBedrooms, setSelectedBedrooms] = useState("");
     const [currentPage, setCurrentPage] = useState(1);
 
     const itemsPerPage = 6;
@@ -35,15 +37,44 @@ function BookNow() {
         return Array.from(optionsByValue.values());
     }, [properties]);
 
-    const filteredProperties = useMemo(() => {
-        if (!selectedPropertyType) return properties;
-
-        const selected = normalizeFilterValue(selectedPropertyType);
-
-        return properties.filter((item) =>
-            normalizeFilterValue(item.propertyType || item.type) === selected
-        );
+    const locationOptions = useMemo(() => {
+        const seen = new Set();
+        const source = selectedPropertyType
+            ? properties.filter((item) => {
+                const selected = normalizeFilterValue(selectedPropertyType);
+                return normalizeFilterValue(item.propertyType || item.type) === selected;
+            })
+            : properties;
+        return source
+            .map((item) => item.shortLocation)
+            .filter((loc) => loc && !seen.has(loc) && seen.add(loc));
     }, [properties, selectedPropertyType]);
+
+    const bedroomOptions = useMemo(() => {
+        const seen = new Set();
+        const source = selectedPropertyType
+            ? properties.filter((item) => {
+                const selected = normalizeFilterValue(selectedPropertyType);
+                return normalizeFilterValue(item.propertyType || item.type) === selected;
+            })
+            : properties;
+        return source
+            .map((item) => item.bedrooms)
+            .filter((b) => b !== null && b !== undefined && !seen.has(b) && seen.add(b))
+            .sort((a, b) => Number(a) - Number(b));
+    }, [properties, selectedPropertyType]);
+
+    const filteredProperties = useMemo(() => {
+        return properties.filter((item) => {
+            if (selectedPropertyType) {
+                const selected = normalizeFilterValue(selectedPropertyType);
+                if (normalizeFilterValue(item.propertyType || item.type) !== selected) return false;
+            }
+            if (selectedLocation && item.shortLocation !== selectedLocation) return false;
+            if (selectedBedrooms && String(item.bedrooms) !== String(selectedBedrooms)) return false;
+            return true;
+        });
+    }, [properties, selectedPropertyType, selectedLocation, selectedBedrooms]);
 
     const totalPages = Math.max(1, Math.ceil(filteredProperties.length / itemsPerPage));
 
@@ -54,6 +85,8 @@ function BookNow() {
 
     useEffect(() => {
         setSelectedPropertyType(selectedType || "");
+        setSelectedLocation("");
+        setSelectedBedrooms("");
         setCurrentPage(1);
     }, [selectedType]);
 
@@ -136,6 +169,8 @@ function BookNow() {
                                 value={selectedPropertyType}
                                 onChange={(event) => {
                                     setSelectedPropertyType(event.target.value);
+                                    setSelectedLocation("");
+                                    setSelectedBedrooms("");
                                     setCurrentPage(1);
                                 }}
                                 className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md w-full bg-white"
@@ -153,13 +188,22 @@ function BookNow() {
                             </div>
                         </div>
 
-                        {/* Location */}
+                        {/* Bedrooms */}
                         <div className="relative w-full sm:w-auto">
-                            <select className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md w-full bg-white">
-                                <option>Location</option>
-                                <option>Downtown Dubai</option>
-                                <option>Dubai Marina</option>
-                                <option>Palm Jumeirah</option>
+                            <select
+                                value={selectedBedrooms}
+                                onChange={(event) => {
+                                    setSelectedBedrooms(event.target.value);
+                                    setCurrentPage(1);
+                                }}
+                                className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md w-full bg-white"
+                            >
+                                <option value="">Bedrooms</option>
+                                {bedroomOptions.map((b) => (
+                                    <option key={b} value={b}>
+                                        {Number(b) === 0 ? "Studio" : b}
+                                    </option>
+                                ))}
                             </select>
 
                             <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
@@ -168,6 +212,29 @@ function BookNow() {
                                 </svg>
                             </div>
                         </div>
+
+                        {/* Location */}
+                        <div className="relative w-full sm:w-auto">
+                            <select
+                                value={selectedLocation}
+                                onChange={(event) => {
+                                    setSelectedLocation(event.target.value);
+                                    setCurrentPage(1);
+                                }}
+                                className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md w-full bg-white"
+                            >
+                                <option value="">Location</option>
+                                {locationOptions.map((loc) => (
+                                    <option key={loc} value={loc}>{loc}</option>
+                                ))}
+                            </select>
+
+                            <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                                <svg className="w-4 h-4 text-theme" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </div>                        
 
                     </div>
 

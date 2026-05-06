@@ -348,18 +348,7 @@ export default function AddProperty() {
                                         value={model.guestrooms}
                                         onChange={(e) => setField("guestrooms", e.target.value)}
                                     />
-                                </div>
-
-                                <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Bathrooms</label>
-                                    <input
-                                        type="number"
-                                        min={0}
-                                        className="w-full rounded-lg border-2 border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
-                                        value={model.bathrooms}
-                                        onChange={(e) => setField("bathrooms", e.target.value)}
-                                    />
-                                </div>
+                                </div>                                
 
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Bedrooms</label>   
@@ -377,6 +366,17 @@ export default function AddProperty() {
                                     </select>
                                     {/*<FiChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />*/}
                                 </div>                                
+
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Bathrooms</label>
+                                    <input
+                                        type="number"
+                                        min={0}
+                                        className="w-full rounded-lg border-2 border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
+                                        value={model.bathrooms}
+                                        onChange={(e) => setField("bathrooms", e.target.value)}
+                                    />
+                                </div>
 
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Furnishing Status</label>

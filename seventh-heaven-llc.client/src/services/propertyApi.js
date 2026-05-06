@@ -62,8 +62,10 @@ export const mapPropertyToUi = (property) => {
     const houseRulesRaw = getField(property, "houseRules", "HouseRules");
     const cancellationRaw = getField(property, "cancellationPolicy", "CancellationPolicy");
     const location = getField(property, "locationLink", "LocationLink") || "Dubai";
+    const shortLocation = getField(property, "shortLocation", "ShortLocation") || "";
+    const bedrooms = getField(property, "bedrooms", "Bedrooms") ?? null;
     const imagesRaw = getField(property, "images", "Images");
-    
+
 
     const images = Array.isArray(imagesRaw)
         ? imagesRaw
@@ -117,6 +119,8 @@ export const mapPropertyToUi = (property) => {
         description: description.length > 0 ? description : ["Property details available on request."],
         houseRules: toArray(houseRulesRaw),
         cancellationPolicy: toArray(cancellationRaw),
+        shortLocation,
+        bedrooms,
         showOnHomepage: getField(property, "showOnHomepage", "ShowOnHomepage"),
         isVisible: getField(property, "isVisible", "IsVisible"),
     };
