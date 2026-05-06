@@ -107,7 +107,7 @@ const AppSidebar = ({ open, collapsed, onClose }) => {
                     >
                         <div className="flex items-center gap-3">
                             <IoImagesOutline className="h-5 w-5" />
-                            {!collapsed && <span>Properties Management</span>}
+                            {!collapsed && <span>Property Mgnt</span>}
                         </div>
 
                         {!collapsed && (
@@ -149,7 +149,7 @@ const AppSidebar = ({ open, collapsed, onClose }) => {
                                                          
                     {/* Other Items */}
                     {[
-                        { to: "/poweradmin/enquiries", label: "Enquiries", Icon: HiOutlineClipboardDocumentList },
+                        { to: "/poweradmin/enquiry", label: "Enquiries", Icon: HiOutlineClipboardDocumentList },
                         { to: "/poweradmin/property/listing", label: "Listed Properties", Icon: HiOutlineClipboardDocumentList },
                         { to: "/poweradmin/property/enquiry", label: "Property Enquiries", Icon: RiFileEditLine },
                         /*{ to: "/poweradmin/inquiry", label: "Inquiry Managements", Icon: FaWpforms },*/

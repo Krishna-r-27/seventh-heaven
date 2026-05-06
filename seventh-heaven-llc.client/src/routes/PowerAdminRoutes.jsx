@@ -40,13 +40,15 @@ import PropertyListing from "./poweradmin/pages/PropertyListing/listing";
 import PropertyListingDetail from "./poweradmin/pages/PropertyListing/Details"; 
 import PropertyEnquiry from "./poweradmin/pages/PropertyEnquiry/View";
 import PropertyEnquiryDetail from "./poweradmin/pages/PropertyEnquiry/EnquiryDetails";
+import Enquiry from "./Poweradmin/Pages/ContactUs/ViewEnquiry";
+import EnquiryDetail from "./Poweradmin/Pages/ContactUs/ViewDetails";
 
 
 const PowerAdminRoutes = () => {
     return (
         <Routes>
             {/* Auth Routes (no MainLayout) */}
-            <Route path="/signin" element={<SignIn />} />
+            <Route path="/poweradmin" element={<SignIn />} />
             <Route path="/poweradmin/forgot-password" element={<ForgotPassword />} />
             <Route path="/poweradmin/verify-otp" element={<OtpVerify />} />
 
@@ -89,6 +91,8 @@ const PowerAdminRoutes = () => {
                 <Route path="change-password" element={<AdminChangePassword />} />
 
                 {/* Properties */}
+                <Route path="enquiry" element={<Enquiry />} />
+                <Route path="enquiry/detail/:id" element={<EnquiryDetail />} />
                 <Route path="properties" element={<ViewProperty />} />
                 <Route path="properties/add" element={<AddProperty />} />
                 <Route path="properties/edit/:id" element={<AddProperty />} />

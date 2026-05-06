@@ -117,6 +117,92 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                 });
             }
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                const string sql = @"
+                SELECT
+                    Id,
+                    FirstName,
+                    LastName,
+                    Phone,
+                    Email,
+                    City,
+                    CreatedAt
+                FROM ContactInquiries
+                ORDER BY Id DESC;";
+
+                var data = (await _dal.QueryAsync<dynamic>(sql))
+                    .Select(x => new
+                    {
+                        id = x.Id,
+                        firstName = x.FirstName,
+                        lastName = x.LastName,
+                        phone = x.Phone,
+                        email = x.Email,
+                        city = x.City,
+                        createdAt = x.CreatedAt
+                    });
+
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Failed to load contact inquiries.",
+                    error = ex.Message
+                });
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            try
+            {
+                const string sql = @"
+                SELECT
+                    Id,
+                    FirstName,
+                    LastName,
+                    Phone,
+                    Email,
+                    City,
+                    Message,
+                    CreatedAt
+                FROM ContactInquiries
+                WHERE Id = @Id;";
+
+                var rows = (await _dal.QueryAsync<dynamic>(sql, new { Id = id })).ToList();
+                if (!rows.Any())
+                    return NotFound(new { message = "Contact inquiry not found." });
+
+                var inquiry = rows.First();
+                return Ok(new
+                {
+                    id = inquiry.Id,
+                    firstName = inquiry.FirstName,
+                    lastName = inquiry.LastName,
+                    phone = inquiry.Phone,
+                    email = inquiry.Email,
+                    city = inquiry.City,
+                    message = inquiry.Message,
+                    createdAt = inquiry.CreatedAt
+                });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Failed to load contact inquiry details.",
+                    error = ex.Message
+                });
+            }
+        }
     }
 
     public class CreateContactInquiryRequest

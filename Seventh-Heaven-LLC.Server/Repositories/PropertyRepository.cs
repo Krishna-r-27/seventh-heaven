@@ -72,8 +72,8 @@ namespace Seventh_Heaven_LLC.Server.Repositories
             var shiftSql = "UPDATE Properties SET SortOrder = SortOrder + 1";
             await _dal.ExecuteAsync(shiftSql);
 
-            var sql = @"INSERT INTO Properties (title, Description, PropertyType, Guestrooms, Bedrooms, Bathrooms,Amenities,LocationLink,HouseRules,CancellationPolicy,ShowOnHomepage,IsVisible,SortOrder)
-                        VALUES (@title, @Description, @PropertyType, @Guestrooms, @Bedrooms, @Bathrooms,@Amenities,@LocationLink,@HouseRules,@CancellationPolicy,@ShowOnHomepage,@IsVisible,1);
+            var sql = @"INSERT INTO Properties (title, Description, PropertyType, Guestrooms, Bedrooms, Bathrooms,Amenities,LocationLink,HouseRules,CancellationPolicy,ShowOnHomepage,IsVisible,SortOrder,ShortLocation,NearestLocation,FurnishingStatus)
+                        VALUES (@title, @Description, @PropertyType, @Guestrooms, @Bedrooms, @Bathrooms,@Amenities,@LocationLink,@HouseRules,@CancellationPolicy,@ShowOnHomepage,@IsVisible,1,@ShortLocation,@NearestLocation,@FurnishingStatus);
                         SELECT LAST_INSERT_ID();";
             return await _dal.ExecuteScalarAsync<int>(sql, property);
         }
@@ -84,7 +84,8 @@ namespace Seventh_Heaven_LLC.Server.Repositories
                         SET title=@title, Description=@Description, PropertyType=@PropertyType,
                             Guestrooms=@Guestrooms, Bedrooms=@Bedrooms, Bathrooms=@Bathrooms,
                             Amenities=@Amenities, LocationLink=@LocationLink, HouseRules=@HouseRules,
-                            CancellationPolicy=@CancellationPolicy, IsVisible=@IsVisible, ShowOnHomepage = @ShowOnHomepage
+                            CancellationPolicy=@CancellationPolicy, IsVisible=@IsVisible, ShowOnHomepage = @ShowOnHomepage,
+                            ShortLocation=@ShortLocation, NearestLocation=@NearestLocation, FurnishingStatus=@FurnishingStatus
                         WHERE Id=@Id";
             var rows = await _dal.ExecuteAsync(sql, property);
             return rows > 0;

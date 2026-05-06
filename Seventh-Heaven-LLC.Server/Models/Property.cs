@@ -11,11 +11,14 @@ namespace Seventh_Heaven_LLC.Server.Models
         public string? PropertyType { get; set; }
 
         public int Guestrooms { get; set; } = 1;
-        public int Bedrooms { get; set; } = 1;
+        public string? Bedrooms { get; set; } 
         public int Bathrooms { get; set; } = 1;
 
         public string? Amenities { get; set; } // stored as comma-separated or JSON
         public string? LocationLink { get; set; }
+        public string? ShortLocation { get; set; }
+        public string? NearestLocation { get; set; }
+        public string? FurnishingStatus { get; set; }
         public string? HouseRules { get; set; }
         public string? CancellationPolicy { get; set; }
 

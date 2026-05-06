@@ -123,10 +123,10 @@ export default function ViewProperty() {
         //      />
         //    ),
         //},
-        {
-            title: "SORT ORDER",
-            data: "sortOrder",
-        },
+        //{
+        //    title: "SORT ORDER",
+        //    data: "sortOrder",
+        //},
         {
             title: "ACTION",
             data: null,

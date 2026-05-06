@@ -37,7 +37,7 @@ const AdminRoute = ({ children }) => {
         localStorage.getItem("powerAdminToken") ||
         sessionStorage.getItem("powerAdminToken");
 
-    return isAdminTokenValid(token) ? children : <Navigate to="/poweradmin/signin" replace />;
+    return isAdminTokenValid(token) ? children : <Navigate to="/poweradmin" replace />;
 };
 
 export default AdminRoute;

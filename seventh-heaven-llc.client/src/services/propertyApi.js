@@ -31,7 +31,7 @@ const slugify = (text = "") =>
 //    if (/^https?:\/\//i.test(url)) return url;
 //    return url.startsWith("/") ? url : `/${url}`;
 //};
-const BACKEND_BASE_URL = "https://localhost:7176";
+const BACKEND_BASE_URL = "https://www.seventh-heaven.ae";
 
 const normalizeImageUrl = (url) => {
     if (!url) return null;
@@ -56,12 +56,16 @@ export const mapPropertyToUi = (property) => {
     const type = getField(property, "propertyType", "PropertyType") || "Apartment";
     const descriptionRaw = getField(property, "description", "Description") || "";
     const description = toArray(descriptionRaw);
+    const furnishingStatusRaw = getField(property, "furnishingStatus", "FurnishingStatus") || "";
+    const furnishingStatus = toArray(furnishingStatusRaw);
     const amenitiesRaw = getField(property, "amenities", "Amenities");
     const houseRulesRaw = getField(property, "houseRules", "HouseRules");
     const cancellationRaw = getField(property, "cancellationPolicy", "CancellationPolicy");
     const location = getField(property, "locationLink", "LocationLink") || "Dubai";
+    const shortLocation = getField(property, "shortLocation", "ShortLocation") || "";
+    const bedrooms = getField(property, "bedrooms", "Bedrooms") ?? null;
     const imagesRaw = getField(property, "images", "Images");
-    
+
 
     const images = Array.isArray(imagesRaw)
         ? imagesRaw
@@ -102,8 +106,10 @@ export const mapPropertyToUi = (property) => {
         slug,
         location,
         nearestLocation: location,
+        furnishingStatus,
         price: "Price on request",
         type,
+        propertyType: type,
         imagePng,
         images: images.length > 0 ? images : [fallbackImage],
         amenities: toArray(amenitiesRaw).map((name) => ({
@@ -113,6 +119,8 @@ export const mapPropertyToUi = (property) => {
         description: description.length > 0 ? description : ["Property details available on request."],
         houseRules: toArray(houseRulesRaw),
         cancellationPolicy: toArray(cancellationRaw),
+        shortLocation,
+        bedrooms,
         showOnHomepage: getField(property, "showOnHomepage", "ShowOnHomepage"),
         isVisible: getField(property, "isVisible", "IsVisible"),
     };

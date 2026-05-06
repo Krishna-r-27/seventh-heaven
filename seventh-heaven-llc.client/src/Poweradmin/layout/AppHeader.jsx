@@ -54,7 +54,7 @@ const AppHeader = ({ onMenuClick }) => {
         localStorage.removeItem("powerAdminUser");
         sessionStorage.removeItem("powerAdminToken");
         sessionStorage.removeItem("powerAdminUser");
-        navigate("/poweradmin/signin");   // FIX: was "/signin"
+        navigate("/poweradmin");   // FIX: was "/signin"
     };
 
     return (

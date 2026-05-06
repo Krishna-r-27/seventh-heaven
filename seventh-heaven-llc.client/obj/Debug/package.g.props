@@ -11,14 +11,17 @@
     <PackageJsonScriptsLint Condition="$(PackageJsonScriptsLint) == ''">eslint .</PackageJsonScriptsLint>
     <PackageJsonScriptsPreview Condition="$(PackageJsonScriptsPreview) == ''">vite preview</PackageJsonScriptsPreview>
     <PackageJsonDependenciesFancyappsUi Condition="$(PackageJsonDependenciesFancyappsUi) == ''">^6.1.13</PackageJsonDependenciesFancyappsUi>
+    <PackageJsonDependenciesAxios Condition="$(PackageJsonDependenciesAxios) == ''">^1.15.2</PackageJsonDependenciesAxios>
     <PackageJsonDependenciesDatatablesNet Condition="$(PackageJsonDependenciesDatatablesNet) == ''">^2.3.7</PackageJsonDependenciesDatatablesNet>
     <PackageJsonDependenciesDatatablesNetDt Condition="$(PackageJsonDependenciesDatatablesNetDt) == ''">^2.3.7</PackageJsonDependenciesDatatablesNetDt>
     <PackageJsonDependenciesDatatablesNetReact Condition="$(PackageJsonDependenciesDatatablesNetReact) == ''">^1.0.1</PackageJsonDependenciesDatatablesNetReact>
     <PackageJsonDependenciesFramerMotion Condition="$(PackageJsonDependenciesFramerMotion) == ''">^12.38.0</PackageJsonDependenciesFramerMotion>
+    <PackageJsonDependenciesLucideReact Condition="$(PackageJsonDependenciesLucideReact) == ''">^1.8.0</PackageJsonDependenciesLucideReact>
     <PackageJsonDependenciesReact Condition="$(PackageJsonDependenciesReact) == ''">^19.2.4</PackageJsonDependenciesReact>
     <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^19.2.4</PackageJsonDependenciesReactDom>
     <PackageJsonDependenciesReactIcons Condition="$(PackageJsonDependenciesReactIcons) == ''">^5.6.0</PackageJsonDependenciesReactIcons>
     <PackageJsonDependenciesReactRouterDom Condition="$(PackageJsonDependenciesReactRouterDom) == ''">^7.14.0</PackageJsonDependenciesReactRouterDom>
+    <PackageJsonDependenciesSonner Condition="$(PackageJsonDependenciesSonner) == ''">^2.0.7</PackageJsonDependenciesSonner>
     <PackageJsonDependenciesSwiper Condition="$(PackageJsonDependenciesSwiper) == ''">^12.1.3</PackageJsonDependenciesSwiper>
     <PackageJsonDevdependenciesEslintJs Condition="$(PackageJsonDevdependenciesEslintJs) == ''">^9.39.4</PackageJsonDevdependenciesEslintJs>
     <PackageJsonDevdependenciesTailwindcssVite Condition="$(PackageJsonDevdependenciesTailwindcssVite) == ''">^4.2.2</PackageJsonDevdependenciesTailwindcssVite>

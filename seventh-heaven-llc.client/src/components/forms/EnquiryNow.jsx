@@ -6,13 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 const propertyTypeOptions = [
     "Apartment",
-    "Villa",
-    "Studio",
-    "1 BHK",
-    "2 BHK",
-    "Commercial",
-    "Penthouse",
+    "Villa",    
     "Town Houses",
+    "Penthouse",
 ];
 
 const initialForm = {

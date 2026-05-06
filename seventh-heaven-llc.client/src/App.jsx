@@ -29,7 +29,8 @@ import PropertyListing from "./poweradmin/pages/PropertyListing/listing";
 import PropertyListingDetail from "./poweradmin/pages/PropertyListing/Details";
 import PropertyEnquiry from "./poweradmin/pages/PropertyEnquiry/View";
 import PropertyEnquiryDetail from "./poweradmin/pages/PropertyEnquiry/details";
-
+import Enquiry from "./Poweradmin/Pages/ContactUs/ViewEnquiry";
+import EnquiryDetail from "./Poweradmin/Pages/ContactUs/ViewDetails";
 
 function App() {
     return (
@@ -62,7 +63,7 @@ function App() {
                             path="/poweradmin"
                            
                         >
-                            <Route path="signin" element={<SignIn />} />
+                            <Route path="" element={<SignIn />} />
                             <Route path="forgot-password" element={<ForgotPassword />} />
                             <Route path="verify-otp" element={<OtpVerify />} />
                             <Route path="change-password" element={<AdminChangePassword />} />
@@ -72,6 +73,8 @@ function App() {
                                 <AdminAppLayout />
                             </ThemeProvider>}>
                                 <Route path="dashboard" element={<Dashboard />} />
+                                <Route path="enquiry" element={<Enquiry />} />
+                                <Route path="enquiry/detail/:id" element={<EnquiryDetail />} />
                                 <Route path="properties" element={<ViewProperty />} />
                                 <Route path="properties/add" element={<AddProperty />} />
                                 <Route path="properties/edit/:id" element={<AddProperty />} />

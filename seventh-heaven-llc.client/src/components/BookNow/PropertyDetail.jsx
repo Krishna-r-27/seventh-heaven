@@ -208,7 +208,10 @@ function PropertyDetail() {
                                     </p>
 
                                     <p>
-                                        <span className="font-semibold">Location:</span> <span className="text-theme">{property.location}</span>
+                                        <span className="font-semibold">Area / Location:</span> <span className="text-theme">{property.location}</span>
+                                    </p>
+                                    <p>
+                                        <span className="font-semibold">Furnishing Status:</span> <span className="text-theme">{property.furnishingStatus}</span>
                                     </p>
                                 </div>
 
@@ -250,6 +253,17 @@ function PropertyDetail() {
                             </div>
                         
 
+                            {/*<div>*/}
+                            {/*    {typeof property.description === "string" &&*/}
+                            {/*        property.description*/}
+                            {/*            .split(/\n+/)*/}
+                            {/*            .filter(para => para.trim() !== "")*/}
+                            {/*            .map((para, i) => (*/}
+                            {/*                <p key={i} className="text-theme leading-7 mb-2">*/}
+                            {/*                    {para.trim()}*/}
+                            {/*                </p>*/}
+                            {/*            ))}*/}
+                            {/*</div>*/}
                             <div>
                                 {property.description.map((para, i) => (
                                     <p key={i} className="text-theme leading-7 mb-2">
@@ -262,7 +276,7 @@ function PropertyDetail() {
 
                                 <div className="inline-block">
                                     <h2 className="text-xl md:text-2xl font-semibold text-theme">
-                                        Nearest Location
+                                        Near by Location
                                     </h2>
 
                                     <div className="mt-2">

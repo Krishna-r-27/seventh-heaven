@@ -65,8 +65,14 @@ function ContactForm() {
             nextValue = value.replace(/[^A-Za-z ]+/g, "");
         }
 
+        //if (name === "phone") {
+        //    nextValue = value.replace(/[^\d+ ]+/g, "");
+        //    nextValue = nextValue.replace(/\+/g, (match, offset) => (offset === 0 ? match : ""));
+        //}
+
         if (name === "phone") {
-            nextValue = value.replace(/[^\d+ ]+/g, "");
+            //nextValue = value.replace(/[^\d+ ]+/g, "");
+            nextValue = value.replace(/\D+/g, "").slice(0, 10);
             nextValue = nextValue.replace(/\+/g, (match, offset) => (offset === 0 ? match : ""));
         }
 
