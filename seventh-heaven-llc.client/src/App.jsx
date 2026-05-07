@@ -12,6 +12,7 @@ import ThankYou from "./pages/ThankYou";
 import ScrollToTop from "./components/Common/ScrollToTop";
 import ScrollToHash from "./components/Common/ScrollToHash";
 import PropertyDetail from "./components/BookNow/PropertyDetail";
+import UnderConstruction from "./components/UnderConstruction";
 import './App.css';
 import { ThemeProvider } from "./poweradmin/context/ThemeContext";
 import AdminRoute from "./routes/AdminRoute";
@@ -44,8 +45,12 @@ function App() {
                     <Routes>
 
                         {/* Public Website */}
+                        <Route>
+                            <Route path="/" element={<UnderConstruction />} />
+                        </Route>
+
                         <Route element={<AppLayout />}>
-                            <Route path="/" element={<Home />} />
+                            <Route path="/home" element={<Home />} />
                             <Route path="/about-us" element={<AboutUs />} />
                             <Route path="/contact-us" element={<ContactUs />} />
                             <Route path="/book-now" element={<BookNow />} />
@@ -55,7 +60,6 @@ function App() {
                             <Route path="/faq" element={<FAQ />} />
                             <Route path="/property/:slug" element={<PropertyDetail />} />
                             <Route path="*" element={<Error />} />
-
                         </Route>
                        
                         {/* Admin Panel */}
