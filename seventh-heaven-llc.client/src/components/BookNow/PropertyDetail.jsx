@@ -253,31 +253,30 @@ function PropertyDetail() {
                             </div>
 
 
-                            {/*<div>*/}
-                            {/*    {typeof property.description === "string" &&*/}
-                            {/*        property.description*/}
-                            {/*            .split(/\n+/)*/}
-                            {/*            .filter(para => para.trim() !== "")*/}
-                            {/*            .map((para, i) => (*/}
-                            {/*                <p key={i} className="text-theme leading-7 mb-2">*/}
-                            {/*                    {para.trim()}*/}
-                            {/*                </p>*/}
-                            {/*            ))}*/}
-                            {/*</div>*/}
-                            <div className="my-8">
+                     
+                            <div className="mt-8 mb-4">
                                 <p className="text-theme text-md font-semibold mt-4">
                                     Bedrooms : {property.bedrooms}
                                 </p>
                             </div>
 
+                            {/*<div>*/}
+                            {/*    {property.description.map((para, i) => (*/}
+                            {/*        <p key={i} className="text-theme leading-7 mb-2">*/}
+                            {/*            {para}*/}
+                            {/*        </p>*/}
+                            {/*    ))}*/}
+                            {/*</div>*/}
+
                             <div>
-                                {property.description.map((para, i) => (
-                                    <p key={i} className="text-theme leading-7 mb-2">
-                                        {para}
-                                    </p>
-                                ))}
+                                <p className="text-theme leading-7 whitespace-pre-line">
+                                    {Array.isArray(property.description)
+                                        ? property.description.join(" ")
+                                        : property.description}
+                                </p>
                             </div>
 
+                           
                             <div className="my-8">
 
                                 <div className="inline-block">
