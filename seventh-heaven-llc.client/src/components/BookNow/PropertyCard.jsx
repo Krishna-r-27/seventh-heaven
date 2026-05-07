@@ -21,9 +21,9 @@ function PropertyCard({ property }) {
                     className="w-full h-[220px] object-cover rounded-lg transition-transform duration-700 ease-in-out group-hover:scale-115"
                 />
 
-                <div className="absolute top-3 right-3 bg-theme/60 p-2 rounded">
-                    <img src={heartIcon} alt="heart" className="w-5 h-5" />
-                </div>
+                {/*<div className="absolute top-3 right-3 bg-theme/60 p-2 rounded">*/}
+                {/*    <img src={heartIcon} alt="heart" className="w-5 h-5" />*/}
+                {/*</div>*/}
 
                 <div className="absolute bottom-3 right-3 bg-white px-3 py-1 text-md rounded flex items-center gap-2 shadow">
                     <img src={bedIcon} className="w-5 h-5" />
