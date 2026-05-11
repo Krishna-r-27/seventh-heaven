@@ -309,11 +309,15 @@ function PropertyDetail() {
 
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                                     {property.houseRules.map((rule, i) => (
-                                        <div key={i} className="flex items-center gap-2">
+                                        <div key={i} className="flex items-start gap-2">
 
-                                            <picture>
+                                            <picture className="flex-shrink-0">
                                                 <source srcSet={arrowWebp} type="image/webp" />
-                                                <img src={arrowPng} alt="arrow" className="w-4 h-4" />
+                                                <img
+                                                    src={arrowPng}
+                                                    alt="arrow"
+                                                    className="w-4 h-4 mt-1 flex-shrink-0"
+                                                />
                                             </picture>
 
                                             <p className="text-theme font-semibold">{rule}</p>
@@ -338,9 +342,13 @@ function PropertyDetail() {
                                     {property.cancellationPolicy.map((item, i) => (
                                         <div key={i} className="flex items-start gap-2">
 
-                                            <picture>
+                                            <picture className="flex-shrink-0">
                                                 <source srcSet={arrowWebp} type="image/webp" />
-                                                <img src={arrowPng} alt="arrow" className="w-4 h-4 mt-1" />
+                                                <img
+                                                    src={arrowPng}
+                                                    alt="arrow"
+                                                    className="w-4 h-4 mt-1 flex-shrink-0"
+                                                />
                                             </picture>
 
                                             <p className="text-theme">
