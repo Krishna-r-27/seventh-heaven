@@ -110,7 +110,7 @@ const VisionMission = () => {
                                 }}
                             />
 
-                            <ul className="list-disc pl-5 space-y-3 text-theme text-md marker:text-[#C5A553]"> {data.mission.points.map((point, index) => (<li key={index}> {point} </li>))} </ul>
+                            <ul className="list-disc pl-5 space-y-3 text-theme text-md marker:text-[#C5A553]"> {data.mission.points.map((point, index) => (<li className="leading-relaxed" key={index}> {point} </li>))} </ul>
                         </motion.div>
 
                     </div>
@@ -123,7 +123,7 @@ const VisionMission = () => {
                             <img
                                 src={data.image.png}
                                 alt="VisionMission"
-                                className="w-full  h-[400px] sm:h-[450px] md:h-[500px]  lg:h-[600px]  object-cover rounded-2xl"
+                                className="w-full  h-[300px] sm:h-[350px] md:h-[400px]  lg:h-[500px]  object-cover rounded-2xl"
                             />
                         </picture>
                     </div>
