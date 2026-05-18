@@ -75,7 +75,7 @@ const Header = () => {
                                         end={path === "/"}
                                         className={({ isActive }) =>
                                             `font-medium text-body-sm whitespace-nowrap relative pb-1 transition-colors ${isActive
-                                                ? "text-gold after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[2px] after:bg-gold"
+                                                ? "text-gold font-semibold after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[2px] after:bg-gold"
                                                 : "text-theme hover:text-gold"
                                             }`
                                         }

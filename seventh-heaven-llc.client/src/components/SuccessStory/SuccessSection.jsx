@@ -1,6 +1,10 @@
 ﻿import React from "react";
 import data from "../../data/AboutUs/successData";
 import { motion, useAnimation } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay } from "swiper/modules";
+import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const SuccessSection = () => {
     const controls = useAnimation();
@@ -18,7 +22,7 @@ const SuccessSection = () => {
                             <img
                                 src={data.image.png}
                                 alt="Success"
-                                className="w-full h-[400px] sm:h-[450px] md:h-[500px]  lg:h-full object-cover rounded-2xl"
+                                className="w-full h-[400px] sm:h-[450px] md:h-[500px]  lg:h-[400px] object-cover rounded-2xl"
                             />
                         </picture>
                     </div>
@@ -87,36 +91,76 @@ const SuccessSection = () => {
                             {data.subtitle}
                         </p>
 
-                        {/* STATS */}
-                        <div className="space-y-5 flex flex-col items-start w-full">
-                            {data.stats.map((item, index) => (
-                                <React.Fragment key={index}>
+                        <div className="space-y-6 flex flex-col items-start max-w-[650px]">
 
-                                    <div className="flex items-center gap-4 md:gap-6 w-full justify-start">
+                            <Swiper
+                                modules={[Autoplay]}
+                                slidesPerView={1}
+                                spaceBetween={30}
+                                loop={true}
+                                autoplay={{
+                                    delay: 4000,
+                                    disableOnInteraction: false,
+                                }}
+                                className="w-full"
+                            >
 
-                                        {/* ICON */}
-                                        <div className="bg-gold p-3 md:p-4 rounded-sm flex-shrink-0">
-                                            <img src={item.icon} alt="" className="w-5 h-5 md:w-6 md:h-6" />
-                                        </div>
+                                {data.reviews.map((item, index) => (
 
-                                        {/* TEXT */}
-                                        <div>
-                                            <h3 className="text-xl md:text-2xl font-semibold text-blue">
-                                                {item.value}
-                                            </h3>
-                                            <p className="text-theme text-md">
-                                                {item.label}
+                                    <SwiperSlide key={index}>
+
+                                        <div className="rounded-2xl border border-gold p-6 inline-block">
+
+                                            {/* QUOTE IMAGE */}
+                                            <img
+                                                src={data.quoteImg}
+                                                alt="Quote"
+                                                className="w-auto mb-4 lg:mb-5"
+                                            />
+
+                                            {/* REVIEW TEXT */}
+                                            <p className="text-theme font-medium italic text-[16px] leading-[30px]">
+                                                {item.review}
                                             </p>
+
+                                            {/* NAME SECTION */}
+                                            <div className="mt-5 flex items-center gap-3">
+
+                                                {/* FIRST LETTER BOX */}
+                                                <div className="w-10 h-10 rounded-full bg-[#C5A553] text-white flex items-center justify-center text-lg font-semibold uppercase">
+                                                    {item.name.charAt(0)}
+                                                </div>
+
+                                                {/* FULL NAME */}
+                                                <h4 className="font-semibold text-theme text-md">
+                                                    {item.name}
+                                                </h4>
+
+                                            </div>
+
                                         </div>
 
-                                    </div>
+                                    </SwiperSlide>
 
-                                    {index !== data.stats.length - 1 && (
-                                        <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#797979] to-transparent"></div>
-                                    )}
+                                ))}
 
-                                </React.Fragment>
-                            ))}
+                            </Swiper>
+
+                            {/* ICONS */}
+                            <div className="w-full flex items-center justify-center gap-3">
+
+                                {/* PREV */}
+                                <button className="custom-prev w-8 h-8 rounded-full border border-[#C5A553] text-[#C5A553] flex items-center justify-center hover:bg-[#C5A553] hover:text-white transition-all duration-300">
+                                    <FiChevronLeft size={18} />
+                                </button>
+
+                                {/* NEXT */}
+                                <button className="custom-next w-8 h-8 rounded-full border border-[#C5A553] text-[#C5A553] flex items-center justify-center hover:bg-[#C5A553] hover:text-white transition-all duration-300">
+                                    <FiChevronRight size={18} />
+                                </button>
+
+                            </div>
+
                         </div>
 
                     </div>

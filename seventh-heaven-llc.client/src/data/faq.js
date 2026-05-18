@@ -1,7 +1,7 @@
 export const faqs = [
     {
         question: "What services does Seventh-Heaven provide?",
-        answer: "SEVENTH-HEAVEN Holiday Homes is a Dubai-based holiday home management company established in May 2022. We provide high-quality holiday homes and serviced apartments with full management including reservations, guest communication, housekeeping, and maintenance."
+        answer: "Seventh Heaven Holiday Homes is a Dubai-based holiday homes company established in May 2022. We provide high-quality holiday homes and serviced apartments with full management including reservations, guest communication, housekeeping, and maintenance."
     },
     {
         question: "Do you manage properties for owners?",
