@@ -1,33 +1,44 @@
-import projectIcon from "../../assets/img/project.png";
-import houseIcon from "../../assets/img/house.png";
-import clientIcon from "../../assets/img/client.png";
+﻿import successImgPng from "../../assets/img/deyafa-apartments.png";
+import successImgWebp from "../../assets/img/deyafa-apartments.webp";
 
-import successImgPng from "../../assets/img/success.png";
-import successImgWebp from "../../assets/img/success.webp";
+import quoteImg from "../../assets/img/review-quotes.png";
 
 const successData = {
-    title: "Our Awesome ",
-    highlight: "Success Story",
-    subtitle:
-        "Numbers that reflect our unwavering commitment to excellence and client satisfaction.",
+    title: "Customer",
+    highlight: "Reviews",
 
-    stats: [
+    subtitle:
+        "Hear what our happy clients say about their luxury holiday home experience.",
+
+    reviews: [
         {
-            value: "20.5K",
-            label: "Featured Projects",
-            icon: projectIcon,
+            name: "James Anderson",
+            review:
+                "Amazing luxury stay experience with excellent support and hospitality. The apartment was spotless, beautifully designed, and located in a perfect area for exploring the city.",
         },
         {
-            value: "100.5k",
-            label: "Luxury Houses",
-            icon: houseIcon,
+            name: "Sophia Miller",
+            review:
+                "Professional team and smooth property booking process throughout. From check-in to check-out, everything was handled efficiently with great attention to detail and customer comfort.",
         },
         {
-            value: "150.5k",
-            label: "Satisfied Clients",
-            icon: clientIcon,
+            name: "Daniel Clark",
+            review:
+                "Beautiful apartments with premium service and quick assistance. The staff was always available, and the overall stay exceeded our expectations in every possible way.",
+        },
+        {
+            name: "Olivia Brown",
+            review:
+                "Outstanding holiday home experience with luxurious interiors and excellent amenities. The property felt safe, comfortable, and ideal for a relaxing family vacation.",
+        },
+        {
+            name: "Michael Carter",
+            review:
+                "Highly recommended for anyone looking for premium holiday rentals. The booking process was simple, and the hospitality team ensured we had everything we needed during our stay.",
         },
     ],
+
+    quoteImg,
 
     image: {
         png: successImgPng,

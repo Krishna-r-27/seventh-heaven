@@ -8,18 +8,16 @@ const visionMissionData = {
         title: "Vision",
         icon: visionIcon,
         description:
-            "To become one of the most trusted and leading holiday home management companies in Dubai, delivering exceptional accommodation experiences while maximizing value for property owners and creating memorable stays for our guests."
+            "Our vision is to become one of Dubai's most trusted and leading holiday homes companies by delivering exceptional accommodation experiences, maximizing value for property owners, and creating memorable stays for every guest."
     },
 
     mission: {
         title: "Mission",
         icon: missionIcon,
         points: [
-            "To provide high-quality, fully furnished, and well-maintained holiday homes that ensure comfort and satisfaction for every guest. ",
-            "To deliver outstanding customer service with professionalism, reliability, and attention to detail.",
-            "To help property owners maximize their rental income through efficient property management and strategic listing optimization.",
-            "To maintain the highest standards in hospitality, cleanliness, and guest experience.",
-            "To build long-term relationships with guests and property owners through trust, transparency, and consistent service excellence."
+            "We aim to provide high-quality, fully furnished, and well-maintained holiday homes that ensure comfort and satisfaction for every guest. ",
+            "We are committed to delivering outstanding customer service with professionalism, reliability, and attention to detail.",
+            "Our goal is to help property owners maximize rental income through efficient property management and strategic listing optimization.",
         ]
     },
     image: {

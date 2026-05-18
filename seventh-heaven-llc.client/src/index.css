@@ -12,6 +12,10 @@
         @apply font-primary;
     }
 
+    p {
+        @apply text-[16px] leading-[30px];
+    }
+
     :root {
         /*Font-size*/
         --font-16: 16px;

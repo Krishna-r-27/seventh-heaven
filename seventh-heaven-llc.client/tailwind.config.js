@@ -59,9 +59,7 @@ export default {
 
             // ✅ Fonts
             fontFamily: {
-                primary: ["Montserrat", "sans-serif"],
-                montserrat: ["Montserrat", "sans-serif"],
-                manrope: ["Manrope", "sans-serif"],
+                primary: ['Lato', 'sans-serif'],
             },
 
             // ✅ Border radius (extend, don’t override)

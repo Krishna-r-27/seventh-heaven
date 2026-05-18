@@ -20,7 +20,7 @@ function SiteMap() {
                   </h2>
 
                   <p className="text-theme leading-relaxed mb-3">
-                      SEVENTH-HEAVEN Holiday Homes is a Dubai-based holiday home management
+                      Seventh Heaven Holiday Homes is a Dubai-based holiday home management
                       company offering premium holiday homes and serviced apartments.
                       We focus on delivering comfort, convenience, and a luxurious stay
                       experience for travelers visiting Dubai. Whether for short stays or
@@ -37,7 +37,7 @@ function SiteMap() {
                   </h2>
 
                   <p className="text-theme leading-relaxed mb-3">
-                      SEVENTH-HEAVEN Holiday Homes was established in May 2022 by three
+                      Seventh Heaven Holiday Homes was established in May 2022 by three
                       professionals with over a decade of experience in the real estate industry.
                       Based in Dubai, we specialize in managing high-quality holiday homes and
                       serviced apartments that offer a premium living experience.
@@ -69,7 +69,7 @@ function SiteMap() {
                   </h2>
 
                   <p className="text-theme leading-relaxed mb-3 lg:mb-5">
-                      Get in touch with SEVENTH-HEAVEN Holiday Homes for bookings, inquiries,
+                      Get in touch with Seventh Heaven Holiday Homes for bookings, inquiries,
                       or property management services. Our team is always ready to assist you
                       in finding the perfect holiday home in Dubai or helping you list your
                       property with us.
@@ -90,7 +90,7 @@ function SiteMap() {
 
                           <div className="flex flex-col">
                               <h3 className="text-gold font-semibold text-lg mb-1">
-                                  SEVENTH-HEAVEN Holiday Homes L.L.C
+                                  Seventh Heaven Holiday Homes L.L.C
                               </h3>
                               <h4 className="text-blue font-semibold text-lg mb-1">
                                   Email Us
