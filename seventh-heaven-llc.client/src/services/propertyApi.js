@@ -63,6 +63,7 @@ export const mapPropertyToUi = (property) => {
     const cancellationRaw = getField(property, "cancellationPolicy", "CancellationPolicy");
     const location = getField(property, "locationLink", "LocationLink") || "Dubai";
     const shortLocation = getField(property, "shortLocation", "ShortLocation") || "";
+    const nearestLocation = getField(property, "nearestLocation", "NearestLocation") || "";
     const bedrooms = getField(property, "bedrooms", "Bedrooms") ?? null;
     const imagesRaw = getField(property, "images", "Images");
 
@@ -105,7 +106,7 @@ export const mapPropertyToUi = (property) => {
         title,
         slug,
         location,
-        nearestLocation: location,
+        nearestLocation: nearestLocation,
         furnishingStatus,
         price: "Price on request",
         type,
