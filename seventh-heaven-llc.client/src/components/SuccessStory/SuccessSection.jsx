@@ -3,7 +3,7 @@ import data from "../../data/AboutUs/successData";
 import { motion, useAnimation } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const SuccessSection = () => {
@@ -94,13 +94,17 @@ const SuccessSection = () => {
                         <div className="space-y-6 flex flex-col items-start max-w-[650px]">
 
                             <Swiper
-                                modules={[Autoplay]}
+                                modules={[Autoplay, Navigation]}
                                 slidesPerView={1}
                                 spaceBetween={30}
                                 loop={true}
                                 autoplay={{
                                     delay: 4000,
                                     disableOnInteraction: false,
+                                }}
+                                navigation={{
+                                    prevEl: ".custom-prev",
+                                    nextEl: ".custom-next",
                                 }}
                                 className="w-full"
                             >
