@@ -168,12 +168,12 @@ const Footer = () => {
                     <p className="">
                         Website Design by{" "}
                         <a
-                            href="https://www.dotsandcoms.in/"
+                            href="https://www.dotsandcoms.com/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-gold transition"
                         >
-                            D&C
+                            Dots and Coms
                         </a>
                     </p>
 
