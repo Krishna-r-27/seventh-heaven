@@ -295,7 +295,7 @@ function PropertyDetail() {
                                     </div>
                                 </div>
 
-                                <p className="text-theme text-md font-semibold mt-4">
+                                <p className="text-theme text-md mt-4">
                                     {property.nearestLocation}
                                 </p>
                             </div>
@@ -330,7 +330,7 @@ function PropertyDetail() {
                                                             />
                                                         </picture>
 
-                                                        <p className="text-theme font-semibold">{rule}</p>
+                                                        <p className="text-theme">{rule}</p>
                                                     </div>
                                                 ))}
                                         </div>
