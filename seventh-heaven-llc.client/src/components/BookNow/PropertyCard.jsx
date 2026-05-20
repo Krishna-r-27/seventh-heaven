@@ -33,14 +33,20 @@ function PropertyCard({ property }) {
 
             <div className="mt-4 px-2">
                 <div className="flex items-center justify-between">
-                    <div className="flex-1 pr-3">
+                    <div className="flex-1 pr-3 min-w-0">
                         <h3 className="text-primary font-semibold text-lg md:text-xl leading-7">
                             {property.title}
                         </h3>
 
                         <div className="flex items-center gap-1.5 text-gray text-md mt-2">
-                            <img src={locationIcon} className="w-5 h-5" />
-                            <span className="font-medium text-theme">{property.location}</span>
+                            <img
+                                src={locationIcon}
+                                className="w-5 h-5 flex-shrink-0"
+                            />
+
+                            <span className="font-medium text-theme truncate">
+                                {property.location}
+                            </span>
                         </div>
                     </div>
 
