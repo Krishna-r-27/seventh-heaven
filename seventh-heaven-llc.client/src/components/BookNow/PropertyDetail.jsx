@@ -208,11 +208,16 @@ function PropertyDetail() {
                                     </p>
 
                                     <p>
-                                        <span className="font-semibold">Area / Location:</span> <span className="text-theme">{property.location}</span>
+                                        <span className="font-semibold">Area / Location:</span> <span className="text-theme">{property.shortLocation}</span>
                                     </p>
-                                    <p>
-                                        <span className="font-semibold">Furnishing Status:</span> <span className="text-theme">{property.furnishingStatus}</span>
-                                    </p>
+                                    {String(property?.furnishingStatus || "").trim() !== "" && (
+                                        <p>
+                                            <span className="font-semibold">Furnishing Status:</span>{" "}
+                                            <span className="text-theme">
+                                                {property.furnishingStatus}
+                                            </span>
+                                        </p>
+                                    )}
                                 </div>
 
                                 {/* Title */}
@@ -228,20 +233,20 @@ function PropertyDetail() {
                                 </div>
 
                                 {/* Amenities Row */}
-                                <div className="flex flex-wrap items-center gap-x-5 gap-y-2 lg:gap-x-10 lg:gap-y-2">
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-4 gap-y-3 gap-x-6">
 
                                     {property.amenities.map((item, i) => (
-                                        <div key={i} className="flex items-center gap-2 mt-4">
+                                        <div key={i} className="flex items-start gap-2">
 
-                                            {/* Icon */}
+                                            {/* Bullet */}
                                             <img
                                                 src={item.icon}
                                                 alt={item.name}
-                                                className="w-3 h-3"
+                                                className="w-2.5 h-2.5 mt-2 flex-shrink-0 custom-padding"
                                             />
 
-                                            {/* Name */}
-                                            <span className="text-theme font-medium">
+                                            {/* Text */}
+                                            <span className="text-theme font-medium leading-normal">
                                                 {item.name}
                                             </span>
 
@@ -295,78 +300,96 @@ function PropertyDetail() {
                                 </p>
                             </div>
 
-                            <div className="mb-8">
-                                <div className="inline-block">
-                                    <h2 className="text-xl md:text-2xl font-semibold text-theme">
-                                        House Rules
-                                    </h2>
+                            {Array.isArray(property?.houseRules) &&
+                                property.houseRules.filter(rule => String(rule || "").trim() !== "").length > 0 && (
 
-                                    <div className="mt-2">
-                                        <div className="w-[62%] h-[1px] bg-gold"></div>
-                                        <div className="w-[35%] h-[1px] bg-gold mt-1"></div>
-                                    </div>
-                                </div>
+                                    <div className="mb-8">
+                                        <div className="inline-block">
+                                            <h2 className="text-xl md:text-2xl font-semibold text-theme">
+                                                House Rules
+                                            </h2>
 
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                                    {property.houseRules.map((rule, i) => (
-                                        <div key={i} className="flex items-start gap-2">
-
-                                            <picture className="flex-shrink-0">
-                                                <source srcSet={arrowWebp} type="image/webp" />
-                                                <img
-                                                    src={arrowPng}
-                                                    alt="arrow"
-                                                    className="w-4 h-4 mt-1 flex-shrink-0"
-                                                />
-                                            </picture>
-
-                                            <p className="text-theme font-semibold">{rule}</p>
+                                            <div className="mt-2">
+                                                <div className="w-[62%] h-[1px] bg-gold"></div>
+                                                <div className="w-[35%] h-[1px] bg-gold mt-1"></div>
+                                            </div>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
 
-                            <div className="mb-8">
-                                <div className="inline-block">
-                                    <h2 className="text-xl md:text-2xl font-semibold text-theme">
-                                        Cancellation Policy
-                                    </h2>
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                                            {property.houseRules
+                                                .filter(rule => String(rule || "").trim() !== "")
+                                                .map((rule, i) => (
+                                                    <div key={i} className="flex items-start gap-2">
 
-                                    <div className="mt-2">
-                                        <div className="w-[62%] h-[1px] bg-gold"></div>
-                                        <div className="w-[35%] h-[1px] bg-gold mt-1"></div>
-                                    </div>
-                                </div>
+                                                        <picture className="flex-shrink-0">
+                                                            <source srcSet={arrowWebp} type="image/webp" />
+                                                            <img
+                                                                src={arrowPng}
+                                                                alt="arrow"
+                                                                className="w-4 h-4 mt-1 flex-shrink-0"
+                                                            />
+                                                        </picture>
 
-                                <div className="space-y-3 mt-4">
-                                    {property.cancellationPolicy.map((item, i) => (
-                                        <div key={i} className="flex items-start gap-2">
-
-                                            <picture className="flex-shrink-0">
-                                                <source srcSet={arrowWebp} type="image/webp" />
-                                                <img
-                                                    src={arrowPng}
-                                                    alt="arrow"
-                                                    className="w-4 h-4 mt-1 flex-shrink-0"
-                                                />
-                                            </picture>
-
-                                            <p className="text-theme">
-                                                {item.split(/(\d+%|\d+\s+days)/g).map((part, i) => {
-                                                    if (/^\d+%$/.test(part) || /^\d+\s+days$/.test(part)) {
-                                                        return (
-                                                            <span key={i} className="font-semibold">
-                                                                {part}
-                                                            </span>
-                                                        );
-                                                    }
-                                                    return <span key={i}>{part}</span>;
-                                                })}
-                                            </p>
+                                                        <p className="text-theme font-semibold">{rule}</p>
+                                                    </div>
+                                                ))}
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
+                                    </div>
+                                )}
+
+                            {Array.isArray(property?.cancellationPolicy) &&
+                                property.cancellationPolicy.filter(item => String(item || "").trim() !== "").length > 0 && (
+
+                                    <div className="mb-8">
+                                        <div className="inline-block">
+                                            <h2 className="text-xl md:text-2xl font-semibold text-theme">
+                                                Cancellation Policy
+                                            </h2>
+
+                                            <div className="mt-2">
+                                                <div className="w-[62%] h-[1px] bg-gold"></div>
+                                                <div className="w-[35%] h-[1px] bg-gold mt-1"></div>
+                                            </div>
+                                        </div>
+
+                                        <div className="space-y-3 mt-4">
+                                            {property.cancellationPolicy
+                                                .filter(item => String(item || "").trim() !== "")
+                                                .map((item, i) => (
+                                                    <div key={i} className="flex items-start gap-2">
+
+                                                        <picture className="flex-shrink-0">
+                                                            <source srcSet={arrowWebp} type="image/webp" />
+                                                            <img
+                                                                src={arrowPng}
+                                                                alt="arrow"
+                                                                className="w-4 h-4 mt-1 flex-shrink-0"
+                                                            />
+                                                        </picture>
+
+                                                        <p className="text-theme">
+                                                            {String(item)
+                                                                .split(/(\d+%|\d+\s+days)/g)
+                                                                .map((part, i) => {
+                                                                    if (
+                                                                        /^\d+%$/.test(part) ||
+                                                                        /^\d+\s+days$/.test(part)
+                                                                    ) {
+                                                                        return (
+                                                                            <span key={i} className="font-semibold">
+                                                                                {part}
+                                                                            </span>
+                                                                        );
+                                                                    }
+
+                                                                    return <span key={i}>{part}</span>;
+                                                                })}
+                                                        </p>
+                                                    </div>
+                                                ))}
+                                        </div>
+                                    </div>
+                                )}
                             <div className="rounded-md overflow-hidden mb-6">
                                 <a
                                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(property.location)}`}

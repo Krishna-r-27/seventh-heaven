@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useRef } from "react";
 import PropertyCard from "./PropertyCard";
 import prevPng from "@img/previous-icon.png";
 import nextPng from "@img/next-icon.png";
@@ -10,6 +10,10 @@ function BookNow() {
     const controls = useAnimation();
     const location = useLocation();
     const selectedType = location.state?.propertyType;
+    const dropdownRefs = useRef({});
+   
+
+    const [openDropdown, setOpenDropdown] = useState(null);
 
     const [properties, setProperties] = useState([]);
     const [selectedPropertyType, setSelectedPropertyType] = useState(selectedType || "");
@@ -51,18 +55,51 @@ function BookNow() {
             .filter((loc) => loc && !seen.has(loc) && seen.add(loc));
     }, [properties, selectedPropertyType]);
 
+    //const bedroomOptions = useMemo(() => {
+    //    const seen = new Set();
+    //    const source = selectedPropertyType
+    //        ? properties.filter((item) => {
+    //            const selected = normalizeFilterValue(selectedPropertyType);
+    //            return normalizeFilterValue(item.propertyType || item.type) === selected;
+    //        })
+    //        : properties;
+    //    return source
+    //        .map((item) => item.bedrooms)
+    //        .filter((b) => b !== null && b !== undefined && !seen.has(b) && seen.add(b))
+    //        .sort((a, b) => Number(a) - Number(b));
+    //}, [properties, selectedPropertyType]);
+
     const bedroomOptions = useMemo(() => {
         const seen = new Set();
+
         const source = selectedPropertyType
             ? properties.filter((item) => {
                 const selected = normalizeFilterValue(selectedPropertyType);
-                return normalizeFilterValue(item.propertyType || item.type) === selected;
+
+                return (
+                    normalizeFilterValue(item.propertyType || item.type) ===
+                    selected
+                );
             })
             : properties;
+
         return source
             .map((item) => item.bedrooms)
-            .filter((b) => b !== null && b !== undefined && !seen.has(b) && seen.add(b))
-            .sort((a, b) => Number(a) - Number(b));
+            .filter(
+                (b) =>
+                    b !== null &&
+                    b !== undefined &&
+                    !seen.has(b) &&
+                    seen.add(b)
+            )
+            .sort((a, b) => {
+                // Keep Studio first
+                if (a === "Studio") return -1;
+                if (b === "Studio") return 1;
+
+                // Sort 1BR, 2BR, 3BR, 4BR+ numerically
+                return parseInt(a) - parseInt(b);
+            });
     }, [properties, selectedPropertyType]);
 
     const filteredProperties = useMemo(() => {
@@ -83,6 +120,27 @@ function BookNow() {
         (currentPage - 1) * itemsPerPage,
         currentPage * itemsPerPage
     );
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const isInsideAnyDropdown = Object.values(
+                dropdownRefs.current
+            ).some((ref) => ref?.contains(event.target));
+
+            if (!isInsideAnyDropdown) {
+                setOpenDropdown(null);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener(
+                "mousedown",
+                handleClickOutside
+            );
+        };
+    }, []);
 
     useEffect(() => {
         const loadProperties = async () => {
@@ -158,78 +216,198 @@ function BookNow() {
                     <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
 
                         {/* Property Type */}
-                        <div className="relative w-full sm:w-auto">
-                            <select
-                                value={selectedPropertyType}
-                                onChange={(event) => {
-                                    setSelectedPropertyType(event.target.value);
-                                    setSelectedLocation("");
-                                    setSelectedBedrooms("");
-                                    setCurrentPage(1);
-                                }}
-                                className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md w-full bg-white"
+                        <div ref={(el) => (dropdownRefs.current.property = el)} className="relative w-full sm:w-[180px]">
+                            <button
+                                onClick={() =>
+                                    setOpenDropdown(
+                                        openDropdown === "property" ? null : "property"
+                                    )
+                                }
+                                className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md w-full bg-white text-left relative"
                             >
-                                <option value="">Property Type</option>
-                                {propertyTypeOptions.map((type) => (
-                                    <option key={type} value={type}>{type}</option>
-                                ))}
-                            </select>
+                                {selectedPropertyType || "Property Type"}
 
-                            <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
-                                <svg className="w-4 h-4 text-theme" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </div>
+                                <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                                    <svg
+                                        className="w-4 h-4 text-theme"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </div>
+                            </button>
+
+                            {openDropdown === "property" && (
+                                <ul className="absolute left-0 mt-1 w-full min-w-[180px] bg-white border border-gray-300 rounded-md shadow-lg z-50">
+                                    <li
+                                        className="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-gray-100"
+                                        onClick={() => {
+                                            setSelectedPropertyType("");
+                                            setOpenDropdown(null);
+                                        }}
+                                    >
+                                        Property Type
+                                    </li>
+
+                                    {propertyTypeOptions.map((type, index) => (
+                                        <li
+                                            key={type}
+                                            onClick={() => {
+                                                setSelectedPropertyType(type);
+                                                setSelectedLocation("");
+                                                setSelectedBedrooms("");
+                                                setCurrentPage(1);
+                                                setOpenDropdown(null);
+                                            }}
+                                            className={`px-4 py-2 cursor-pointer hover:bg-gray-100 ${selectedPropertyType === type ? "bg-gray-100 font-semibold" : ""
+                                                } ${index !== propertyTypeOptions.length - 1
+                                                    ? "border-b border-gray-300"
+                                                    : ""
+                                                }`}
+                                        >
+                                            {type}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </div>
 
                         {/* Bedrooms */}
-                        <div className="relative w-full sm:w-auto">
-                            <select
-                                value={selectedBedrooms}
-                                onChange={(event) => {
-                                    setSelectedBedrooms(event.target.value);
-                                    setCurrentPage(1);
-                                }}
-                                className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md w-full bg-white"
+                        <div ref={(el) => (dropdownRefs.current.bedroom = el)} className="relative w-full sm:w-[180px]">
+                            <button
+                                onClick={() =>
+                                    setOpenDropdown(
+                                        openDropdown === "bedroom" ? null : "bedroom"
+                                    )
+                                }
+                                className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md w-full bg-white text-left relative"
                             >
-                                <option value="">Bedrooms</option>
-                                {bedroomOptions.map((b) => (
-                                    <option key={b} value={b}>
-                                        {Number(b) === 0 ? "Studio" : b}
-                                    </option>
-                                ))}
-                            </select>
+                                {selectedBedrooms
+                                    ? Number(selectedBedrooms) === 0
+                                        ? "Studio"
+                                        : selectedBedrooms
+                                    : "Bedrooms"}
 
-                            <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
-                                <svg className="w-4 h-4 text-theme" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </div>
+                                <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                                    <svg
+                                        className="w-4 h-4 text-theme"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </div>
+                            </button>
+
+                            {openDropdown === "bedroom" && (
+                                <ul className="absolute left-0 mt-1 w-full min-w-[180px] bg-white border border-gray-300 rounded-md shadow-lg z-50">
+                                    <li
+                                        className="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-gray-100"
+                                        onClick={() => {
+                                            setSelectedBedrooms("");
+                                            setOpenDropdown(null);
+                                        }}
+                                    >
+                                        Bedrooms
+                                    </li>
+
+                                    {bedroomOptions.map((b, index) => (
+                                        <li
+                                            key={b}
+                                            onClick={() => {
+                                                setSelectedBedrooms(b);
+                                                setCurrentPage(1);
+                                                setOpenDropdown(null);
+                                            }}
+                                            className={`px-4 py-2 cursor-pointer hover:bg-gray-100 ${selectedBedrooms === b ? "bg-gray-100 font-semibold" : ""
+                                                } ${index !== bedroomOptions.length - 1
+                                                    ? "border-b border-gray-300"
+                                                    : ""
+                                                }`}
+                                        >
+                                            {Number(b) === 0 ? "Studio" : b}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </div>
 
                         {/* Location */}
-                        <div className="relative w-full sm:w-auto">
-                            <select
-                                value={selectedLocation}
-                                onChange={(event) => {
-                                    setSelectedLocation(event.target.value);
-                                    setCurrentPage(1);
-                                }}
-                                className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md w-full bg-white"
+                        <div ref={(el) => (dropdownRefs.current.location = el)} className="relative w-full sm:w-[220px]">
+                            <button
+                                onClick={() =>
+                                    setOpenDropdown(
+                                        openDropdown === "location" ? null : "location"
+                                    )
+                                }
+                                className="appearance-none border border-theme pl-4 pr-10 py-2 rounded-md bg-white w-full sm:w-[220px] text-left relative"
                             >
-                                <option value="">Location</option>
-                                {locationOptions.map((loc) => (
-                                    <option key={loc} value={loc}>{loc}</option>
-                                ))}
-                            </select>
+                                <span className="block truncate">
+                                    {selectedLocation || "Location"}
+                                </span>
 
-                            <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
-                                <svg className="w-4 h-4 text-theme" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </div>
+                                <div className="pointer-events-none absolute inset-y-0 right-3 flex items-center">
+                                    <svg
+                                        className="w-4 h-4 text-theme"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M19 9l-7 7-7-7"
+                                        />
+                                    </svg>
+                                </div>
+                            </button>
+
+                            {openDropdown === "location" && (
+                                <ul className="absolute left-0 mt-1 w-full min-w-[220px] bg-white border border-gray-300 rounded-md shadow-lg z-50">
+                                    <li
+                                        className="px-4 py-2 border-b border-gray-300 cursor-pointer hover:bg-gray-100"
+                                        onClick={() => {
+                                            setSelectedLocation("");
+                                            setOpenDropdown(null);
+                                        }}
+                                    >
+                                        Location
+                                    </li>
+
+                                    {locationOptions.map((loc, index) => (
+                                        <li
+                                            key={loc}
+                                            onClick={() => {
+                                                setSelectedLocation(loc);
+                                                setCurrentPage(1);
+                                                setOpenDropdown(null);
+                                            }}
+                                            className={`px-4 py-2 cursor-pointer hover:bg-gray-100 ${selectedLocation === loc ? "bg-gray-100 font-semibold" : ""
+                                                } ${index !== locationOptions.length - 1
+                                                    ? "border-b border-gray-300"
+                                                    : ""
+                                                }`}
+                                        >
+                                            {loc}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </div>
-                        
                     </div>
 
                 </div>
