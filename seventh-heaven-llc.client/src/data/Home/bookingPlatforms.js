@@ -6,9 +6,9 @@ import airbnbWebp from "@img/airbnb-logo.webp";
 import bookingPng from "@img/booking-logo.png";
 import bookingWebp from "@img/booking-logo.webp";
 
-// Guest Ready
-import guestReadyPng from "@img/guest-ready-logo.png";
-import guestReadyWebp from "@img/guest-ready-logo.webp";
+//// Guest Ready
+//import guestReadyPng from "@img/guest-ready-logo.png";
+//import guestReadyWebp from "@img/guest-ready-logo.webp";
 
 // Property Finder
 import propertyFinderPng from "@img/property-finder-logo.png";
@@ -37,12 +37,12 @@ export const platforms = [
         webp: bookingWebp,
         link: "https://www.booking.com/",
     },
-    {
-        name: "Guest Ready",
-        png: guestReadyPng,
-        webp: guestReadyWebp,
-        link: "https://www.guestready.com/",
-    },
+    //{
+    //    name: "Guest Ready",
+    //    png: guestReadyPng,
+    //    webp: guestReadyWebp,
+    //    link: "https://www.guestready.com/",
+    //},
     {
         name: "Property Finder",
         png: propertyFinderPng,
