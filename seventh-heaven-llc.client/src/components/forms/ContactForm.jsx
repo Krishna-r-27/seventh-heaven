@@ -214,7 +214,7 @@ function ContactForm() {
                         {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
                     </div>
                 </div>
-
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div className="relative">
                     <select
                         value={form.city}
@@ -231,8 +231,19 @@ function ContactForm() {
                     </select>
                     <FiChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
                     {errors.city && <p className="text-red-600 text-sm mt-1">{errors.city}</p>}
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Area Name"
+                            value={form.areaName}
+                            onChange={(e) => onFieldChange("areaName", e.target.value)}
+                            required
+                            className="border border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
+                        />
+                        {errors.areaName && <p className="text-red-600 text-sm mt-1">{errors.areaName}</p>}
+                    </div>
                 </div>
-
                 <div>
                     <textarea
                         placeholder="Message"

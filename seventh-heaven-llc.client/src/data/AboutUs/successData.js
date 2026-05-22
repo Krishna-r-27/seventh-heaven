@@ -12,27 +12,27 @@ const successData = {
 
     reviews: [
         {
-            name: "James Anderson",
+            name: "Bhumika Parmar",
             review:
                 "Amazing luxury stay experience with excellent support and hospitality. The apartment was spotless, beautifully designed, and located in a perfect area for exploring the city.",
         },
         {
-            name: "Sophia Miller",
+            name: "Priya Joshi",
             review:
                 "Professional team and smooth property booking process throughout. From check-in to check-out, everything was handled efficiently with great attention to detail and customer comfort.",
         },
         {
-            name: "Daniel Clark",
+            name: "Ronak Patel",
             review:
                 "Beautiful apartments with premium service and quick assistance. The staff was always available, and the overall stay exceeded our expectations in every possible way.",
         },
         {
-            name: "Olivia Brown",
+            name: "Vivaan Sharma",
             review:
                 "Outstanding holiday home experience with luxurious interiors and excellent amenities. The property felt safe, comfortable, and ideal for a relaxing family vacation.",
         },
         {
-            name: "Michael Carter",
+            name: "Rohan Mehta",
             review:
                 "Highly recommended for anyone looking for premium holiday rentals. The booking process was simple, and the hospitality team ensured we had everything we needed during our stay.",
         },
