@@ -1,5 +1,5 @@
-﻿import successImgPng from "../../assets/img/deyafa-apartment.png";
-import successImgWebp from "../../assets/img/deyafa-apartment.webp";
+﻿import successImgPng from "../../assets/img/customer-review.png";
+import successImgWebp from "../../assets/img/customer-review.webp";
 
 import quoteImg from "../../assets/img/review-quotes.png";
 
