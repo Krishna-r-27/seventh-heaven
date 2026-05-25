@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import aboutData from "../../data/Home/aboutUsData";
 import aboutBgPng from "@img/about-bg.png";
 import aboutBgWebp from "@img/about-bg.webp";
-import roomViewPng from "@img/property-hall.png";
-import roomViewWebp from "@img/property-hall.webp";
-import propertyRoomPng from "@img/property-room.png";
-import propertyRoomWebp from "@img/property-room.webp";
+import roomViewPng from "@img/property-hall-view.png";
+import roomViewWebp from "@img/property-hall-view.webp";
+import propertyRoomPng from "@img/property-room-view.png";
+import propertyRoomWebp from "@img/property-room-view.webp";
 import { motion, useAnimation } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 
