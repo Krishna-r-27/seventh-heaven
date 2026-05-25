@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import aboutData from "../../data/Home/aboutUsData";
 import aboutBgPng from "@img/about-bg.png";
 import aboutBgWebp from "@img/about-bg.webp";
-import roomViewPng from "@img/room-view.png";
-import roomViewWebp from "@img/room-view.webp";
+import roomViewPng from "@img/property-hall.png";
+import roomViewWebp from "@img/property-hall.webp";
 import propertyRoomPng from "@img/property-room.png";
 import propertyRoomWebp from "@img/property-room.webp";
 import { motion, useAnimation } from "framer-motion";
@@ -199,22 +199,23 @@ const AboutUs = () => {
                             {/* Image 1 */}
                             <div className="w-50 h-50 rounded-lg overflow-hidden">
                                 <picture>
-                                    <source srcSet={roomViewWebp} type="image/webp" />
+                                    <source srcSet={propertyRoomWebp} type="image/webp" />
                                     <img
-                                        src={roomViewPng}
-                                        alt="room view"
+                                        src={propertyRoomPng}
+                                        alt="property room"
                                         className="w-full h-full object-cover"
                                     />
                                 </picture>
                             </div>
 
+
                             {/* Image 2 */}
                             <div className="w-50 h-50 rounded-lg overflow-hidden">
                                 <picture>
-                                    <source srcSet={propertyRoomWebp} type="image/webp" />
+                                    <source srcSet={roomViewWebp} type="image/webp" />
                                     <img
-                                        src={propertyRoomPng}
-                                        alt="property room"
+                                        src={roomViewPng}
+                                        alt="room view"
                                         className="w-full h-full object-cover"
                                     />
                                 </picture>
