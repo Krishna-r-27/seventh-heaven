@@ -54,8 +54,11 @@ const VisionMission = () => {
                             </div>
 
                             <motion.div
-                                className="h-[2px] w-full bg-gold mb-4"
-                                style={{ originX: 0 }}
+                                className="h-[2px] w-full bg-gold mb-4 will-change-transform"
+                                style={{
+                                    originX: 0,
+                                    transform: "translateZ(0)"
+                                }}
                                 variants={{
                                     hidden: { scaleX: 0 },
                                     visible: {
@@ -64,7 +67,7 @@ const VisionMission = () => {
                                     }
                                 }}
                             />
-
+                           
                             <p className="text-theme text-md leading-7">
                                 {data.vision.description}
                             </p>
@@ -99,8 +102,11 @@ const VisionMission = () => {
                             </div>
 
                             <motion.div
-                                className="h-[2px] w-full bg-gold mb-4"
-                                style={{ originX: 0 }}
+    className="h-[2px] w-full bg-gold mb-4 will-change-transform"
+    style={{
+        originX: 0,
+        transform: "translateZ(0)"
+    }}
                                 variants={{
                                     hidden: { scaleX: 0 },
                                     visible: {
