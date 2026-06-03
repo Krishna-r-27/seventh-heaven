@@ -17,6 +17,7 @@
     <PackageJsonDependenciesDatatablesNetReact Condition="$(PackageJsonDependenciesDatatablesNetReact) == ''">^1.0.1</PackageJsonDependenciesDatatablesNetReact>
     <PackageJsonDependenciesFramerMotion Condition="$(PackageJsonDependenciesFramerMotion) == ''">^12.38.0</PackageJsonDependenciesFramerMotion>
     <PackageJsonDependenciesLucideReact Condition="$(PackageJsonDependenciesLucideReact) == ''">^1.8.0</PackageJsonDependenciesLucideReact>
+    <PackageJsonDependenciesMotionDom Condition="$(PackageJsonDependenciesMotionDom) == ''">^12.40.0</PackageJsonDependenciesMotionDom>
     <PackageJsonDependenciesReact Condition="$(PackageJsonDependenciesReact) == ''">^19.2.4</PackageJsonDependenciesReact>
     <PackageJsonDependenciesReactDom Condition="$(PackageJsonDependenciesReactDom) == ''">^19.2.4</PackageJsonDependenciesReactDom>
     <PackageJsonDependenciesReactIcons Condition="$(PackageJsonDependenciesReactIcons) == ''">^5.6.0</PackageJsonDependenciesReactIcons>

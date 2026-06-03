@@ -83,10 +83,22 @@ export default function ViewDetails() {
                                     <Info
                                         label="Enquiry Date"
                                         value={data.createdAt ? new Date(data.createdAt).toLocaleDateString() : "-"}
-                                    />
+                                    />                                    
+                                </div>
+                               
+                            </div>
+                            {/*<div className="mb-8">*/}
+                            {/*<div className="grid grid-cols-1 gap-12 text-sm md:grid-cols-2">*/}
+                            {/*        <Info label="Area" value={data.area} />*/}
+                            {/*    </div>*/}
+                            {/* </div>*/}
+                            <div className="mb-8">
+                                <div className="grid grid-cols-1 gap-12 text-sm md:grid-cols-2">
+                                    <div className="col-span-1 md:col-span-2">
+                                        <Info label="Area" value={data.area} />
+                                    </div>
                                 </div>
                             </div>
-
                             <div>
                                 <h3 className="mb-4 border-b pb-2 text-md font-semibold text-gray-700">
                                     Message

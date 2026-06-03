@@ -1,4 +1,5 @@
 using Seventh_Heaven_LLC.Server.DTOs;
+using System.Globalization;
 
 namespace Seventh_Heaven_LLC.Server.Services
 {
@@ -13,7 +14,7 @@ namespace Seventh_Heaven_LLC.Server.Services
         Task SendAdminOtpAsync(string toEmail, string otp);
         Task SendPasswordResetConfirmationAsync(string toEmail);
         Task SendEmailVerificationAsync(string toEmail, string toName, string verifyLink, string otp);
-        Task SendContactInquiryNotificationToAdminAsync(string adminEmail, string firstName, string lastName, string phone, string email, string city, string message);
+        Task SendContactInquiryNotificationToAdminAsync(string adminEmail, string firstName, string lastName, string phone, string email, string city,string area, string message);
         Task SendPropertyInquiryNotificationToAdminAsync(
             string adminEmail,
             string firstName,

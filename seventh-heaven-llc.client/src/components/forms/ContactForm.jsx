@@ -10,6 +10,7 @@ const initialForm = {
     phone: "",
     email: "",
     city: "",
+    area: "",
     message: "",
     captcha: "",
 };
@@ -140,6 +141,7 @@ function ContactForm() {
                 phone: form.phone.trim(),
                 email: form.email.trim(),
                 city: form.city.trim(),
+                area: form.area.trim(),
                 message: form.message.trim(),
             });
 
@@ -236,12 +238,13 @@ function ContactForm() {
                         <input
                             type="text"
                             placeholder="Area Name"
-                            value={form.areaName}
-                            onChange={(e) => onFieldChange("areaName", e.target.value)}
+                            value={form.area}
+                            onChange={(e) => onFieldChange("area", e.target.value)}
                             required
                             className="border placeholder:text-theme border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
                         />
                         {errors.areaName && <p className="text-red-600 text-sm mt-1">{errors.areaName}</p>}
+
                     </div>
                 </div>
                 <div>

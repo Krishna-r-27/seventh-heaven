@@ -64,6 +64,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                     Phone,
                     Email,
                     City,
+                    Area,
                     Message,
                     CreatedAt
                 )
@@ -74,6 +75,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                     @Phone,
                     @Email,
                     @City,
+                    @Area,
                     @Message,
                     UTC_TIMESTAMP()
                 );
@@ -86,6 +88,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                     Phone = request.Phone.Trim(),
                     Email = request.Email.Trim(),
                     City = request.City.Trim(),
+                    Area = request.Area.Trim(),
                     Message = request.Message.Trim()
                 });
 
@@ -99,6 +102,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                         request.Phone.Trim(),
                         request.Email.Trim(),
                         request.City.Trim(),
+                        request.Area.Trim(),
                         request.Message.Trim());
                 }
                 catch (Exception emailEx)
@@ -131,6 +135,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                     Phone,
                     Email,
                     City,
+                    Area,
                     CreatedAt
                 FROM ContactInquiries
                 ORDER BY Id DESC;";
@@ -144,6 +149,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                         phone = x.Phone,
                         email = x.Email,
                         city = x.City,
+                        area = x.Area,
                         createdAt = x.CreatedAt
                     });
 
@@ -172,6 +178,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                     Phone,
                     Email,
                     City,
+                    Area,
                     Message,
                     CreatedAt
                 FROM ContactInquiries
@@ -190,6 +197,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                     phone = inquiry.Phone,
                     email = inquiry.Email,
                     city = inquiry.City,
+                    area = inquiry.Area,
                     message = inquiry.Message,
                     createdAt = inquiry.CreatedAt
                 });
@@ -212,6 +220,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
         public string Phone { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public string City { get; set; } = string.Empty;
+        public string Area { get; set; } = string.Empty;
         public string Message { get; set; } = string.Empty;
     }
 }
