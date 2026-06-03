@@ -152,6 +152,7 @@ namespace Seventh_Heaven_LLC.Server.Services
             string phone,
             string email,
             string city,
+            string area,
             string message)
         {
             var subject = "New contact inquiry received";
@@ -160,6 +161,7 @@ namespace Seventh_Heaven_LLC.Server.Services
             var safePhone = System.Net.WebUtility.HtmlEncode(phone);
             var safeEmail = System.Net.WebUtility.HtmlEncode(email);
             var safeCity = System.Net.WebUtility.HtmlEncode(city);
+            var safeArea= System.Net.WebUtility.HtmlEncode(area);
             var safeMessage = System.Net.WebUtility.HtmlEncode(message).Replace("\n", "<br/>");
 
             var body = $@"<!doctype html>
@@ -178,6 +180,7 @@ namespace Seventh_Heaven_LLC.Server.Services
           <tr><td style='padding:6px 0;color:#555;font-weight:700;'>Phone:</td><td style='padding:6px 0;color:#111;'>{safePhone}</td></tr>
           <tr><td style='padding:6px 0;color:#555;font-weight:700;'>Email:</td><td style='padding:6px 0;color:#111;'>{safeEmail}</td></tr>
           <tr><td style='padding:6px 0;color:#555;font-weight:700;'>City:</td><td style='padding:6px 0;color:#111;'>{safeCity}</td></tr>
+          <tr><td style='padding:6px 0;color:#555;font-weight:700;'>Area:</td><td style='padding:6px 0;color:#111;'>{safeArea}</td></tr>
           <tr><td style='padding:6px 0;color:#555;font-weight:700;vertical-align:top;'>Message:</td><td style='padding:6px 0;color:#111;'>{safeMessage}</td></tr>
         </table>
       </div>
