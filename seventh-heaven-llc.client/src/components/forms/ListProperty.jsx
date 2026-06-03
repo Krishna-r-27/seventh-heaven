@@ -231,7 +231,7 @@ function ListProperty() {
                           onChange={(e) => onFieldChange("city", e.target.value)}
                           className="w-full appearance-none border border-theme rounded-md px-4 py-3 pr-10 text-theme focus:outline-none focus:border-[#005AA4]"
                       >
-                          <option value="">--Select City--</option>
+                          <option value="">--Select Location--</option>
                           {dubaiCityOptions.map((city) => (
                               <option key={city} value={city}>
                                   {city}
