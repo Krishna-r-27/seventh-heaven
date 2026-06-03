@@ -238,21 +238,11 @@ function ContactForm() {
                         <input
                             type="text"
                             placeholder="Area Name"
-<<<<<<< HEAD
                             value={form.area}
                             onChange={(e) => onFieldChange("area", e.target.value)}
                             required
                             className="border border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
-                        />
-                        {errors.area && <p className="text-red-600 text-sm mt-1">{errors.area}</p>}
-=======
-                            value={form.areaName}
-                            onChange={(e) => onFieldChange("areaName", e.target.value)}
-                            required
-                            className="border border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
-                        />
-                        {errors.areaName && <p className="text-red-600 text-sm mt-1">{errors.areaName}</p>}
->>>>>>> 844bf9545bcd09878085568c5009956579e08923
+                        />                        
                     </div>
                 </div>
                 <div>
