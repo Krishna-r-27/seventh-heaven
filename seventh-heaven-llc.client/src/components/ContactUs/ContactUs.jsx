@@ -78,7 +78,7 @@ function ContactUs() {
 
                             <div>
                                 <h4 className="text-[#005AA4] font-semibold text-xl">
-                                    Call on
+                                    Call us
                                 </h4>
                                 <p className="text-md text-theme leading-6 mt-1">
                                     <a
@@ -107,7 +107,7 @@ function ContactUs() {
 
                             <div>
                                 <h4 className="text-[#005AA4] font-semibold text-xl">
-                                    Email on
+                                    Email us
                                 </h4>
                                 <a
                                     href="mailto:info@seventh-heaven.ae"

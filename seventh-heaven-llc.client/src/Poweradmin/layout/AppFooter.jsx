@@ -4,12 +4,12 @@ const AppFooter = () => {
             <div className="max-w-7xl mx-auto px-4 py-2 text-center text-base">
                 &copy; 2026 All Rights Reserved &middot; Powered by{" "}
                 <a
-                    href="https://www.dotsandcoms.in/"
+                    href="https://www.dotsandcoms.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-medium text-neutral-900 dark:text-white hover:underline underline-offset-4 transition"
                 >
-                    DNC
+                    Dots and Coms
                 </a>
             </div>
         </footer>

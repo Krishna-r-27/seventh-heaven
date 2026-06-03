@@ -8,7 +8,8 @@ import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { FaRegUserCircle } from "react-icons/fa";
 import { RiFileEditLine } from "react-icons/ri";
 import { FaWpforms } from "react-icons/fa6";
-
+import logoPng from "@img/Seventh-Heaven-Holiday-Homes.png";
+import logoWebp from "@img/Seventh-Heaven-Holiday-Homes.webp";
 
 const baseItem =
     "group flex items-center gap-3 px-4 py-2.5 rounded-lg  font-medium transition-all duration-200";
@@ -59,24 +60,24 @@ const AppSidebar = ({ open, collapsed, onClose }) => {
                         className="flex items-center"
                     >
                         {/* Icon logo (collapsed) */}
-                        <img
-                            src="/src/assets/img/Seventh-Heaven-Holiday-Homes.png"
-                            alt="Logo Icon"
-                            className={`
-            h-5 w-5 transition-all duration-700
-            ${collapsed ? "block" : "hidden"}
-        `}
-                        />
+                        <picture className={`${collapsed ? "block" : "hidden"}`}>
+                            <source srcSet={logoWebp} type="image/webp" />
+                            <img
+                                src={logoPng}
+                                alt="Logo Icon"
+                                className="h-5 w-5 transition-all duration-700"
+                            />
+                        </picture>
 
                         {/* Full logo (expanded) */}
-                        <img
-                            src="/src/assets/img/Seventh-Heaven-Holiday-Homes.png"
-                            alt="Logo"
-                            className={`
-            h-10 w-auto transition-all ml-2 duration-700
-            ${collapsed ? "hidden" : "block"}
-        `}
-                        />
+                        <picture className={`${collapsed ? "hidden" : "block"}`}>
+                            <source srcSet={logoWebp} type="image/webp" />
+                            <img
+                                src={logoPng}
+                                alt="Logo"
+                                className="h-10 w-auto ml-2 transition-all duration-700"
+                            />
+                        </picture>
                     </NavLink>
                 </div>
 

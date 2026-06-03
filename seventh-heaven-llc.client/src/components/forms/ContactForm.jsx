@@ -172,7 +172,7 @@ function ContactForm() {
                             value={form.firstName}
                             onChange={(e) => onFieldChange("firstName", e.target.value)}
                             required
-                            className="border border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
+                            className="border placeholder:text-theme border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
                         />
                         {errors.firstName && <p className="text-red-600 text-sm mt-1">{errors.firstName}</p>}
                     </div>
@@ -184,7 +184,7 @@ function ContactForm() {
                             value={form.lastName}
                             onChange={(e) => onFieldChange("lastName", e.target.value)}
                             required
-                            className="border border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
+                            className="border placeholder:text-theme border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
                         />
                         {errors.lastName && <p className="text-red-600 text-sm mt-1">{errors.lastName}</p>}
                     </div>
@@ -199,7 +199,7 @@ function ContactForm() {
                             onChange={(e) => onFieldChange("phone", e.target.value)}
                             inputMode="tel"
                             required
-                            className="border rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
+                            className="border placeholder:text-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
                         />
                         {errors.phone && <p className="text-red-600 text-sm mt-1">{errors.phone}</p>}
                     </div>
@@ -211,7 +211,7 @@ function ContactForm() {
                             value={form.email}
                             onChange={(e) => onFieldChange("email", e.target.value)}
                             required
-                            className="border rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
+                            className="border placeholder:text-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
                         />
                         {errors.email && <p className="text-red-600 text-sm mt-1">{errors.email}</p>}
                     </div>
@@ -224,7 +224,7 @@ function ContactForm() {
                         required
                         className="w-full appearance-none border rounded-md px-4 py-3 pr-10 focus:outline-none focus:border-[#005AA4]"
                     >
-                        <option value="">--Select City--</option>
+                            <option value="">--Select Location--</option>
                         {dubaiCityOptions.map((city) => (
                             <option key={city} value={city}>
                                 {city}
@@ -241,8 +241,10 @@ function ContactForm() {
                             value={form.area}
                             onChange={(e) => onFieldChange("area", e.target.value)}
                             required
-                            className="border border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
-                        />                        
+                            className="border placeholder:text-theme border-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
+                        />
+                        {errors.areaName && <p className="text-red-600 text-sm mt-1">{errors.areaName}</p>}
+
                     </div>
                 </div>
                 <div>
@@ -252,7 +254,7 @@ function ContactForm() {
                         value={form.message}
                         onChange={(e) => onFieldChange("message", e.target.value)}
                         required
-                        className="w-full border rounded-md px-4 py-2 focus:outline-none focus:border-[#005AA4]"
+                        className="w-full placeholder:text-theme border rounded-md px-4 py-2 focus:outline-none focus:border-[#005AA4]"
                     />
                     {errors.message && <p className="text-red-600 text-sm mt-1">{errors.message}</p>}
                 </div>
@@ -266,7 +268,7 @@ function ContactForm() {
                             onChange={(e) => onFieldChange("captcha", e.target.value)}
                             inputMode="numeric"
                             required
-                            className="border rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
+                            className="border placeholder:text-theme rounded-md px-4 py-3 focus:outline-none focus:border-[#005AA4] w-full"
                         />
                         {errors.captcha && <p className="text-red-600 text-sm mt-1">{errors.captcha}</p>}
                     </div>
