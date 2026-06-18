@@ -45,12 +45,12 @@ function App() {
                     <Routes>
 
                         {/* Public Website */}
-                        <Route>
-                            <Route path="/" element={<UnderConstruction />} />
-                        </Route>
+                        {/*<Route>*/}
+                        {/*    <Route path="/" element={<UnderConstruction />} />*/}
+                        {/*</Route>*/}
 
                         <Route element={<AppLayout />}>
-                            <Route path="/home" element={<Home />} />
+                            <Route path="/" element={<Home />} />
                             <Route path="/about-us" element={<AboutUs />} />
                             <Route path="/contact-us" element={<ContactUs />} />
                             <Route path="/book-now" element={<BookNow />} />
