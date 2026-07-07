@@ -2,15 +2,34 @@ import BannerSection from "../components/BannerSection/BannerSection";
 import { Link } from "react-router-dom";
 import callIcon from "@img/call-white.svg";
 import emailIcon from "@img/email-white.svg";
+import { Helmet } from "react-helmet-async";
 function SiteMap() {
   return (
       <>
+          <Helmet>
+              <title>Sitemap | Seventh Heaven Holiday Homes Dubai</title>
+
+              <meta
+                  name="description"
+                  content="Explore the complete sitemap of Seventh Heaven Holiday Homes to quickly access our holiday homes, serviced apartments, property management services, and important pages."
+              />
+
+              <meta
+                  name="keywords"
+                  content="Seventh Heaven sitemap, Dubai holiday homes sitemap, serviced apartments Dubai, website navigation"
+              />
+
+              <link
+                  rel="canonical"
+                  href="https://www.seventh-heaven.ae/sitemap"
+              />
+          </Helmet>
+
           <BannerSection
               title="Sitemap"
               pageName="Sitemap" />
           <section className="w-full py-8 sm:py-12 md:py-14 lg:py-16">
               <div className="container mx-auto">
-
                   
                   {/* ================= HOME ================= */}
                   <h2 className="text-2xl font-bold text-gold mb-3">
@@ -20,12 +39,7 @@ function SiteMap() {
                   </h2>
 
                   <p className="text-theme leading-relaxed mb-3">
-                      Seventh Heaven Holiday Homes is a Dubai-based holiday home management
-                      company offering premium holiday homes and serviced apartments.
-                      We focus on delivering comfort, convenience, and a luxurious stay
-                      experience for travelers visiting Dubai. Whether for short stays or
-                      extended visits, our properties are designed to provide a perfect
-                      blend of style, comfort, and location.
+                      Experience premium holiday homes and serviced apartments across Dubai. Enjoy fully furnished accommodations, exceptional comfort, and professional hospitality with Seventh Heaven. 
                   </p>
 
 
@@ -37,12 +51,7 @@ function SiteMap() {
                   </h2>
 
                   <p className="text-theme leading-relaxed mb-3">
-                      Seventh Heaven Holiday Homes was established in May 2022 by three
-                      professionals with over a decade of experience in the real estate industry.
-                      Based in Dubai, we specialize in managing high-quality holiday homes and
-                      serviced apartments that offer a premium living experience.
-                      Our goal is to provide guests with exceptional comfort, seamless service,
-                      and a memorable stay in one of the world's most vibrant cities.
+                      Seventh Heaven Holiday Homes is a trusted Dubai-based company offering premium holiday homes, exceptional guest experiences, and reliable property management services. 
                   </p>
 
 
@@ -54,10 +63,109 @@ function SiteMap() {
                   </h2>
 
                   <p className="text-theme leading-relaxed mb-3">
-                      Explore our collection of carefully curated holiday homes and serviced
-                      apartments located in prime areas of Dubai such as Downtown, Dubai Marina,
-                      and Palm Jumeirah. Each property is fully furnished and equipped with
-                      modern amenities to ensure a comfortable and luxurious stay for our guests.
+                      Browse our collection of fully furnished holiday homes and serviced apartments in Dubai. Find the perfect stay for business trips, family vacations, or long-term visits. 
+                  </p>
+
+                  <div className="ms-6 space-y-4">
+                      <div className="mt-4">
+                          <h3 className="text-xl font-bold text-gold mb-2">
+                              <a
+                                  href="https://www.seventh-heaven.ae/property/spacious-2-bedroom-furnished-apartment-opposite-city-centre-deira-14"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="hover:underline"
+                              >
+                                  Spacious 2-Bedroom Furnished Apartment
+                              </a>
+                          </h3>
+
+                          <p className="text-theme leading-relaxed">
+                              Stay in a spacious, fully furnished 2-bedroom apartment opposite City Centre Deira,
+                              offering comfort, convenience, and easy access to Dubai's attractions.
+                          </p>
+                      </div>
+
+                      <div>
+                          <h3 className="text-xl font-bold text-gold mb-2">
+                              <a
+                                  href="https://www.seventh-heaven.ae/property/spacious-2br-with-mall-view-13"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="hover:underline"
+                              >
+                                  Spacious 2BR with Mall View
+                              </a>
+                          </h3>
+
+                          <p className="text-theme leading-relaxed">
+                              Enjoy a stylish 2-bedroom apartment with beautiful mall views, modern amenities,
+                              and a comfortable stay in the heart of Dubai.
+                          </p>
+                      </div>
+
+                      <div>
+                          <h3 className="text-xl font-bold text-gold mb-2">
+                              <a
+                                  href="https://www.seventh-heaven.ae/property/studio-in-karama-12"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="hover:underline"
+                              >
+                                  Studio in Karama
+                              </a>
+                          </h3>
+
+                          <p className="text-theme leading-relaxed">
+                              Stay in a cozy, fully furnished studio in Karama, offering modern amenities,
+                              a convenient location, and a comfortable space for both short and extended stays in Dubai.
+                          </p>
+                      </div>
+
+                      <div>
+                          <h3 className="text-xl font-bold text-gold mb-2">
+                              <a
+                                  href="https://www.seventh-heaven.ae/property/al-deyafa-apartments-11"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="hover:underline"
+                              >
+                                  Al Deyafa Apartments
+                              </a>
+                          </h3>
+
+                          <p className="text-theme leading-relaxed">
+                              Discover comfortable serviced apartments at Al Deyafa with premium amenities
+                              and a convenient location for leisure and business travelers.
+                          </p>
+                      </div>
+
+                      <div className="mb-6">
+                          <h3 className="text-xl font-bold text-gold mb-2">
+                              <a
+                                  href="https://www.seventh-heaven.ae/property/beautiful-1-br-apartment-in-al-mankhool-9"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="hover:underline"
+                              >
+                                  Beautiful 1-BR Apartment in Al Mankhool
+                              </a>
+                          </h3>
+
+                          <p className="text-theme leading-relaxed">
+                              Enjoy a beautifully furnished 1-bedroom apartment in Al Mankhool,
+                              offering a relaxing stay with modern comforts and easy city access.
+                          </p>
+                      </div>
+                  </div>
+
+                  <h2 className="text-2xl font-bold text-gold mb-3">
+                      <Link to="/listing" className="hover:underline">
+                          List with Us
+                      </Link>
+                  </h2>
+
+                  <p className="text-theme leading-relaxed mb-3">
+                      Partner with Seventh Heaven and maximize your property's rental income through professional holiday home management and marketing services.
                   </p>
 
 
@@ -69,10 +177,7 @@ function SiteMap() {
                   </h2>
 
                   <p className="text-theme leading-relaxed mb-3 lg:mb-5">
-                      Get in touch with Seventh Heaven Holiday Homes for bookings, inquiries,
-                      or property management services. Our team is always ready to assist you
-                      in finding the perfect holiday home in Dubai or helping you list your
-                      property with us.
+                      Get in touch with Seventh Heaven Holiday Homes for reservations, guest assistance, or property management inquiries. Our team is here to help. 
                   </p>
 
                   <ul className="space-y-6">

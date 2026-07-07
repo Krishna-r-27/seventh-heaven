@@ -1,5 +1,6 @@
 ﻿import { useEffect } from "react";
 import BannerSection from "../components/BannerSection/BannerSection";
+import { Helmet } from "react-helmet-async";
 function ThankYou() {
 
     useEffect(() => {
@@ -12,6 +13,25 @@ function ThankYou() {
 
     return (
         <>
+            <Helmet>
+                <title>Thank You | Seventh Heaven Holiday Homes Dubai</title>
+
+                <meta
+                    name="description"
+                    content="Thank you for contacting Seventh Heaven Holiday Homes. We've received your request and our team will get back to you shortly."
+                />
+
+                <meta
+                    name="keywords"
+                    content="thank you, Seventh Heaven Dubai, holiday homes Dubai, property inquiry"
+                />
+
+                <link
+                    rel="canonical"
+                    href="https://www.seventh-heaven.ae/thank-you"
+                />
+            </Helmet>
+
             <BannerSection
                 title="Thank You"
                 pageName="Thank You" />
