@@ -11,7 +11,7 @@ function PropertyCard({ property }) {
     return (
         <div
             onClick={() => navigate(`/property/${property.slug}`, { state: property })}
-            className="group border border-[#C5A553] rounded-xl p-3 bg-white shadow-sm hover:shadow-md transition cursor-pointer"
+            className="group border border-[#C5A553] rounded-xl p-3 bg-white shadow-sm hover:shadow-md transition cursor-pointer h-full flex flex-col"
         >
 
             <div className="relative overflow-hidden rounded-lg">
@@ -31,20 +31,20 @@ function PropertyCard({ property }) {
                 </div>
             </div>
 
-            <div className="mt-4 px-2">
+            <div className="mt-4 px-2 flex flex-col flex-1">
                 <div className="flex items-center justify-between">
                     <div className="flex-1 pr-3 min-w-0">
-                        <h3 className="text-primary font-semibold text-lg md:text-xl leading-7">
+                        <h3 className="text-primary font-semibold text-lg md:text-xl leading-7 line-clamp-2 h-14">
                             {property.title}
                         </h3>
 
-                        <div className="flex items-center gap-1.5 text-gray text-md mt-2">
+                        <div className="flex items-center gap-1.5 text-gray text-md mt-2 h-6">
                             <img
                                 src={locationIcon}
                                 className="w-5 h-5 flex-shrink-0"
                             />
 
-                            <span className="font-medium text-theme truncate">
+                            <span className="font-medium text-theme line-clamp-1">
                                 {property.location}
                             </span>
                         </div>
@@ -59,7 +59,7 @@ function PropertyCard({ property }) {
                 </div>
 
 
-                <div className="my-2">
+                <div className="mt-auto pt-3 pb-2">
                     {(() => {
                         const [amount, ...rest] = property.price.split(" ");
                         return (

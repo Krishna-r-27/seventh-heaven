@@ -41,6 +41,7 @@ namespace Seventh_Heaven_LLC.Server.Models
         public string ImageUrl { get; set; } = string.Empty;      // original path
         public string? ImageWebpUrl { get; set; }                  // webp version
         public bool IsPrimary { get; set; } = false;
+        public int SortOrder { get; set; } = 0;                   // image display order
 
         // Foreign key
         public Property? Property { get; set; }

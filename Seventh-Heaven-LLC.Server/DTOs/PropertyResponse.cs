@@ -10,6 +10,7 @@ namespace Seventh_Heaven_LLC.Server.DTOs
         public string? ImageUrl { get; set; }
         public string? ImageWebpUrl { get; set; }
         public bool IsPrimary { get; set; }
+        public int SortOrder { get; set; }
     }
 
     public class PropertyResponse

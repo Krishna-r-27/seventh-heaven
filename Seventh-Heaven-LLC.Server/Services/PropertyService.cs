@@ -53,13 +53,15 @@ namespace Seventh_Heaven_LLC.Server.Services
             // Add images
             if (request.Images != null && request.Images.Any())
             {
+                int sortOrder = 0;
                 foreach (var img in request.Images)
                 {
                     property.Images.Add(new PropertyImage
                     {
                         ImageUrl = img.ImageUrl,
                         ImageWebpUrl = img.ImageWebpUrl,
-                        IsPrimary = img.IsPrimary
+                        IsPrimary = img.IsPrimary,
+                        SortOrder = sortOrder++
                     });
                 }
             }
@@ -89,6 +91,29 @@ namespace Seventh_Heaven_LLC.Server.Services
             await _repo.SetPrimaryImageAsync(propertyId, imageId);
         }
 
+        public async Task UpdateImageSortOrderAsync(int imageId, int sortOrder)
+        {
+            await _repo.UpdateImageSortOrderAsync(imageId, sortOrder);
+        }
+
+        public async Task<DTOs.PropertyImageDto?> GetImageByIdAsync(int imageId)
+        {
+            var image = await _repo.GetImageByIdAsync(imageId);
+            return image == null ? null : new DTOs.PropertyImageDto
+            {
+                Id = image.Id,
+                ImageUrl = image.ImageUrl,
+                ImageWebpUrl = image.ImageWebpUrl,
+                IsPrimary = image.IsPrimary,
+                SortOrder = image.SortOrder
+            };
+        }
+
+        public async Task<bool> DeleteImageAsync(int imageId)
+        {
+            return await _repo.DeleteImageAsync(imageId);
+        }
+
         public async Task<PropertyResponse?> UpdateAsync(int id, UpdatePropertyRequest request)
         {
             var existing = await _repo.GetByIdAsync(id);
@@ -115,13 +140,16 @@ namespace Seventh_Heaven_LLC.Server.Services
             if (request.Images != null)
             {
                 existing.Images.Clear();
+                int sortOrder = 0;
                 foreach (var img in request.Images)
                 {
                     existing.Images.Add(new PropertyImage
                     {
+                        Id = img.Id,
                         ImageUrl = img.ImageUrl,
                         ImageWebpUrl = img.ImageWebpUrl,
-                        IsPrimary = img.IsPrimary
+                        IsPrimary = img.IsPrimary,
+                        SortOrder = sortOrder++
                     });
                 }
             }
@@ -163,12 +191,13 @@ namespace Seventh_Heaven_LLC.Server.Services
             IsVisible = property.IsVisible,
             ShowOnHomepage = property.ShowOnHomepage,
             Images = property.Images
-                .Select(img => new Seventh_Heaven_LLC.Server.DTOs.PropertyImageDto
+                .Select(img => new DTOs.PropertyImageDto
                 {
                     Id = img.Id,
                     ImageUrl = img.ImageUrl,
                     ImageWebpUrl = img.ImageWebpUrl,
-                    IsPrimary = img.IsPrimary
+                    IsPrimary = img.IsPrimary,
+                    SortOrder = img.SortOrder
                 })
                 .ToList(),
             CreatedAt = property.CreatedAt,

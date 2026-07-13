@@ -17,5 +17,8 @@ namespace Seventh_Heaven_LLC.Server.Repositories
         // Persist a single PropertyImage row for a property
         Task InsertPropertyImageAsync(Seventh_Heaven_LLC.Server.Controllers.PropertyImageDto img, int propertyId);
         Task SetPrimaryImageAsync(int propertyId, int imageId);
+        Task UpdateImageSortOrderAsync(int imageId, int sortOrder);
+        Task<PropertyImage?> GetImageByIdAsync(int imageId);
+        Task<bool> DeleteImageAsync(int imageId);
     }
 }

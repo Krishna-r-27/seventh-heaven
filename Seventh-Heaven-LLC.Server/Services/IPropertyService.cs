@@ -12,8 +12,11 @@ namespace Seventh_Heaven_LLC.Server.Services
         Task<PropertyResponse> CreateAsync(CreatePropertyRequest request);
         Task InsertPropertyImageAsync(Controllers.PropertyImageDto img, int propertyId);
         Task SetPrimaryImageAsync(int propertyId, int imageId);
+        Task UpdateImageSortOrderAsync(int imageId, int sortOrder);
         Task<PropertyResponse?> UpdateAsync(int id, UpdatePropertyRequest request);
         Task<bool> DeleteAsync(int id);
+        Task<DTOs.PropertyImageDto?> GetImageByIdAsync(int imageId);
+        Task<bool> DeleteImageAsync(int imageId);
 
         /// <summary>
         /// Toggle the ShowOnHomepage flag for the property. Returns true when update succeeded.

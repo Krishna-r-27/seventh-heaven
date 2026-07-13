@@ -33,7 +33,8 @@ export default function AddProperty() {
     const [model, setModel] = useState(emptyModel);
     const [files, setFiles] = useState([]);
     const [existingImages, setExistingImages] = useState([]); // existing images for edit
-    const [homepageImages, setHomepageImages] = useState([]);
+    // single-select: index of the one image marked "show on homepage" (or null if none)
+    const [homepageIndex, setHomepageIndex] = useState(null);
     const [saving, setSaving] = useState(false);
     const [errors, setErrors] = useState({});
     const BACKEND_BASE_URL = "https://www.seventh-heaven.ae";
@@ -67,7 +68,7 @@ export default function AddProperty() {
                     cancellationPolicy: data.cancellationPolicy ?? "",
                     showOnHomepage: toBool(data.showOnHomepage),
                     isVisible: toBool(data.isVisible)
-               
+
                 });
 
                 // set existing images for previews (resolve asset path for local uploads)
@@ -78,10 +79,14 @@ export default function AddProperty() {
                 }));
                 setExistingImages(imgs);
 
-                // If backend provides homepage indices/flags, populate homepageImages here.
-                // Example: if data.homepageImageIndices exists:
-                if (Array.isArray(data.homepageImageIndices)) {
-                    setHomepageImages(data.homepageImageIndices);
+                // If backend provides homepage indices/flags, populate homepageIndex here.
+                // Example: if data.homepageImageIndices exists, take the first one (single-select).
+                if (Array.isArray(data.homepageImageIndices) && data.homepageImageIndices.length > 0) {
+                    setHomepageIndex(data.homepageImageIndices[0]);
+                } else {
+                    // fall back to deriving from isPrimary flag on the loaded images
+                    const primaryIdx = imgs.findIndex((img) => img.isPrimary);
+                    setHomepageIndex(primaryIdx >= 0 ? primaryIdx : null);
                 }
             })
             .catch((err) => {
@@ -116,7 +121,7 @@ export default function AddProperty() {
     }, [previews]);
 
     useEffect(() => {
-        setHomepageImages([]);
+        setHomepageIndex(null);
     }, [files]);
 
     function setField(name, value) {
@@ -126,10 +131,83 @@ export default function AddProperty() {
         }
     }
 
+    // single-select toggle: checking one unchecks any previously-checked image
     function toggleHomepageImage(idx) {
-        setHomepageImages((prev) =>
-            prev.includes(idx) ? prev.filter((i) => i !== idx) : [...prev, idx]
-        );
+        setHomepageIndex((prev) => (prev === idx ? null : idx));
+    }
+
+    //function reorderImages(sourceIndex, targetIndex) {
+    //    if (sourceIndex === targetIndex) return;
+
+    //    const newExisting = [...existingImages];
+    //    const newFiles = [...files];
+
+    //    if (sourceIndex < existingImages.length && targetIndex < existingImages.length) {
+    //        // Reorder existing images
+    //        const [item] = newExisting.splice(sourceIndex, 1);
+    //        newExisting.splice(targetIndex, 0, item);
+    //        setExistingImages(newExisting);
+    //    } else if (sourceIndex >= existingImages.length && targetIndex >= existingImages.length) {
+    //        // Reorder new files
+    //        const sourceFileIdx = sourceIndex - existingImages.length;
+    //        const targetFileIdx = targetIndex - existingImages.length;
+    //        const [item] = newFiles.splice(sourceFileIdx, 1);
+    //        newFiles.splice(targetFileIdx, 0, item);
+    //        setFiles(newFiles);
+    //    } else {
+    //        // Moving between existing and new - not allowed for simplicity
+    //        return;
+    //    }
+    //}
+
+    function reorderImages(sourceIndex, targetIndex) {
+        if (sourceIndex === targetIndex) return;
+
+        const newExisting = [...existingImages];
+        const newFiles = [...files];
+
+        if (sourceIndex < existingImages.length && targetIndex < existingImages.length) {
+            // Reorder existing images
+            const [item] = newExisting.splice(sourceIndex, 1);
+            newExisting.splice(targetIndex, 0, item);
+            setExistingImages(newExisting);
+        } else if (sourceIndex >= existingImages.length && targetIndex >= existingImages.length) {
+            // Reorder new files
+            const sourceFileIdx = sourceIndex - existingImages.length;
+            const targetFileIdx = targetIndex - existingImages.length;
+            const [item] = newFiles.splice(sourceFileIdx, 1);
+            newFiles.splice(targetFileIdx, 0, item);
+            setFiles(newFiles);
+        } else {
+            // Moving between existing and new - not allowed for simplicity
+            return;
+        }
+
+        // keep homepageIndex pointing at the same image after the move
+        setHomepageIndex((prev) => {
+            if (prev === null) return prev;
+            if (prev === sourceIndex) return targetIndex;
+            if (sourceIndex < prev && targetIndex >= prev) return prev - 1;
+            if (sourceIndex > prev && targetIndex <= prev) return prev + 1;
+            return prev;
+        });
+    }
+
+    // Remove an image from the previews list (existing or newly-selected file)
+    function handleRemovePreview(previewId, idx) {
+        if (typeof previewId === "string" && previewId.startsWith("existing-")) {
+            setExistingImages((prev) => prev.filter((_, i) => i !== idx));
+        } else {
+            const fileIdx = idx - existingImages.length;
+            setFiles((prev) => prev.filter((_, i) => i !== fileIdx));
+        }
+
+        // keep homepageIndex valid after removal
+        setHomepageIndex((prev) => {
+            if (prev === null) return prev;
+            if (prev === idx) return null;
+            return prev > idx ? prev - 1 : prev;
+        });
     }
 
     function validate() {
@@ -181,7 +259,7 @@ export default function AddProperty() {
                 cancellationPolicy: model.cancellationPolicy,
                 showOnHomepage: toBool(model.showOnHomepage),
                 isVisible: toBool(model.isVisible),
-                homepageImageIndices: homepageImages,
+                homepageImageIndices: homepageIndex !== null ? [homepageIndex] : [],
             };
 
             form.append("payload", JSON.stringify(payload));
@@ -203,27 +281,54 @@ export default function AddProperty() {
             form.append("ShowOnHomepage", toBool(model.showOnHomepage) ? "true" : "false");
             form.append("IsVisible", toBool(model.isVisible) ? "true" : "false");
 
-            // include existing image ids to keep when updating
+            // include existing image ids and sort order when updating
             if (id && existingImages.length > 0) {
                 const existingIds = existingImages.map((img) => img.id).filter(Boolean);
-                existingIds.forEach((imgId) => {
+                existingIds.forEach((imgId, idx) => {
                     form.append("ExistingImageIds", String(imgId));
+                    form.append(`ImageSortOrder_${imgId}`, String(idx));
                 });
             }
 
-            // attach new files
-            files.forEach((f) => form.append("files", f));
+            // attach new files with sort order
+            files.forEach((f, idx) => {
+                form.append("files", f);
+                form.append(`NewFileSortOrder_${idx}`, String(existingImages.length + idx));
+            });
 
             // PrimaryIndex maps to the combined image list order expected by backend:
             // - Create: only new files => first new file is primary by default
             // - Update: kept existing images first, then newly uploaded images
+            //let primaryIndex = null;
+            //if (id) {
+            //    const existingPrimaryIndex = existingImages.findIndex((img) => !!img.isPrimary);
+            //    if (existingPrimaryIndex >= 0) {
+            //        primaryIndex = existingPrimaryIndex;
+            //    } else if (files.length > 0) {
+            //        // combined list starts with existing images, so first new image comes after them
+            //        primaryIndex = existingImages.length;
+            //    } else if (existingImages.length > 0) {
+            //        primaryIndex = 0;
+            //    }
+            //} else if (files.length > 0) {
+            //    primaryIndex = 0;
+            //}
+
+            //if (primaryIndex !== null) {
+            //    form.append("PrimaryIndex", String(primaryIndex));
+            //}
+
             let primaryIndex = null;
-            if (id) {
+
+            if (homepageIndex !== null) {
+                // user explicitly picked a homepage/primary image via the checkbox
+                primaryIndex = homepageIndex;
+            } else if (id) {
+                // fall back to whatever was already primary, or sensible defaults
                 const existingPrimaryIndex = existingImages.findIndex((img) => !!img.isPrimary);
                 if (existingPrimaryIndex >= 0) {
                     primaryIndex = existingPrimaryIndex;
                 } else if (files.length > 0) {
-                    // combined list starts with existing images, so first new image comes after them
                     primaryIndex = existingImages.length;
                 } else if (existingImages.length > 0) {
                     primaryIndex = 0;
@@ -348,10 +453,10 @@ export default function AddProperty() {
                                         value={model.guestrooms}
                                         onChange={(e) => setField("guestrooms", e.target.value)}
                                     />
-                                </div>                                
+                                </div>
 
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700 mb-1">Bedrooms</label>   
+                                    <label className="block text-sm font-medium text-gray-700 mb-1">Bedrooms</label>
                                     <select
                                         className="w-full rounded-lg border-2 border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-100 transition"
                                         value={model.bedrooms}
@@ -364,8 +469,7 @@ export default function AddProperty() {
                                         <option>3BR</option>
                                         <option>4BR+</option>
                                     </select>
-                                    {/*<FiChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />*/}
-                                </div>                                
+                                </div>
 
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Bathrooms</label>
@@ -500,70 +604,92 @@ export default function AddProperty() {
 
                             {previews.length > 0 && (
                                 <div>
-                                    <p className="text-sm font-medium text-gray-700 mb-3">Selected Images ({previews.length})</p>
+                                    <p className="text-sm font-medium text-gray-700 mb-3">Selected Images ({previews.length}) - Drag to reorder</p>
                                     <div className="space-y-3">
-                                        {previews.map((p, idx) => (
-                                            <div key={p.id} className="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                                                {/* Image Preview */}
-                                                <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border border-gray-200">
-                                                    {/*<img*/}
-                                                    {/*    src={*/}
-                                                    {/*        p.url && p.url.startsWith("/uploads/")*/}
-                                                    {/*            ? `${window.location.origin}${p.url}`*/}
-                                                    {/*            : p.url && p.url.startsWith("/uploads/")*/}
-                                                    {/*                ? `${process.env.REACT_APP_API_BASE_URL || "http://localhost:7176"}${p.url}`*/}
-                                                    {/*                : p.url*/}
-                                                           
-                                                    {/*    }*/}
-                                                    {/*    alt=""*/}
-                                                    {/*    className="w-full h-full object-cover"*/}
-                                                    {/*/>*/}
-                                                    <img
-                                                        src={p.url?.startsWith("/uploads/") ? `${BACKEND_BASE_URL}${p.url}` : p.url}
-                                                        alt=""
-                                                        className="h-16 w-16 rounded-md border border-gray-200 object-cover"
-                                                        onError={(e) => { e.currentTarget.style.display = "none"; }}
-                                                    />
-                                                </div>
-                                          
+                                        {previews.map((p, idx) => {
+                                            // single-select: an image is checked only if it matches homepageIndex
+                                            const isChecked = homepageIndex === idx;
 
-                                                {/* Image Info and Options */}
-                                                <div className="flex-1 space-y-2">
-                                                    <p className="text-sm font-medium text-gray-700">Image {idx + 1}</p>
+                                            return (
+                                                <div
+                                                    key={p.id}
+                                                    draggable
+                                                    onDragStart={(e) => {
+                                                        e.dataTransfer.effectAllowed = "move";
+                                                        e.dataTransfer.setData("text/plain", idx.toString());
+                                                    }}
+                                                    onDragOver={(e) => {
+                                                        e.preventDefault();
+                                                        e.dataTransfer.dropEffect = "move";
+                                                    }}
+                                                    onDrop={(e) => {
+                                                        e.preventDefault();
+                                                        const sourceIdx = parseInt(e.dataTransfer.getData("text/plain"), 10);
+                                                        reorderImages(sourceIdx, idx);
+                                                    }}
+                                                    className="flex items-center gap-4 p-4 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-move"
+                                                >
+                                                    {/* Drag Handle */}
+                                                    <div className="flex-shrink-0 text-gray-400 hover:text-gray-600">
+                                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                                            <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                                                        </svg>
+                                                    </div>
 
-                                                    {/* Homepage Checkbox */}
-                                                    <button
-                                                        type="button"
-                                                        role="checkbox"
-                                                        aria-checked={homepageImages.includes(idx)}
-                                                        onClick={() => toggleHomepageImage(idx)}
-                                                        className="flex items-center gap-2 cursor-pointer"
-                                                    >
-                                                        <span
-                                                            className={`inline-flex h-4 w-4 items-center justify-center rounded border text-[11px] leading-none transition ${
-                                                                homepageImages.includes(idx)
-                                                                    ? "border-indigo-600 bg-indigo-600 text-white"
-                                                                    : "border-gray-400 bg-white text-transparent"
-                                                            }`}
+                                                    {/* Image Preview */}
+                                                    <div className="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden border border-gray-200">
+                                                        <img
+                                                            src={p.url?.startsWith("/uploads/") ? `${BACKEND_BASE_URL}${p.url}` : p.url}
+                                                            alt=""
+                                                            className="h-16 w-16 rounded-md border border-gray-200 object-cover"
+                                                            onError={(e) => { e.currentTarget.style.display = "none"; }}
+                                                        />
+                                                    </div>
+
+                                                    {/* Image Info and Options */}
+                                                    <div className="flex-1 space-y-2">
+                                                        <p className="text-sm font-medium text-gray-700">Image {idx + 1}</p>
+
+                                                        {/* Homepage Checkbox (single-select) */}
+                                                        <button
+                                                            type="button"
+                                                            role="checkbox"
+                                                            aria-checked={isChecked}
+                                                            onClick={() => toggleHomepageImage(idx)}
+                                                            className="flex items-center gap-2 cursor-pointer"
                                                         >
-                                                            ✓
-                                                        </span>
-                                                        <span className="text-sm text-gray-600">
-                                                            Show on homepage
-                                                        </span>
-                                                    </button>
-                                                </div>
+                                                            <span
+                                                                className={`inline-flex h-4 w-4 items-center justify-center rounded border text-[11px] leading-none transition ${isChecked
+                                                                        ? "border-indigo-600 bg-indigo-600 text-white"
+                                                                        : "border-gray-400 bg-white text-transparent"
+                                                                    }`}
+                                                            >
+                                                                ✓
+                                                            </span>
+                                                            <span className="text-sm text-gray-600">
+                                                                Show on homepage
+                                                            </span>
+                                                        </button>
+                                                    </div>
 
-                                                {/* Status Badges */}
-                                                <div className="flex gap-2">
-                                                    {homepageImages.includes(idx) && (
-                                                        <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full font-medium">
-                                                            Homepage
-                                                        </span>
-                                                    )}
+                                                    {/* Status Badges and Delete Button */}
+                                                    <div className="flex gap-2">
+                                                        {isChecked && (
+                                                            <span className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full font-medium">
+                                                                Homepage
+                                                            </span>
+                                                        )}
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => handleRemovePreview(p.id, idx)}
+                                                            className="px-3 py-1 bg-red-100 text-red-700 text-xs rounded hover:bg-red-200 transition font-medium"
+                                                        >
+                                                            Delete
+                                                        </button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        ))}
+                                            );
+                                        })}
                                     </div>
                                 </div>
                             )}
@@ -585,11 +711,10 @@ export default function AddProperty() {
                                 className="flex items-center gap-3 cursor-pointer"
                             >
                                 <span
-                                    className={`inline-flex h-4 w-4 items-center justify-center rounded border text-[11px] leading-none transition ${
-                                        toBool(model.showOnHomepage)
+                                    className={`inline-flex h-4 w-4 items-center justify-center rounded border text-[11px] leading-none transition ${toBool(model.showOnHomepage)
                                             ? "border-indigo-600 bg-indigo-600 text-white"
                                             : "border-gray-400 bg-white text-transparent"
-                                    }`}
+                                        }`}
                                 >
                                     ✓
                                 </span>
@@ -608,17 +733,16 @@ export default function AddProperty() {
                                 className="flex items-center gap-3 cursor-pointer"
                             >
                                 <span
-                                    className={`inline-flex h-4 w-4 items-center justify-center rounded border text-[11px] leading-none transition ${
-                                        toBool(model.isVisible)
+                                    className={`inline-flex h-4 w-4 items-center justify-center rounded border text-[11px] leading-none transition ${toBool(model.isVisible)
                                             ? "border-indigo-600 bg-indigo-600 text-white"
                                             : "border-gray-400 bg-white text-transparent"
-                                    }`}
+                                        }`}
                                 >
                                     ✓
                                 </span>
                                 <span className="text-sm font-medium text-gray-700">Visible in Frontend</span>
                             </button>
-                      
+
                         </div>
 
                         {/* Form Actions */}

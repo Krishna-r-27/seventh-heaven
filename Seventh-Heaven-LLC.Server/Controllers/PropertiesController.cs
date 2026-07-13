@@ -115,25 +115,48 @@ namespace Seventh_Heaven_LLC.Server.Controllers
             if (existing == null) return NotFound();
 
             // Determine which existing images to keep
-            var keepIds = (request.ExistingImageIds ?? Enumerable.Empty<int>()).ToHashSet();
+            //var keepIds = (request.ExistingImageIds ?? Enumerable.Empty<int>()).ToHashSet();
 
-            // existing.Images is expected to be non-null (PropertyResponse.Images is non-nullable)
+            //// existing.Images is expected to be non-null (PropertyResponse.Images is non-nullable)
+            //var existingImages = existing.Images;
+
+            //var keptExistingImages = existingImages
+            //                            .Where(img => keepIds.Contains(img.Id))
+            //                            .Select(img => new PropertyImageDto
+            //                            {
+            //                                Id = img.Id,
+            //                                ImageUrl = img.ImageUrl,
+            //                                ImageWebpUrl = img.ImageWebpUrl,
+            //                                IsPrimary = false // will set later
+            //                            })
+            //                            .ToList();
+
+            //// Delete images that are not kept
+            //var toDelete = existingImages
+            //                .Where(img => !keepIds.Contains(img.Id))
+            //                .ToList();
+
+            // preserve the order sent by the client instead of DB fetch order
+            var keepIdsOrdered = (request.ExistingImageIds ?? Enumerable.Empty<int>()).ToList();
+            var keepIdSet = keepIdsOrdered.ToHashSet();
+
             var existingImages = existing.Images;
 
-            var keptExistingImages = existingImages
-                                        .Where(img => keepIds.Contains(img.Id))
-                                        .Select(img => new PropertyImageDto
-                                        {
-                                            Id = img.Id,
-                                            ImageUrl = img.ImageUrl,
-                                            ImageWebpUrl = img.ImageWebpUrl,
-                                            IsPrimary = false // will set later
-                                        })
-                                        .ToList();
+            var keptExistingImages = keepIdsOrdered
+                .Select(keepId => existingImages.FirstOrDefault(img => img.Id == keepId))
+                .Where(img => img != null)
+                .Select(img => new PropertyImageDto
+                {
+                    Id = img!.Id,
+                    ImageUrl = img.ImageUrl,
+                    ImageWebpUrl = img.ImageWebpUrl,
+                    IsPrimary = false // will set later
+                })
+                .ToList();
 
             // Delete images that are not kept
             var toDelete = existingImages
-                            .Where(img => !keepIds.Contains(img.Id))
+                            .Where(img => !keepIdSet.Contains(img.Id))
                             .ToList();
 
             foreach (var d in toDelete)
@@ -158,17 +181,18 @@ namespace Seventh_Heaven_LLC.Server.Controllers
                     if (f != null && f.Length > 0)
                     {
                         var pair = await _imageStorage.SaveImageAsync(f, "properties");
+                        var sortOrder = keptExistingImages.Count + i;
                         var newImage = new PropertyImageDto
                         {
                             ImageUrl = pair.originalPath,
                             ImageWebpUrl = pair.webpPath,
-                            IsPrimary = false
+                            IsPrimary = false,
+                            SortOrder = sortOrder
                         };
                         newImages.Add(newImage);
 
-                        
-                            // use 1/0 for IsPrimary to be DB-friendly
-                            await _propertyService.InsertPropertyImageAsync(newImage, id);                        
+                        // use 1/0 for IsPrimary to be DB-friendly
+                        await _propertyService.InsertPropertyImageAsync(newImage, id);
                     }
                 }
             }
@@ -177,6 +201,16 @@ namespace Seventh_Heaven_LLC.Server.Controllers
             var combined = new List<PropertyImageDto>();
             combined.AddRange(keptExistingImages);
             combined.AddRange(newImages);
+
+            // Update sort order for existing images based on their new position
+            for (int i = 0; i < keptExistingImages.Count; i++)
+            {
+                keptExistingImages[i].SortOrder = i;
+                if (keptExistingImages[i].Id > 0)
+                {
+                    await _propertyService.UpdateImageSortOrderAsync(keptExistingImages[i].Id, i);
+                }
+            }
 
             // mark primary based on provided PrimaryIndex
             if (request.PrimaryIndex.HasValue)
@@ -305,6 +339,7 @@ namespace Seventh_Heaven_LLC.Server.Controllers
         public string? ImageUrl { get; set; }
         public string? ImageWebpUrl { get; set; }
         public bool IsPrimary { get; set; }
+        public int SortOrder { get; set; }
     }
 
     #endregion

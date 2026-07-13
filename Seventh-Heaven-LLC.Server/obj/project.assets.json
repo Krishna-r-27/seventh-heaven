@@ -77,7 +77,7 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Microsoft.AspNetCore.SpaProxy/8.0.27": {
+      "Microsoft.AspNetCore.SpaProxy/8.0.28": {
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.AspNetCore.SpaProxy.dll": {}
@@ -548,10 +548,10 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.SpaProxy/8.0.27": {
-      "sha512": "xE0GUhCU31MOiFHEqqubuuZyFNRh1Fmv47/p6TC2L4cuzvnFEnJ20E6kNnVPKZl+kVGPbXzUEZDos1X1SK62WA==",
+    "Microsoft.AspNetCore.SpaProxy/8.0.28": {
+      "sha512": "K4wzSkJzMp6jzxOYJObB3Tky8+InsbRTX5udC9HrOz/+tV588K1mdMh6c8DlSdl/3x6i+eKjnXYC4T9tNEuLcw==",
       "type": "package",
-      "path": "microsoft.aspnetcore.spaproxy/8.0.27",
+      "path": "microsoft.aspnetcore.spaproxy/8.0.28",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -559,7 +559,7 @@
         "THIRD-PARTY-NOTICES.TXT",
         "build/Microsoft.AspNetCore.SpaProxy.targets",
         "lib/net8.0/Microsoft.AspNetCore.SpaProxy.dll",
-        "microsoft.aspnetcore.spaproxy.8.0.27.nupkg.sha512",
+        "microsoft.aspnetcore.spaproxy.8.0.28.nupkg.sha512",
         "microsoft.aspnetcore.spaproxy.nuspec"
       ]
     },
@@ -1360,23 +1360,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\DNC\\.nuget\\packages\\": {},
+    "C:\\Users\\DNC-BHUMIKA\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\DNC\\Desktop\\Krishna - DNC Projects\\React Projects\\seventh-heaven\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
+      "projectUniqueName": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\seventh2\\seventh-heaven\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
       "projectName": "Seventh-Heaven-LLC.Server",
-      "projectPath": "C:\\Users\\DNC\\Desktop\\Krishna - DNC Projects\\React Projects\\seventh-heaven\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
-      "packagesPath": "C:\\Users\\DNC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\DNC\\Desktop\\Krishna - DNC Projects\\React Projects\\seventh-heaven\\Seventh-Heaven-LLC.Server\\obj\\",
+      "projectPath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\seventh2\\seventh-heaven\\Seventh-Heaven-LLC.Server\\Seventh-Heaven-LLC.Server.csproj",
+      "packagesPath": "C:\\Users\\DNC-BHUMIKA\\.nuget\\packages\\",
+      "outputPath": "D:\\Bhumika\\Bhumika\\Projects\\NEW\\2026\\seventh2\\seventh-heaven\\Seventh-Heaven-LLC.Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\DNC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DNC-BHUMIKA\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1385,11 +1385,11 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
+          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -1404,10 +1404,11 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "10.0.200"
     },
     "frameworks": {
       "net8.0": {
+        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "BCrypt.Net-Next": {
@@ -1470,7 +1471,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
